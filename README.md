@@ -10,7 +10,7 @@ plan to do in 2024:
 1. MATH 500 note: Abstract Algebra I
 2. MATH 535 note: General Topology
 3. Linear Algebra Done Right (S. Axler) (4th)
-4. Lectures Notes on Elementary Topology and Geometry (I. M. Singer & J. A. Thorpe)
+4. Lecture Notes on Elementary Topology and Geometry (I. M. Singer & J. A. Thorpe)
 
 further plan: ? 
 
