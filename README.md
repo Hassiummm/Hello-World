@@ -12,6 +12,6 @@ plan to do in 2024:
 3. Linear Algebra Done Right (S. Axler) (4th)
 4. Lecture Notes on Elementary Topology and Geometry (I. M. Singer & J. A. Thorpe)
 
-further plan: ? 
+further plan: ???
 
-Where are they??? 😋 PRIVATE 🤪
+Where are they??? 😋 PRIVATE 🤪 
