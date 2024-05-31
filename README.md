@@ -2,16 +2,28 @@ I am glad you read this first ^ _ ^
 
 Contents: notes for everything I'm interested in (◐‿◑), and notes for classes (￣▽￣)
 
-working on:
-1. Basic Algebra I & II (N. Jacobson)
-2. Algebra (S. Lang) (3rd)
+Here's my full plan!
 
-plan to do in 2024:
-1. MATH 500 note: Abstract Algebra I
-2. MATH 535 note: General Topology
-3. Linear Algebra Done Right (S. Axler) (4th)
-4. Lecture Notes on Elementary Topology and Geometry (I. M. Singer & J. A. Thorpe)
+#1 Classic Books (with answers if possible)
 
-further plan: ???
+currently working on:
+1. Basic Algebra I & II (Jacobson) 
+2. Algebra (Lang) (3rd)
 
-Where are they??? 😋 PRIVATE 🤪 
+plan to do:
+1. Linear Representations of Finite Groups (Serre)
+
+#2 Class Notes
+
+currently working on:
+no class in summer!!! I want to play Minecraft (*^_^*)
+
+#3 Reference Books
+
+currently working on:
+??? idk
+
+plan to do:
+????? idk
+
+Wait! I'm not a person who just want to read math books!!! Please recommend me any books or articles you think important (or interesting). I want other subjects in my Github. (>^ω^<) 
