@@ -15,12 +15,12 @@ Here's some of my plans!
   #2 Class Notes
   
   currently working on:
-  No class in this summer!!! I want to play Minecraft (*^_^*) 1.21 is really cool!!!
+  No class in this summer!!! I want to play Minecraft, 1.21 is really cool!!! (#^.^#)
   
   #3 Reference Books
   
   Not planning to write anything about reference books yet.
 
-Well, not all of my notes have answers to the problems. If you want answers, see: https://www.theproofistrivial.com/
+Well, not all of my notes have answers to the problems. If you want answers, see: https://www.theproofistrivial.com/ (⁎⁍̴̛ᴗ⁍̴̛⁎)
 
 Please recommend me any books or articles you think interesting (>^ω^<) 
