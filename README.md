@@ -1,4 +1,4 @@
-I am glad you read this first ^ _ ^ 
+I'm glad you read this first ^ _ ^ 
 
 Contents: notes for everything I'm interested in (◐‿◑), and notes for classes (￣▽￣)
 
