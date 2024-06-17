@@ -21,6 +21,6 @@ Here's some of my plans!
   
   Not planning to write anything about reference books yet.
 
-Well, not all of my notes have answers to the problem. If you do want an answer, see: https://www.theproofistrivial.com/
+Well, not all of my notes have answers to the problems. If you want answers, see: https://www.theproofistrivial.com/
 
 Please recommend me any books or articles you think interesting (>^ω^<) 
