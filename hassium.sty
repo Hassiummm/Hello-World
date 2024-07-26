@@ -4,6 +4,7 @@
 
 % 1. Package
 \RequirePackage{environ}
+\RequirePackage{xcolor,etoolbox}
 \RequirePackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs}
 \RequirePackage{tikz-cd,graphicx,wrapfig,pgfplots}
 \RequirePackage{setspace,geometry,enumerate,enumitem,blindtext}
@@ -11,6 +12,7 @@
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{chemfig}
+\RequirePackage{lipsum}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{comment,csquotes}
 
@@ -53,7 +55,11 @@
     \RenewEnviron{proof}{\phantom{}\\\ \\ \\}{}
     \BODY
     \let\proof\visibleproof
-    \let\endproof\endvisibleproof}
+    \let\endproof\endvisibleproof
+}
+
+% Darkmode (black background, white text)
+\newcommand{\darkmode}{\pagecolor{black}\color{white}}
 
 % Enumerate with tab
 \newenvironment{level}
@@ -135,8 +141,6 @@
 \newcommand{\vp}{\varphi}
 
 % Arrows
-\newcommand{\ra}{\rightarrow}
-\newcommand{\la}{\leftarrow}
 \newcommand{\ua}{\uparrow}
 \newcommand{\da}{\downarrow}
 \newcommand{\Ra}{\Rightarrow}
@@ -176,7 +180,7 @@
 
 % Maps
 \newcommand{\id}{\text{id}}
-\newcommand{\Im}{\text{im}}
+\newcommand{\im}{\text{im}}
 \newcommand{\Ker}{\text{ker}}
 
 % Galois group 
