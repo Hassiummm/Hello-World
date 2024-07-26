@@ -1,0 +1,212 @@
+\ProvidesPackage{hassium} % version 1.0
+
+% 1. Package
+\RequirePackage{environ}
+\RequirePackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs}
+\RequirePackage{tikz-cd,graphicx,wrapfig,pgfplots}
+\RequirePackage{setspace,geometry,enumerate,enumitem,blindtext}
+\RequirePackage{mdframed,tabularx,nicematrix,chngcntr,centernot,ytableau}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[explicit]{titlesec}
+\RequirePackage{chemfig}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{comment,csquotes}
+
+% 2. General Commands
+
+% Geometry (page)
+\geometry{letterpaper, margin=0.75in}
+\setstretch{1.25}
+
+% Newsection (shown in ToC, not counter)
+\makeatletter
+\newcommand\newsection[1]{%
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}%
+}
+\makeatother
+
+% Hyperlink on Toc and section titles
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{\hyperlink{sec-\thesection}{#1}
+\addtocontents{toc}{\protect\hypertarget{sec-\thesection}{}}}
+\titleformat{name=\section,numberless}
+{\normalfont\Large\bfseries}{}{0pt}{\hyperlink{toc}{#1}}
+
+% Table of contents section only
+\setcounter{tocdepth}{1}
+
+% Changefont
+\newcommand{\cf}[1]{\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}}
+
+% Enumerate
+\setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+
+% Remove proofs by empty lines
+\NewEnviron{reviewmode}{%
+    \let\visibleproof\proof
+    \let\endvisibleproof\endproof
+    \RenewEnviron{proof}{\phantom{}\\\ \\ \\}{}
+    \BODY
+    \let\proof\visibleproof
+    \let\endproof\endvisibleproof}
+
+% Enumerate with tab
+\newenvironment{level}
+{\addtolength{\itemindent}{2em}}
+{\addtolength{\itemindent}{-2em}}
+
+% Circle
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.5pt](char){#1};}}
+
+% Roman number
+\newcommand{\rom}{\romannumeral}
+
+% Pgfplot
+\pgfplotsset{compat=1.18}
+
+% 3. Math
+
+% Theorem styles
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{notation}{Notation}
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+\newtheorem{questioninner}{Exercise}
+\newenvironment{exercise}[1][]{%
+    \ifx\relax#1\relax\else\renewcommand{\thequestioninner}{#1}\fi 
+    \questioninner
+}{%
+}
+
+% Equation counter
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+% Quiver (Authors: varkor (https://github.com/varkor), AndréC (https://tex.stackexchange.com/users/138900/andr%C3%A9c))
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
+\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
+\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
+\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
+
+% Change font (math) 
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ca}[1]{\mathcal{#1}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\Sg}{\mathfrak{S}}
+\newcommand{\Ag}{\mathfrak{A}}
+
+% Uniqueness
+\newcommand{\uni}{\exists\ \text{!}\ }
+
+% Greek and Hebrew letters
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\ga}{\gamma}
+\newcommand{\si}{\sigma}
+\newcommand{\la}{\lambda}
+\newcommand{\vt}{\vartheta}
+\newcommand{\vp}{\varphi}
+
+% Arrows
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\ua}{\uparrow}
+\newcommand{\da}{\downarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Ua}{\Uparrow}
+\newcommand{\Da}{\Downarrow}
+\newcommand{\nRa}{\nRightarrow}
+\newcommand{\nLa}{\nLeftarrow}
+\newcommand{\hra}{\hookrightarrow}
+\newcommand{\hla}{\hookleftarrow}
+\newcommand{\lt}{\leadsto}
+\newcommand{\mt}{\mapsto}
+\newcommand{\rat}{\rightarrowtail}
+\newcommand{\lat}{\leftarrowtail}
+
+% Sets
+\newcommand{\sub}{\subset}
+\newcommand{\sube}{\subseteq}
+\newcommand{\supe}{\supseteq}
+\newcommand{\nsub}{\centernot\subset}
+\newcommand{\nsup}{\centernot\supset}
+\newcommand{\nsube}{\centernot\subseteq}
+\newcommand{\nsupe}{\centernot\supseteq}
+\newcommand{\es}{\varnothing}
+\newcommand{\sm}{\setminus}
+\newcommand{\ps}{\mathscr{P}}
+
+% Otimes, oplus
+\newcommand{\ot}{\otimes}
+\newcommand{\op}{\oplus}
+
+% Modulo
+\renewcommand{\mod}{\ \text{mod}\ }
+
+% Smaller circle
+\newcommand{\circo}{~\raisebox{1pt}{\tikz \draw[line width=0.6pt] circle(1.1pt);}~}
+
+% Maps
+\newcommand{\id}{\text{id}}
+\newcommand{\im}{\text{im}}
+\newcommand{\ke}{\text{ker}}
+
+% Galois group 
+\newcommand{\gal}{\text{Gal}}
+
+% Order and cardinalitiy
+\newcommand{\card}[1]{\lvert{#1}\rvert}
+\newcommand{\ord}{\text{ord}}
+
+% Groups generated 
+\newcommand{\cyc}[1]{\langle{#1}\rangle}
+
+% Category and morphism
+\newcommand{\iso}{\cong}
+\newcommand{\Aut}{\text{Aut}}
+\newcommand{\End}{\text{End}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\cop}[1]{{#1}^{\textit{op}}}
+\newcommand{\cset}{\textit{Set}}
+\newcommand{\ctop}{\textit{Top}}
+\newcommand{\cgrp}{\textit{Grp}}
+\newcommand{\cvec}{\textit{Vec}}
+\newcommand{\ccat}{\textit{Cat}}
+
+% Derivatives
+\newcommand{\fd}[1]{{#1}^{\prime}}
+\newcommand{\sd}[1]{{#1}^{\prime\prime}}
+\newcommand{\nd}[2][2]{{#1}^{(#2)}}
+\newcommand{\pd}[2][2]{\dfrac{\partial#1}{\partial#2}}
+\newcommand{\dr}[2][2]{\dfrac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% Triangle symbol
+\newcommand{\tri}{\triangle}
+
+% Line symbol
+\renewcommand{\line}[1]{\ell_{#1}}
+
+% 4. Physics
+\newcommand{\hb}{\hbar}
