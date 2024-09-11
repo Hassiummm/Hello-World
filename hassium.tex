@@ -1,4 +1,5 @@
 %%% This is a scheme of a simple package. %%%
+% version 1.0.5
 
 % 1. Packages
 \usepackage[T1]{fontenc}
@@ -11,7 +12,7 @@
 
 % 2. General Commands
 
-% Multicolumn
+% Multicolumn setup
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{black}}
 
@@ -41,8 +42,8 @@
 \setcounter{tocdepth}{1}
 
 % Changefont
-\newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}}
-\newcommand{\cfc}[1]{\calligra{#1}\fontfamily{cmr}\selectfont{}}
+\newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}} 
+\newcommand{\cfc}[1]{\calligra{#1}\fontfamily{cmr}\selectfont{}} 
 
 % Enumerate
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
@@ -71,7 +72,7 @@
 % Roman numberals
 \newcommand{\rom}{\romannumeral}
 
-% Pgfplot
+% Pgfplot setup
 \pgfplotsset{compat=1.18}
 
 % 3. Math
@@ -92,13 +93,13 @@
     \questioninner
 }{%
 }
-\makeatletter
+\makeatletter % title: exercise, with customize []
 \newenvironment{x}[1]{%
     \par\noindent\textbf{#1\@addpunct{.}}\hskip\labelsep
 }{%
     \par 
 }
-\makeatother
+\makeatother % general environment for any title you want
 
 % Equation counter
 \counterwithin*{equation}{section}
@@ -166,7 +167,7 @@
 \newcommand{\rat}{\rightarrowtail}
 \newcommand{\lat}{\leftarrowtail}
 \DeclareMathOperator{\id}{id}
-\newcommand{\bij}{\xrightarrow{\sim}}
+\newcommand{\bij}{\xrightarrow{\sim}} % right arrow with \sim on it
 
 % Sets, inclusions
 \newcommand{\sub}{\subset}
@@ -228,11 +229,8 @@
 \DeclareMathOperator{\Ob}{Ob}
 \newcommand{\cop}[1]{{#1}^{op}}
 
-% Triangle symbol
+% Triangle 
 \newcommand{\tri}{\triangle}
-
-% Line symbol
-\renewcommand{\line}[1]{\ell_{#1}}
 
 % Partial derivative
 \newcommand{\pa}{\partial}
