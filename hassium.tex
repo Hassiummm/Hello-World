@@ -100,13 +100,9 @@
     \questioninner
 }{%
 }
-\makeatletter % title: exercise, with customize []
-\newenvironment{x}[1]{%
-    \par\medskip\noindent\textbf{#1\@addpunct{.}}\hskip\labelsep
-}{%
-    \par 
+\newcommand{\customtheorem}[1]{%
+    \expandafter\newtheorem\expandafter*{#1}{#1}%
 }
-\makeatother % general environment for any title you want
 
 % Equation counter
 \counterwithin*{equation}{section}
