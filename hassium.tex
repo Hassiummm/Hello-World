@@ -1,5 +1,7 @@
-%%% This is a scheme of a simple package. %%%
-% version 1.0.8
+%%% A Simple Scheme Package, author: Hassium %%% 
+%%% version 1.1.0 %%% 
+
+% I quoted some lines from Stackexchange and Github.
 
 % 1. Packages
 \usepackage[T1]{fontenc}
@@ -7,7 +9,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
-\usepackage{environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes}
+\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes}
 \usepackage{chemfig}
 
 % 2. General Commands
@@ -21,9 +23,50 @@
 % chktex-file 26 
 % chktex-file 18
 
-% Multicolumn setup
-\setlength{\columnseprule}{1pt}
-\def\columnseprulecolor{\color{black}}
+% Title page setup
+
+\newcommand{\hsetup}{%
+    \begin{center}\Huge\bfseries\htitle\end{center} 
+    \normalsize
+    \ \hfill\large \cfc{\hauthor}
+    \normalsize
+    \vspace{2pt}
+    \phantom{}\hrule\phantom{} % Horizontal rule
+}
+
+% Table of contents
+\renewcommand*\contentsname{}
+\newcommand*{\setupTOC}{%
+\titleformat{\section}{}{}{0pt}{} 
+\titlespacing*{\section}{0pt}
+{*7}  
+{*-15} 
+}
+\newcommand{\htoc}{%
+    \begin{center}
+        {\Large\bfseries Table of Contents\bigskip}
+    \end{center}
+    \normalsize
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+    \addtocontents{toc}{\protect\thispagestyle{empty}}
+    \pagenumbering{gobble}
+}
+
+% How to setup the style? Try this after \begin{document}%
+%\def\htitle{Your Title}
+%\def\hauthor{Your Name}
+%\hsetup 
+%\htoc 
+%\pagestyle{fancy}
+%\fancyhead[L]{\htitle}
+%\fancyhead[R]{\cfc{\hauthor}}
+%\renewcommand{\headrulewidth}{0.5pt}
+%\rule{\linewidth}{0.5pt}
+
+% Solve the warnings
+\setlength{\headheight}{12.96686pt}
 
 % Geometry 
 \geometry{letterpaper, margin=0.75in}
@@ -131,6 +174,8 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\rn}[1]{{\mathbb{R}}^{#1}}
+\newcommand{\cn}[1]{{\mathbb{C}}^{#1}}
 
 % Change font (math) 
 \newcommand{\bb}[1]{\mathbb{#1}}
@@ -139,6 +184,10 @@
 
 % Topological space
 \newcommand{\T}{\mathcal{T}}
+
+% Projective Plane
+\newcommand{\p}{\mathbb{P}}
+\newcommand{\pn}[1]{{\mathbb{P}}^{#1}}
 
 % Several groups
 \DeclareMathOperator{\Sym}{Sym}
@@ -230,7 +279,7 @@
 \newcommand{\acts}{\curvearrowright}
 
 % Span
-\DeclareMathOperator{\Span}{\span}
+\DeclareMathOperator{\Span}{span}
 
 % Sign of permutation
 \DeclareMathOperator{\sgn}{sgn}
