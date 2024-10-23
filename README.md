@@ -1,9 +1,11 @@
 I'm glad you read this first ^ _ ^ 
-----------------------------------
+---
 About my LaTeX style
-
-it is now a .tex document, use \input would be fine~  
-
+---
+It is now a .tex document, you can use \input to include it. This is a simple scheme, add anything you want to upgrade it! 
+How it looks? I will publish a repository soon~
+---
+About other resources
 
 Contents: notes for books, articles, classes (◐‿◑)
 
