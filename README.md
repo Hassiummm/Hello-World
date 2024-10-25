@@ -1,12 +1,10 @@
 I'm glad you read this first ^ _ ^ 
 
-About my LaTeX style
+About my LaTeX style: it is now a .tex document, you can use \input to include it. This is a simple scheme, add anything you want to upgrade it! (or remove some commands you don't like) ╭(╯^╰)╮
 
-It is now a .tex document, you can use \input to include it. This is a simple scheme, add anything you want to upgrade it! (or remove some commands you don't like) ╭(╯^╰)╮
+About my repositories: all repositories are notes for books and articles (◐‿◑)
 
-About my repositories
-
-All repositories are notes for books and articles (◐‿◑)
+Here's a detailed plan:
 
 Textbooks: not sure yet (´･_･`)
 
