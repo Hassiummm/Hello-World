@@ -1,11 +1,11 @@
 I'm glad you read this first ^ _ ^ 
----
+
 About my LaTeX style
----
+
 It is now a .tex document, you can use \input to include it. This is a simple scheme, add anything you want to upgrade it! (or remove some commands you don't like) ╭(╯^╰)╮
----
+
 About my repositories
----
+
 All repositories are notes for books and articles (◐‿◑)
 
 Textbooks: not sure yet (´･_･`)
@@ -25,5 +25,5 @@ Here's my plan!
   Please recommend any books or articles you think are interesting (>^ω^<) 
 
   If you find mistakes in my notes, please contact me: andyshuaihao@gmail.com
----
+
 If you are stuck on a problem, click [here](https://www.theproofistrivial.com/) for inspiration. (⁎⁍̴̛ᴗ⁍̴̛⁎)
