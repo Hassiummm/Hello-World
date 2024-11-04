@@ -6,7 +6,7 @@ This is a simple scheme, add anything you want to upgrade it! (or remove some co
 
 About my repositories: all repositories are notes for books and articles 
 
-In my opnion, textbooks should be really good books that are dense and thoughtful, and I plan to include the best textbooks I've read. Usually, I choose to do all the odd-number exercises (so you do at least one-half of the exercises, this is a simple proof right?)
+In my opnion, textbooks should be really good books that are dense and thoughtful, and I plan to include the best textbooks I've read. Usually, I choose to do all the odd-number exercises (so you do at least one-half of the exercises, this is a simple proof left to the readers, take 1 second to think about it).
 
 More details or plans? Not sure yet (´･_･`)
 
