@@ -10,7 +10,7 @@ In my opnion, textbooks should be really good books that are dense and thoughtfu
 
 More details or plans? Not sure yet (´･_･`)
 
-Please recommend any books or articles you think are interesting (>^ω^<) 
+Please recommend me any books or articles you think are interesting (>^ω^<) 
 
 If you find mistakes in my notes, please contact me: andyshuaihao@gmail.com
 
