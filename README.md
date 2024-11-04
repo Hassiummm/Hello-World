@@ -1,17 +1,15 @@
 I'm glad you read this first ^ _ ^ 
 
-About my LaTeX style: it is now a .tex document, you can use \input to include it. 
-
-This is a simple scheme, add anything you want to upgrade it! (or remove some commands you don't like) ╭(╯^╰)╮
+About my LaTeX style: It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to suggest improvements or remove any commands you find unnecessary. ╭(╯^╰)╮
 
 About my repositories: all repositories are notes for books and articles 
 
-In my opnion, textbooks should be really good books that are dense and thoughtful, and I plan to include the best textbooks I've read. Usually, I choose to do all the odd-number exercises (so you do at least one-half of the exercises, this is a simple proof left to the readers, take 1 second to think about it).
+All repositories are notes for books and articles. I believe textbooks should be dense, thoughtful, and genuinely insightful. My goal is to include only the best textbooks I've read. Typically, I work on all odd-numbered exercises, which covers at least half. (A simple proof left to the reader; take a second to think about it.)
 
-More details or plans? Not sure yet (´･_･`)
+Any plans or more details? Not certain yet. (´･_･`)
 
-Please recommend me any books or articles you think are interesting (>^ω^<) 
+Please share any books or articles you find interesting (>^ω^<)
 
-If you find mistakes in my notes, please contact me: andyshuaihao@gmail.com
+If you find mistakes in my notes, please contact me at: andyshuaihao@gmail.com
 
-If you are stuck on a problem, click [here](https://www.theproofistrivial.com/) for inspiration. 
+If you're stuck on a problem, click [here](https://www.theproofistrivial.com/) for some inspiration. 
