@@ -9,7 +9,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
-\usepackage{textcomp,tocloft,environ,everypage,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes}
+\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes}
 \usepackage{chemfig}
 
 % 2. General Commands
@@ -22,6 +22,11 @@
 % chktex-file 12 
 % chktex-file 26 
 % chktex-file 18
+
+% Page number counter setup
+\newcounter{custompage}
+\setcounter{custompage}{\numexpr\value{page}+1\relax}
+\AddToHook{shipout/before}{\setcounter{custompage}{\numexpr\value{page}+1\relax}}
 
 % Title page setup
 \newcommand{\hsetup}{%
@@ -54,25 +59,27 @@
     \vspace{2pt}\phantom{}\hrule\phantom{}
 }
 
-% Page number counter renew
-\newcounter{custompage}
-\setcounter{custompage}{\numexpr\value{page}+1\relax}
-\AddEverypageHook{\setcounter{custompage}{\numexpr\value{page}+1\relax}}
+% Page numbering command
 \newcommand{\printpage}{\arabic{custompage}}
 
-% How to setup the style? Try this after \begin{document}%
-%\def\htitle{Your Title}
-%\def\hauthor{Your Name}
-%\hsetup\
-%\htoc\
-%\pagestyle{fancy}
-%\fancyhead[L]{\cfc{\hauthor}}
-%\fancyhead[R]{\printpage}
-%\fancyhead[C]{\htitle}
-%\renewcommand{\headrulewidth}{0.5pt}
+% Mainmatter setup
+\newcommand{\hmain}{%
+    \pagestyle{fancy}
+    \fancyhead[L]{\cfc{\hauthor}}      
+    \fancyhead[R]{\cfd{\printpage}}    
+    \fancyhead[C]{\htitle}             
+    \renewcommand{\headrulewidth}{0.5pt} 
+}
 
-% Solve the warnings
-\setlength{\headheight}{12.96686pt}
+% Adjust the headheight
+\setlength{\headheight}{13pt}
+
+% How to set up? here's an example
+% \def\htitle{Your Title}
+% \def\hauthor{Your Name}
+% \hsetup\
+% \htoc\
+% \hmain\ 
 
 % Geometry 
 \geometry{letterpaper, margin=0.75in}
