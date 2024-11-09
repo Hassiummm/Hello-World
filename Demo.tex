@@ -41,7 +41,7 @@ You can setup the table of contents by the code:
         \htoc
     \end{document}
 \end{verbatim}
-This will automatically generates a table of contents when you add a section to the document.
+This will automatically generate a table of contents when you add a section to the document.
 \section{Mainmatter of the Document}
 Every page in the mainmatter has a header, which contains author name, title, and page number. Use the following code to setup:
 \begin{verbatim}
@@ -127,7 +127,7 @@ The command ``circled'' draws a small circle and you can add something inside th
     \circled{1}
 \end{verbatim}
 \noindent
-The output is $\circled{1}$. You can write any romam numerals by:
+The output is $\circled{1}$. You can write any Romam numerals by:
 \begin{verbatim}
     \rom2024 % replace 2024 by any number you want
 \end{verbatim}
@@ -169,6 +169,44 @@ The diagram looks like:
     \end{tikzcd}$
 \end{center}
 \section{Theorem Styles}
+Several theorem styles are offered:
+\begin{verbatim}
+    \theoremstyle{definition}
+    \newtheorem{definition}{Definition}[section]
+    \newtheorem{theorem}{Theorem}[section]
+    \newtheorem*{proposition}{Proposition}
+    \newtheorem*{lemma}{Lemma}
+    \newtheorem*{corollary}{Corollary}
+    \newtheorem*{example}{Example}
+    \newtheorem*{remark}{Remark}
+    \newtheorem*{notation}{Notation}
+\end{verbatim}
+\noindent
+The environment name can be customized by using:
+\begin{verbatim}
+    \customtheorem{This is a custom theorem}
+    \begin{This is a custom theorem}
+        The proof is trivial.
+    \end{theorem}
+\end{verbatim}
+\noindent
+The output environment is:
+\customtheorem{This is a custom theorem}
+\begin{This is a custom theorem}
+    The proof is trivial.
+\end{This is a custom theorem}
+\noindent
+You can put any number or label in ``exercise'' environment:
+\begin{verbatim}
+    \begin{exercise}[8.6]
+        The proof is trivial.
+    \end{exercise}
+\end{verbatim}
+\noindent
+The environment looks like:
+\begin{exercise}[8.6]
+    The proof is trivial.
+\end{exercise}
 \section{Invisible Proofs}
 The environment ``reviewmode'' is originally done by my friend \href{https://github.com/ETwilight}{ETwilight}. It replaces your ``proof'' environment by three empty lines:
 \begin{verbatim}
@@ -180,4 +218,112 @@ The environment ``reviewmode'' is originally done by my friend \href{https://git
 \end{verbatim}
 \section{Simple Commands in Math Mode}
 I will give a table of all commands in math mode.
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{black}}
+\begin{multicols}{2}
+    \noindent$\bs$bs\hfill$\bs$ \\
+    $\bs$N\hfill$\N$ \\
+    $\bs$Z\hfill$\Z$ \\
+    $\bs$Q\hfill$\Q$ \\
+    $\bs$R\hfill$\R$ \\
+    $\bs$C\hfill$\C$ \\
+    $\bs$bb$\{$H$\}$\hfill$\bb{H}$ \\
+    $\bs$ca$\{$H$\}$\hfill$\ca{H}$ \\
+    $\bs$fr$\{$H$\}$\hfill$\fr{H}$ \\
+    $\bs$T\hfill$\T$ \\
+    $\bs$Pn$\{1\}$\hfill$\Pn{1}$ \\
+    $\bs$CP$\{1\}$\hfill$\CP{1}$ \\
+    $\bs$RP$\{1\}$\hfill$\RP{1}$ \\
+    $\bs$Sym\hfill$\Sym$ \\
+    $\bs$GL\hfill$\GL$ \\
+    $\bs$SL\hfill$\SL$ \\
+    $\bs$Mod\hfill$\Mod$ \\
+    $\bs$Sg\hfill$\Sg$ \\
+    $\bs$Ag\hfill$\Ag$ \\
+    $\bs$Cay\hfill$\Cay$ \\
+    $\bs$uni\hfill$\uni$ \\
+    $\bs$al\hfill$\al$ \\
+    $\bs$be\hfill$\be$ \\
+    $\bs$ga\hfill$\ga$ \\
+    $\bs$de\hfill$\de$ \\
+    $\bs$ep\hfill$\ep$ \\
+    $\bs$si\hfill$\si$ \\
+    $\bs$la\hfill$\la$ \\
+    $\bs$ka\hfill$\ka$ \\
+    $\bs$om\hfill$\om$ \\
+    $\bs$vp\hfill$\vp$ \\
+    $\bs$vt\hfill$\vt$ \\
+    $\bs$ve\hfill$\ve$ \\
+    $\bs$ua\hfill$\ua$ \\
+    $\bs$da\hfill$\da$ \\
+    $\bs$Ra\hfill$\Ra$ \\
+    $\bs$La\hfill$\La$ \\
+    $\bs$Ua\hfill$\Ua$ \\
+    $\bs$Da\hfill$\Da$ \\
+    $\bs$nRa\hfill$\nRa$ \\
+    $\bs$nLa\hfill$\nLa$ \\
+    $\bs$hra\hfill$\hra$ \\
+    $\bs$hla\hfill$\hla$ \\
+    $\bs$lt\hfill$\lt$ \\
+    $\bs$mt\hfill$\mt$ \\
+    $\bs$rat\hfill$\rat$ \\
+    $\bs$lat\hfill$\lat$ \\
+    $\bs$thra\hfill$\thra$ \\
+    $\bs$thla\hfill$\thla$ \\
+    $\bs$bij\hfill$\bij$ \\
+    $\bs$ol$\{$A$\}$\hfill$\ol{A}$ \\
+    $\bs$id\hfill$\id$ \\
+    $\bs$sub\hfill$\sub$ \\
+    $\bs$sube\hfill$\sube$ \\
+    $\bs$supe\hfill$\supe$ \\
+    $\bs$nsub\hfill$\nsub$ \\
+    $\bs$nsup\hfill$\nsup$ \\
+    $\bs$nsube\hfill$\nsube$ \\
+    $\bs$nsupe\hfill$\nsupe$ \\
+    $\bs$subn\hfill$\subn$ \\
+    $\bs$supn\hfill$\supn$ \\
+    $\bs$es\hfill$\es$ \\
+    $\bs$sm\hfill$\sm$ \\
+    $\bs$ps\hfill$\ps$ \\
+    $\bs$Un\hfill$\Un$ \\
+    $\bs$In\hfill$\In$ \\
+    $\bs$Du\hfill$\Du$ \\
+    $\bs$cp\hfill$\cp$ \\
+    $\bs$Cp\hfill$\Cp$ \\
+    $\bs$ot\hfill$\ot$ \\
+    $\bs$op\hfill$\op$ \\
+    $\bs$acts\hfill$\acts$ \\
+    $\bs$Span\hfill$\Span$ \\
+    $\bs$sgn\hfill$\sgn$ \\
+    $\bs$nsg\hfill$\nsg$ \\
+    $\bs$defa\hfill$\defa$ \\
+    $\bs$sdp\hfill$\sdp$ \\
+    $\bs$inv$\{$f$\}$\hfill$\inv{f}$ \\
+    1$\bs$mod 2\hfill$1\mod 2$ \\
+    $\bs$Cl\hfill$\Cl$ \\
+    $\bs$Hol\hfill$\Hol$ \\
+    $\bs$comp\hfill$\comp$ \\
+    $\bs$Gal\hfill$\Gal$ \\
+    $\bs$card$\{S\}$\hfill$\card{S}$ \\
+    $\bs$im\hfill$\im$ \\
+    $\bs$norm$\{$M$\}$\hfill$\norm{M}$ \\
+    $\bs$po\hfill$\po$ \\
+    $\bs$cyc$\{$g$\}$\hfill$\cyc{g}$ \\
+    $\bs$Spec\hfill$\Spec$ \\
+    $\bs$Syl\hfill$\Syl$ \\
+    $\bs$iso\hfill$\approx$ \\
+    $\bs$niso\hfill$\niso$ \\
+    $\bs$Mor\hfill$\Mor$ \\
+    $\bs$Aut\hfill$\Aut$ \\
+    $\bs$End\hfill$\End$ \\
+    $\bs$Hom\hfill$\Hom$ \\
+    $\bs$Inn\hfill$\Inn$ \\
+    $\bs$Out\hfill$\Out$ \\
+    $\bs$Iso\hfill$\Iso$ \\
+    $\bs$Ob\hfill$\Ob$ \\
+    $\bs$cop$\{$C$\}$\hfill$\cop{C}$ \\
+    $\bs$tri\hfill$\tri$ \\
+    $\bs$pa\hfill$\pa$ \\
+    $\bs$hb\hfill$\hb$
+\end{multicols} 
 \end{document}
