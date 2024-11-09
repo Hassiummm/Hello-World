@@ -33,33 +33,26 @@
 
 % Title page setup
 \newcommand{\hsetup}{%
-    \begin{center}\Huge\bfseries\htitle\end{center} 
+    \begin{center}
+        \Huge\bfseries\htitle \\
+        \vspace{2pt}
+        \normalsize\Large\cfc{\hauthor}
+    \end{center} 
     \normalsize
-    \ \hfill\large \cfc{\hauthor}
-    \normalsize
-    \vspace{2pt}
+    \vspace{-20.5pt}
     \phantom{}\hrule\phantom{}
 }
 
-% Table of contents
+% Table of Contents
 \renewcommand*\contentsname{}
-\newcommand*{\setupTOC}{%
-\titleformat{\section}{}{}{0pt}{} 
-\titlespacing*{\section}{0pt}
-{*7}  
-{*-15} 
-}
 \newcommand{\htoc}{%
-    \begin{center}
-        {\Large\bfseries Table of Contents\bigskip}
-    \end{center}
     \normalsize
     \begin{multicols}{2}
         \tableofcontents
     \end{multicols}
     \thispagestyle{empty}
     \pagenumbering{gobble}
-    \vspace{2pt}\phantom{}\hrule\phantom{}
+    \vspace{-6.5pt}\phantom{}\hrule\phantom{}
 }
 
 % Page numbering command
@@ -77,18 +70,11 @@
 % Adjust the headheight
 \setlength{\headheight}{13pt}
 
-% How to set up? here's an example
-% \def\htitle{Your Title}
-% \def\hauthor{Your Name}
-% \hsetup\
-% \htoc\
-% \hmain\ 
-
 % Geometry 
 \geometry{letterpaper, margin=0.75in}
 \setstretch{1.25}
 
-% Newsection (shown in ToC, no counter)
+% Newsection
 \makeatletter
 \newcommand\newsection[1]{%
   \section*{#1}%
@@ -103,11 +89,14 @@
 \titleformat{\section}
 {\normalfont\Large\bfseries}{\thesection}{1em}{\hyperlink{sec-\thesection}{#1}
 \addtocontents{toc}{\protect\hypertarget{sec-\thesection}{}}}
-\titleformat{name=\section,numberless}
-{\normalfont\Large\bfseries}{}{0pt}{\hyperlink{toc}{#1}}
 
 % Table of contents section only
 \setcounter{tocdepth}{1}
+
+% Description in table of contents
+\newcommand{\descr}[1]{%
+  \addtocontents{toc}{\medskip\noindent\detokenize{#1}\leavevmode\par\medskip}
+}
 
 % Changefont
 \newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}} 
@@ -116,18 +105,9 @@
 % Enumerate
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 
-% Remove proofs by empty space
-\NewEnviron{reviewmode}{%
-    \let\visibleproof\proof
-    \let\endvisibleproof\endproof
-    \RenewEnviron{proof}{\phantom{}\\\ \\ \\}{}
-    \BODY
-    \let\proof\visibleproof
-    \let\endproof\endvisibleproof
-}
-
-% Darkmode (black background, white text)
+% Darkmode
 \newcommand{\darkmode}{\pagecolor{black}\color{white}}
+\newcommand{\normalmode}{\pagecolor{white}\color{black}}
 
 % Enumerate with tab
 \newenvironment{level}
@@ -165,6 +145,16 @@
     \expandafter\newtheorem\expandafter*{#1}{#1}%
 }
 
+% Remove proofs by empty space
+\NewEnviron{reviewmode}{%
+    \let\visibleproof\proof
+    \let\endvisibleproof\endproof
+    \RenewEnviron{proof}{\phantom{}\\\ \\ \\}{}
+    \BODY
+    \let\proof\visibleproof
+    \let\endproof\endvisibleproof
+}
+
 % Equation counter
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
@@ -190,8 +180,6 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\rn}[1]{{\mathbb{R}}^{#1}}
-\newcommand{\cn}[1]{{\mathbb{C}}^{#1}}
 
 % Change font (math) 
 \newcommand{\bb}[1]{\mathbb{#1}}
@@ -204,6 +192,8 @@
 % Projective Plane
 \newcommand{\p}{\mathbb{P}}
 \newcommand{\pn}[1]{{\mathbb{P}}^{#1}}
+\newcommand{\CP}[1]{{\mathbb{CP}}^{#1}}
+\newcommand{\RP}[1]{{\mathbb{RP}}^{#1}}
 
 % Several groups
 \DeclareMathOperator{\Sym}{Sym}
@@ -260,10 +250,6 @@
 \newcommand{\thra}{\twoheadrightarrow}
 \newcommand{\thla}{\twoheadleftarrow}
 \newcommand{\bij}{\xrightarrow{\sim}} % right arrow with \sim on it, represents bijection
-
-% Projective Plane
-\newcommand{\CP}[1]{{\mathbb{CP}}^{#1}}
-\newcommand{\RP}[1]{{\mathbb{RP}}^{#1}}
 
 % Overline
 \newcommand{\ol}[1]{\overline{#1}}
@@ -330,7 +316,7 @@
 % Galois group
 \DeclareMathOperator{\Gal}{Gal}
 
-% Cardinality
+% Cardinality\
 \newcommand{\card}[1]{\lvert{#1}\rvert}
 
 % Image
@@ -374,9 +360,6 @@
 
 % Quantum: h-bar
 \newcommand{\hb}{\hbar}
-
-% Partial operator
-\newcommand{\pr}{\partial}
 
 
 

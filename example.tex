@@ -1,34 +1,183 @@
-% This is an example of how to use the style
 \documentclass[10pt]{article}
 \input{hassium.tex}
 \begin{document}
-\def\htitle{Your Title Here}
-\def\hauthor{Name}
+\def\htitle{Demo of Hassium Style}
+\def\hauthor{Hassium}
 \hsetup\
 \htoc\
 \hmain\
-\section{Your First Section}
-\lipsum[1]
-\section{Your Second Section}
-\lipsum[2]
-\section{Your Third Section}
-\lipsum[3]
-\section{Some More Sections}
-\lipsum[4]
-\section{Some More Sections?}
-\lipsum[5]
-\section{Some More Sections!}
-\lipsum[6]
-\section{Some More Sections!!}
-\lipsum[7]
-\section{Some More Sections!!!}
-\lipsum[8]
-\section{Think for More Section Titles}
-\lipsum[9]
-\section{Need More?}
-\lipsum[10]
-\section{Maybe Some More Sections}
-\lipsum[11]
-\section{This is the Last Section}
-\lipsum[12]
+\section{Packages and General Setup}
+This style contains the following packages:
+\begin{verbatim}
+    \usepackage[T1]{fontenc}
+    \usepackage[hidelinks]{hyperref}
+    \usepackage[explicit]{titlesec}
+    \usepackage[utf8]{inputenc}
+    \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,
+    centernot,ytableau,tikz-cd}
+    \usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,
+    multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,
+    comment,csquotes}
+    \usepackage{chemfig}
+\end{verbatim}
+How to insert it? 
+\begin{verbatim}
+    \documentclass{article} % This style only has commands on \section
+    \input{hassium.tex} % Download and input it using its path 
+\end{verbatim}
+\section{Title Page Setup}
+After inserting the package, you should define the title and author name as follows:
+\begin{verbatim}
+    \begin{document}
+        \def\htitle{Your Title} % replace ``Your Title'' with the title you want
+        \def\hauthor{Your Name} % replace ``Your Name'' with the author name you want
+        \hsetup % given the parameters, this should setup the title
+    \end{document}
+\end{verbatim}
+\noindent
+You can setup the table of contents by the code:
+\begin{verbatim}
+    \begin{document}
+        \htoc
+    \end{document}
+\end{verbatim}
+This will automatically generates a table of contents when you add a section to the document.
+\section{Mainmatter of the Document}
+Every page in the mainmatter has a header, which contains author name, title, and page number. Use the following code to setup:
+\begin{verbatim}
+    \begin{document}
+        \hmain   
+    \end{document}
+\end{verbatim}
+\section{An Example: This Demo}
+This demo offers an easy example of how to use the style. Here is my code for this demo:
+\begin{verbatim}
+    \documentclass[10pt]{article} % The font size does not matter 
+    \input{hassium.tex}
+    \begin{document}
+        \def\htitle{Demo of Hassium Style}
+        \def\hauthor{Hassium}
+        \hsetup\
+        \htoc\
+        \hmain\
+    \end{document}
+\end{verbatim}
+\section{Setup in Geometry}
+There are some commands that adjust the geometry of the document:
+\begin{verbatim}
+    \geometry{letterpaper, margin=0.75in}
+    \setstretch{1.25} % spacing
+    \setlength{\headheight}{13pt}
+\end{verbatim}
+\section{More on Table of Contents}
+You can add descriptions to each section and the description will appear in the table of contents, directly below the section name: 
+\begin{verbatim}
+    \section{This is a Sample Section} 
+    \descr{This is a description to the section} 
+\end{verbatim}
+\noindent
+The table of contents only shows the section names, but no subsections and numberless sections. If you want a numberless section in the table of contents, use the ``newsection'' command:
+\begin{verbatim}
+    \newsection{This is a numberless section} 
+\end{verbatim}
+\noindent
+Note that the section names in the table of contents are hyperlinks; click on any section name to navigate directly to that section. You can do the converse to navigate to the first page as well.
+\section{Darkmode}
+Darkmode command changes the background color to black and the text to white. The normal mode is used to end the darkmode. Use the commands by:
+\begin{verbatim}
+    \begin{document}
+        \darkmode 
+        \normalmode
+    \end{document}
+\end{verbatim}
+\section{Other Environments and Commands}
+The line-spacing in ``enumerate'' environment is changed:
+\begin{verbatim}
+    \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+\end{verbatim}
+\noindent
+The ``level'' environment is used in ``enumerate'' environment, consider the following code:
+\begin{verbatim}
+    \begin{enumerate}
+        \item This is the first line.
+        \begin{level}
+            \item This is the second line.
+            \begin{level}
+                \item This is the third line.
+            \end{level}
+            \item This is another line.
+        \end{level}
+    \end{enumerate}
+\end{verbatim}
+\noindent
+This code gives:
+\begin{enumerate}
+    \item This is the first line.
+    \begin{level}
+        \item This is the second line.
+        \begin{level}
+            \item This is the third line.
+        \end{level}
+        \item This is another line.
+    \end{level}
+\end{enumerate}
+\noindent
+The command ``circled'' draws a small circle and you can add something inside the circle:
+\begin{verbatim}
+    \circled{1}
+\end{verbatim}
+\noindent
+The output is $\circled{1}$. You can write any romam numerals by:
+\begin{verbatim}
+    \rom2024 % replace 2024 by any number you want
+\end{verbatim}
+\noindent
+There are two simple commands for hand-written fonts:
+\begin{verbatim}
+    \cfd{font 1}
+    \cfc{font 2}
+\end{verbatim}
+The outputs are \cfd{font 1} and \cfc{font 2}.
+\section{Quiver}
+Quiver is done by \href{https://github.com/varkor}{varkor} and \href{https://tex.stackexchange.com/users/138900/andr%C3%A9c}{AndréC}, check their github for more information. I include quiver to draw curve arrows in a commutative diagram. To draw a diagram with quiver, check this \href{https://q.uiver.app/}{website}. An example is given below:
+\begin{verbatim}
+    % chktex-file 15 % the three lines enables useless warnings
+    % chktex-file 17
+    % chktex-file 18
+    \begin{center}
+        \begin{tikzcd}
+            Hello &&&& World \\
+            \\
+            \\
+            && Hassium
+            \arrow["\shortmid"{marking}, curve={height=-6pt}, tail reversed, from=1-1, to=1-5]
+            \arrow[curve={height=6pt}, squiggly, from=1-1, to=4-3]
+            \arrow[curve={height=-6pt}, dashed, hook', from=1-5, to=4-3]
+        \end{tikzcd}
+    \end{center}
+\end{verbatim}
+The diagram looks like:
+\begin{center}
+    $\begin{tikzcd}
+        Hello &&&& World \\
+        \\
+        \\
+        && Hassium
+        \arrow["\shortmid"{marking}, curve={height=-6pt}, tail reversed, from=1-1, to=1-5]
+        \arrow[curve={height=6pt}, squiggly, from=1-1, to=4-3]
+        \arrow[curve={height=-6pt}, dashed, hook', from=1-5, to=4-3]
+    \end{tikzcd}$
+\end{center}
+\section{Theorem Styles}
+\section{Invisible Proofs}
+The environment ``reviewmode'' is originally done by my friend \href{https://github.com/ETwilight}{ETwilight}. It replaces your ``proof'' environment by three empty lines:
+\begin{verbatim}
+    \begin{reviewmode}
+        \begin{proof}
+            The proof is trivial.
+        \end{proof}
+    \end{reviewmode}
+\end{verbatim}
+\section{Simple Commands in Math Mode}
+I will give a table of all commands in math mode.
 \end{document}
