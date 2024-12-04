@@ -158,6 +158,16 @@
     \let\endproof\endvisibleproof
 }
 
+% Remove proofs by trivially
+\NewEnviron{trivialmode}{%
+    \let\visibleproof\proof
+    \let\endvisibleproof\endproof
+    \RenewEnviron{proof}{The proof is trivial.}{}
+    \BODY
+    \let\proof\visibleproof
+    \let\endproof\endvisibleproof
+}
+
 % Equation counter
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
