@@ -78,8 +78,9 @@
 % Newsection
 \makeatletter
 \newcommand\newsection[1]{%
-  \section*{#1}%
-  \addcontentsline{toc}{section}{#1}%
+  \stepcounter{section}
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
 }
 \makeatother
 
