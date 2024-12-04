@@ -18,4 +18,6 @@ Interesting websites
 
 If you're stuck on a problem, click [here](https://www.theproofistrivial.com/) for some inspiration
 
-Which GTM book are you??? Check [GTM test](https://math.jhu.edu/~savitt/GTM.html)
+Which GTM book are you??? check [GTM test](https://math.jhu.edu/~savitt/GTM.html)
+
+Are you familiar with LaTex fonts? check [mathfrak test](https://cims.nyu.edu/~tjl8195/quiz/frak.html)
