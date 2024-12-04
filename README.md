@@ -16,7 +16,7 @@ If you find mistakes in my notes, please contact me at: andyshuaihao@gmail.com
 
 Interesting websites 
 
-If you're stuck on a problem, click [here](https://www.theproofistrivial.com/) for some inspiration
+Need inspirations? check [here](https://www.theproofistrivial.com/)
 
 Which GTM book are you??? check [GTM test](https://math.jhu.edu/~savitt/GTM.html)
 
