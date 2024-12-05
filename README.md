@@ -24,6 +24,8 @@ Are you familiar with LaTex fonts? check [mathfrak test](https://cims.nyu.edu/~t
 
 Summary of common LATEX math symbols: [here](https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf)
 
-Github page of my friend **ETwilight**: https://github.com/ETwilight
+Sheldon Axler's answer on why LADR: [here](https://www.reddit.com/r/math/comments/15ahoci/why_does_sheldon_axler_hate_determinants/)
 
-Github page of my friend **Shanbo Zhang**: https://github.com/EscapistArcadia
+Github page of my friend **ETwilight**: [here](https://github.com/ETwilight)
+
+Github page of my friend **Shanbo Zhang**: [here](https://github.com/EscapistArcadia)
