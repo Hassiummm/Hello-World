@@ -1,10 +1,10 @@
 I'm glad you read this first ^ _ ^ 
 
-<h5>About my LaTeX style</h5>
+<h3>About my LaTeX style</h3>
 
 It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to suggest improvements or remove any commands you find unnecessary. ╭(╯^╰)╮
 
-<h5>About my repositories</h5>
+<h3>About my repositories</h3>
 
 All repositories are notes for books and articles. I believe textbooks should be dense, thoughtful, and genuinely insightful. My goal is to include only the best textbooks I've read. Typically, I work on all odd-numbered exercises, which covers at least half of all questions. (A simple proof left to the reader; take a second to think about it.)
 
@@ -14,7 +14,7 @@ Please share any books or articles you find interesting (>^ω^<)
 
 If you find mistakes in my notes, please contact me at: andyshuaihao@gmail.com
 
-<h5>Interesting links</h5>
+<h3>Interesting links</h3>
 
 Need inspirations? check [here](https://www.theproofistrivial.com/)
 
