@@ -9,7 +9,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
-\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes}
+\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,zref-user,imakeidx,etoolbox,xparse,pgffor}
 \usepackage{chemfig}
 
 % 2. General Commands
@@ -63,7 +63,7 @@
 \newcommand{\hmain}{%
     \pagestyle{fancy}
     \fancyhead[L]{\cfc{\hauthor}}      
-    \fancyhead[R]{\cfd{\printpage}}    
+    \fancyhead[R]{\fontfamily{pzc}\selectfont{{\printpage}}}    
     \fancyhead[C]{\htitle}             
     \renewcommand{\headrulewidth}{0.5pt} 
 }
@@ -100,8 +100,47 @@
   \addtocontents{toc}{\medskip\noindent\detokenize{#1}\leavevmode\par\medskip}
 }
 
+
+%%%%%%%
+
+% Initialize a counter for unique labels
+\newcounter{cfdcounter}
+
+% Store a list of cfd terms and labels
+\newcommand{\cfdlist}{}
+
+% Define the \cfd command to store the term and create a label
+\newcommand{\cfd}[1]{%
+  \refstepcounter{cfdcounter}% Increment the counter for each \cfd{}
+  \label{cfd:\thecfdcounter}% Create a label with the counter
+  \xdef\cfdlist{\cfdlist#1}% Append the term and label to the list
+  {\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}}
+}
+
+% Define the \hindex command to generate an enumerated list with hyperlinks
+\newcommand{\hindex}{%
+  \newsection{Index} % This creates the Index section
+  \def\templist{\cfdlist} % Use the list of terms stored
+    \foreach \term in \templist {%
+      \splitter{\term}{|}% Split by delimiter (counter and term)
+  \begin{enumerate}
+    \item \hyperlink{cfd:\tempa}{\tempa} \\% Create the hyperlink for each item
+  \end{enumerate}
+    }
+   % End the enumerate list
+}
+
+% Helper command to split the list by a delimiter
+\newcommand{\splitter}[2]{%
+  \def\tempa{#1}% First part (counter) goes in #1
+  \def\tempb{#2}% Second part (term) goes in #2
+}
+
+%%%%%%%%%%
+
+
+
 % Changefont
-\newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}} 
 \newcommand{\cfc}[1]{{\usefont{T1}{calligra}{m}{n}#1}} 
 
 % Enumerate
@@ -153,16 +192,6 @@
     \let\visibleproof\proof
     \let\endvisibleproof\endproof
     \RenewEnviron{proof}{\phantom{}\\\ \\ \\}{}
-    \BODY
-    \let\proof\visibleproof
-    \let\endproof\endvisibleproof
-}
-
-% Remove proofs by trivially
-\NewEnviron{trivialmode}{%
-    \let\visibleproof\proof
-    \let\endvisibleproof\endproof
-    \RenewEnviron{proof}{The proof is trivial.}{}
     \BODY
     \let\proof\visibleproof
     \let\endproof\endvisibleproof
