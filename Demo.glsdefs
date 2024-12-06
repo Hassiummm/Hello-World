@@ -1,4 +1,4 @@
-\glsdefs@newdocentry{font 1}%
+\glsdefs@newdocentry{cfd:font 1}%
 {%
 name={font 1},%
 sort={font 1},%
@@ -26,7 +26,7 @@ parent={},%
 %
 }%
 
-\glsdefs@newdocentry{FSG}%
+\glsdefs@newdocentry{cfd:FSG}%
 {%
 name={FSG},%
 sort={FSG},%

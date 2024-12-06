@@ -9,7 +9,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
-\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,zref-user,imakeidx,etoolbox,xparse,pgffor,glossaries}
+\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,zref-user,imakeidx,etoolbox,verbatim}
 \usepackage{chemfig}
 
 % 2. General Commands
@@ -48,24 +48,24 @@
 \renewcommand*\contentsname{}
 \newcommand{\htoc}{%
     \normalsize
-    \begin{multicols}{2}
-        \tableofcontents
-    \end{multicols}
+    \begin{frame}{}
+        \begin{multicols}{2}
+          \tableofcontents
+          \end{multicols}
+    \end{frame}
     \thispagestyle{empty}
     \pagenumbering{gobble}
     \vspace{-6.5pt}\phantom{}\hrule\phantom{}
 }
 
-% Page numbering command
-\newcommand{\printpage}{\arabic{custompage}}
-
 % Mainmatter setup
 \newcommand{\hmain}{%
     \pagestyle{fancy}
     \fancyhead[L]{\cfc{\hauthor}}      
-    \fancyhead[R]{\fontfamily{pzc}\selectfont{{\printpage}}}    
+    \fancyhead[R]{\fontfamily{pzc}\selectfont{{\thepage}}}    
     \fancyhead[C]{\htitle}             
-    \renewcommand{\headrulewidth}{0.5pt} 
+    \renewcommand{\headrulewidth}{0.5pt}
+    \fancyfoot{}
 }
 
 % Adjust the headheight
@@ -101,21 +101,13 @@
 }
 
 
-%%%%%%%
-
-\newcommand{\cfd}[1]{%
-  \newglossaryentry{#1}{name={#1},description={}}
-  \gls{#1}
-  {\fontfamily{pzc}\selectfont{#1}\fontfamily{cmr}\selectfont{}}
-}
 
 
-%%%%%%%%%%
-
-
-
-% Changefont
+\newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont #1\fontfamily{cmr}\selectfont}
 \newcommand{\cfc}[1]{{\usefont{T1}{calligra}{m}{n}#1}} 
+
+
+
 
 % Enumerate
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
