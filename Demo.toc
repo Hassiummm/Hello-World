@@ -1,0 +1,26 @@
+\hypertarget {sec-1}{}
+\contentsline {section}{\numberline {1}Packages and General Setup}{}{section.1}%
+\hypertarget {sec-2}{}
+\contentsline {section}{\numberline {2}Title Page Setup}{}{section.2}%
+\hypertarget {sec-3}{}
+\contentsline {section}{\numberline {3}Mainmatter of the Document}{}{section.3}%
+\hypertarget {sec-4}{}
+\contentsline {section}{\numberline {4}An Example: This Demo}{}{section.4}%
+\hypertarget {sec-5}{}
+\contentsline {section}{\numberline {5}Setup in Geometry}{}{section.5}%
+\hypertarget {sec-6}{}
+\contentsline {section}{\numberline {6}More on Table of Contents}{}{section.6}%
+\hypertarget {sec-7}{}
+\contentsline {section}{\numberline {7}Darkmode}{}{section.7}%
+\hypertarget {sec-8}{}
+\contentsline {section}{\numberline {8}Other Environments and Commands}{}{section.8}%
+\hypertarget {sec-9}{}
+\contentsline {section}{\numberline {9}Quiver}{}{section.9}%
+\hypertarget {sec-10}{}
+\contentsline {section}{\numberline {10}Theorem Styles}{}{section.10}%
+\hypertarget {sec-11}{}
+\contentsline {section}{\numberline {11}Invisible Proofs}{}{section.11}%
+\hypertarget {sec-12}{}
+\contentsline {section}{\numberline {12}Simple Commands in Math Mode}{}{section.12}%
+\hypertarget {sec-13}{}
+\contentsline {section}{\numberline {13}Acknowledgement}{}{section.13}%

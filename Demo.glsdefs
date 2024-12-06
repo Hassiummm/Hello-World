@@ -1,0 +1,56 @@
+\glsdefs@newdocentry{font 1}%
+{%
+name={font 1},%
+sort={font 1},%
+type={main},%
+first={font 1},%
+firstplural={font 1s},%
+text={font 1},%
+plural={font 1s},%
+description={},%
+descriptionplural={},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{FSG}%
+{%
+name={FSG},%
+sort={FSG},%
+type={main},%
+first={FSG},%
+firstplural={FSGs},%
+text={FSG},%
+plural={FSGs},%
+description={},%
+descriptionplural={},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
