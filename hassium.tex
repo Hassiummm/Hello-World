@@ -48,13 +48,13 @@
 \renewcommand*\contentsname{}
 \newcommand{\htoc}{%
     \normalsize
+    \pagenumbering{gobble}
     \begin{frame}{}
         \begin{multicols}{2}
           \tableofcontents
-          \end{multicols}
+        \end{multicols}
     \end{frame}
-    \thispagestyle{empty}
-    \pagenumbering{gobble}
+    \pagestyle{empty}
     \vspace{-6.5pt}\phantom{}\hrule\phantom{}
 }
 
