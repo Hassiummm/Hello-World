@@ -24,7 +24,7 @@ This style contains the following packages:
 \end{verbatim}
 How to insert it? 
 \begin{verbatim}
-    \documentclass{article} % This style only has commands on \section
+    \documentclass{article} 
     \input{hassium.tex} % Download and input it using its path 
 \end{verbatim}
 \section{Title Page Setup}
@@ -166,6 +166,21 @@ Several theorem styles are offered:
     \newtheorem*{remark}{Remark}
     \newtheorem*{notation}{Notation}
 \end{verbatim}
+\noindent
+There is a ``hdefinition'' environment, which works exactly the same as ``definition'' if you write:
+\begin{verbatim}
+    \begin{hdefinition}
+        This is a definition of Hassium.
+    \end{hdefinition}
+\end{verbatim}
+\noindent
+If you include a name variable, it gives an index to the name.
+\begin{verbatim}
+    \begin{hdefinition}[Hassium]
+        This is a definition of Hassium
+    \end{hdefinition}
+    \hindex % This will print Hassium
+\end{verbatim} 
 \noindent
 The environment name can be customized by using:
 \begin{verbatim}
