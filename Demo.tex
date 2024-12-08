@@ -8,18 +8,18 @@
 \hsetup\
 \htoc\
 \hmain\
-\section{Packages and General Setup}
+\section{Packages}
 This style contains the following packages:
 \begin{verbatim}
     \usepackage[T1]{fontenc}
-    \usepackage[hidelinks]{hyperref}
     \usepackage[explicit]{titlesec}
     \usepackage[utf8]{inputenc}
     \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,
     centernot,ytableau,tikz-cd}
-    \usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,
-    multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,
-    comment,csquotes}
+    \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,
+    enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,
+    wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim}
+    \usepackage[hidelinks]{hyperref}
     \usepackage{chemfig}
 \end{verbatim}
 How to insert it? 
@@ -28,33 +28,9 @@ How to insert it?
     \input{hassium.tex} % Download and input it using its path 
 \end{verbatim}
 \section{Title Page Setup}
-After inserting the package, you should define the title and author name as follows:
+After inserting the package, you should define the title and author name. Here is an example, which is the code of this demo:
 \begin{verbatim}
-    \begin{document}
-        \def\htitle{Your Title} % replace ``Your Title'' with the title you want
-        \def\hauthor{Your Name} % replace ``Your Name'' with the author name you want
-        \hsetup % given the parameters, this should setup the title
-    \end{document}
-\end{verbatim}
-\noindent
-You can setup the table of contents by the code:
-\begin{verbatim}
-    \begin{document}
-        \htoc
-    \end{document}
-\end{verbatim}
-This will automatically generate a table of contents when you add a section to the document.
-\section{Mainmatter of the Document}
-Every page in the mainmatter has a header, which contains author name, title, and page number. Use the following code to setup:
-\begin{verbatim}
-    \begin{document}
-        \hmain   
-    \end{document}
-\end{verbatim}
-\section{An Example: This Demo}
-This demo offers an easy example of how to use the style. Here is my code for this demo:
-\begin{verbatim}
-    \documentclass[10pt]{article} % The font size does not matter 
+    \documentclass{article}
     \input{hassium.tex}
     \begin{document}
         \def\htitle{Demo of Hassium Style}
@@ -64,7 +40,7 @@ This demo offers an easy example of how to use the style. Here is my code for th
         \hmain\
     \end{document}
 \end{verbatim}
-\section{Setup in Geometry}
+\section{General Geometry}
 There are some commands that adjust the geometry of the document:
 \begin{verbatim}
     \geometry{letterpaper, margin=0.75in}
@@ -84,6 +60,13 @@ The table of contents only shows the section names, but no subsections and numbe
 \end{verbatim}
 \noindent
 Note that the section names in the table of contents are hyperlinks; click on any section name to navigate directly to that section. You can do the converse to navigate to the first page as well.
+\section{Index Page}
+This style has a customized index page. Check the code:
+\begin{verbatim}
+    This is a \hdef{defintiion}. This is another \hdef{vocabulary}.
+    \hindex
+\end{verbatim}
+The command ``hdef'' mark the word and print it. The command ``hindex'' is a customized index page that print words in three columns. Each page number in the index page contains a hyperlink, you can click it to locate that page.
 \section{Darkmode}
 Darkmode command changes the background color to black and the text to white. The normal mode is used to end the darkmode. Use the commands by:
 \begin{verbatim}
@@ -331,6 +314,4 @@ I will give a table of all commands in math mode.
 \end{multicols}
 \section{Acknowledgement}
 Special thanks to \cfd{FSG}; his advice on style has been invaluable.
-
-
 \end{document}

@@ -5,11 +5,11 @@
 
 % 1. Packages
 \usepackage[T1]{fontenc}
-\usepackage[hidelinks]{hyperref}
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
-\usepackage{textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,zref-user,imakeidx,etoolbox,verbatim}
+\usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim}
+\usepackage[hidelinks]{hyperref}
 \usepackage{chemfig}
 
 % 2. General Commands
@@ -27,11 +27,6 @@
 % chktex-file 36
 % chktex-file 44
 
-% Page number counter setup
-\newcounter{custompage}
-\setcounter{custompage}{\numexpr\value{page}+1\relax}
-\AddToHook{shipout/before}{\setcounter{custompage}{\numexpr\value{page}+1\relax}}
-
 % Title page setup
 \newcommand{\hsetup}{%
     \begin{center}
@@ -45,10 +40,10 @@
 }
 
 % Table of Contents
-\renewcommand*\contentsname{Table of Contents}
+\renewcommand*\contentsname{}
 \newcommand{\htoc}{%
     \normalsize
-    \pagenumbering{gobble}
+    \renewcommand{\cftsecpagefont}{\color{white}}
     \begin{frame}{}
         \begin{multicols}{2}
           \tableofcontents
@@ -92,34 +87,45 @@
 {\normalfont\Large\bfseries}{\thesection}{1em}{\hyperlink{sec-\thesection}{#1}
 \addtocontents{toc}{\protect\hypertarget{sec-\thesection}{}}}
 
-% Table of contents section only
-\setcounter{tocdepth}{1}
-
 % Description in table of contents
 \newcommand{\descr}[1]{%
   \addtocontents{toc}{\medskip\noindent\detokenize{#1}\leavevmode\par\medskip}
 }
 
+% Index page
+\newcommand{\hdef}[1]{
+    {\fontfamily{pzc}\selectfont #1\fontfamily{cmr}\selectfont}\index{#1}
+}
+\newcommand{\hindex}{%
+    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Index}}
+    \hypertarget{sec-index}{} 
+    \begin{multicols}{3}
+        \printindex 
+    \end{multicols}
+}
 
-
-
+% Change fonts
 \newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont #1\fontfamily{cmr}\selectfont}
 \newcommand{\cfc}[1]{{\usefont{T1}{calligra}{m}{n}#1}} 
-
-
-
 
 % Enumerate
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 
 % Darkmode
-\newcommand{\darkmode}{\pagecolor{black}\color{white}}
-\newcommand{\normalmode}{\pagecolor{white}\color{black}}
+\newcommand{\darkmode}{
+    \pagecolor{black}
+    \color{white}
+}
+\newcommand{\normalmode}{
+    \pagecolor{white}
+    \color{black}
+}
 
 % Enumerate with tab
-\newenvironment{level}
-{\addtolength{\itemindent}{2em}}
-{\addtolength{\itemindent}{-2em}}
+\newenvironment{level}{
+    \addtolength{\itemindent}{2em}}{
+    \addtolength{\itemindent}{-2em}
+}
 
 % Circle
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.5pt](char){#1};}}
