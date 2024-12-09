@@ -1,13 +1,13 @@
-% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
+% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
 \documentclass[10pt]{article}
 \input{hassium.tex}
 \makeindex
 \begin{document}
-\def\htitle{Demo of Hassium Style}
+\def\htitle{Demo of My \LaTeX\ Style}
 \def\hauthor{Hassium}
-\hsetup\
-\htoc\
-\hmain\
+\hsetup
+\htoc
+\hmain
 \section{Packages}
 This style contains the following packages:
 \begin{verbatim}
@@ -43,9 +43,9 @@ After inserting the package, you should define the title and author name. Here i
 \section{General Geometry}
 There are some commands that adjust the geometry of the document:
 \begin{verbatim}
-    \geometry{letterpaper, margin=0.75in}
+    \geometry{letterpaper, top=54pt,bottom=46.8pt,marginparsep=5.67pt,marginparwidth=56.69pt,
+    voffset=0pt,hoffset=0pt,left=54pt,right=54pt,headheight=24pt,headsep=10pt}
     \setstretch{1.25} % spacing
-    \setlength{\headheight}{13pt}
 \end{verbatim}
 \section{More on Table of Contents}
 You can add descriptions to each section and the description will appear in the table of contents, directly below the section name: 
@@ -66,7 +66,7 @@ This style has a customized index page. Check the code:
     This is a \hdef{defintiion}. This is another \hdef{vocabulary}.
     \hindex
 \end{verbatim}
-The command ``hdef'' mark the word and print it. The command ``hindex'' is a customized index page that print words in three columns. Each page number in the index page contains a hyperlink, you can click it to locate that page.
+The command ``hdef'' mark the word and print it. The command ``hindex'' is a customized index page that print words in three columns. Each page number in the index page contains a hyperlink to that page.
 \section{Darkmode}
 Darkmode command changes the background color to black and the text to white. The normal mode is used to end the darkmode. Use the commands by:
 \begin{verbatim}
@@ -325,9 +325,10 @@ I will give a table of all commands in math mode.
     $\bs$tri\hfill$\tri$ \\
     $\bs$pa\hfill$\pa$ \\
     $\bs$hb\hfill$\hb$ \\
-    $\bs$Ann\hfill$\Ann$
+    $\bs$Ann\hfill$\Ann$ \\
+    $\bs$dom\hfill$\dom$ \\
+    $\bs$cod\hfill$\cod$
 \end{multicols}
 \section{Acknowledgement}
 Special thanks to \cfd{FSG}; his advice on style has been invaluable.
-\hindex
 \end{document}

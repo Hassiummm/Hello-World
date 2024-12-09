@@ -31,44 +31,35 @@
 % Title page setup
 \newcommand{\hsetup}{%
     \begin{center}
-        \Huge\bfseries\htitle \\
+        \LARGE\bfseries\htitle \\
         \vspace{2pt}
-        \Large\cfc{\hauthor}
+        \large\texttt{\hauthor}
     \end{center} 
     \normalsize
-    \vspace{-20.5pt}
-    \phantom{}\hrule\phantom{}
 }
 
 % Table of Contents
 \renewcommand*\contentsname{}
 \newcommand{\htoc}{%
-    \normalsize
     \renewcommand{\cftsecpagefont}{\color{white}}
-    \begin{frame}{}
-        \begin{multicols}{2}
-          \tableofcontents
-        \end{multicols}
-    \end{frame}
-    \pagestyle{empty}
-    \vspace{-6.5pt}\phantom{}\hrule\phantom{}
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+    \thispagestyle{empty}
 }
 
 % Mainmatter setup
 \newcommand{\hmain}{%
     \pagestyle{fancy}
-    \fancyhead[L]{\cfc{\hauthor}}      
-    \fancyhead[R]{\fontfamily{pzc}\selectfont{{\thepage}}}    
-    \fancyhead[C]{\htitle}             
+    \fancyhead[L]{\texttt{\hauthor}}      
+    \fancyhead[R]{\texttt{p.\thepage}}
+    \fancyhead[C]{\texttt{\htitle}}             
     \renewcommand{\headrulewidth}{0.5pt}
     \fancyfoot{}
 }
 
-% Adjust the headheight
-\setlength{\headheight}{13pt}
-
 % Geometry 
-\geometry{letterpaper, margin=0.75in}
+\geometry{letterpaper, top=54pt,bottom=46.8pt,marginparsep=5.67pt,marginparwidth=56.69pt,voffset=0pt,hoffset=0pt,left=54pt,right=54pt,headheight=24pt,headsep=10pt}
 \setstretch{1.25}
 
 % Newsection
@@ -83,10 +74,12 @@
 % Backslash
 \newcommand{\bs}{\backslash}
 
-% Hyperlink on ToC and section titles
+% Hyperlink on toc and section titles
 \titleformat{\section}
 {\normalfont\Large\bfseries}{\thesection}{1em}{\hyperlink{sec-\thesection}{#1}
 \addtocontents{toc}{\protect\hypertarget{sec-\thesection}{}}}
+\titleformat{name=\section,numberless}
+{\normalfont\Large\bfseries}{}{0pt}{\hyperlink{toc}{#1}}
 
 % Description in table of contents
 \newcommand{\descr}[1]{%
@@ -95,12 +88,15 @@
 
 % Index page
 \makeindex
-\newcommand{\hdef}[1]{
-    {\fontfamily{pzc}\selectfont #1\fontfamily{cmr}\selectfont}\index{#1}
-}
+\newcommand{\hdef}[1]{\cfd{#1}\index{#1}}
 \newcommand{\hindex}{%
+    \renewcommand{\indexname}{Glossary}
+    \pagebreak
+    \pagenumbering{gobble}
+    \thispagestyle{empty}
     \printindex
-    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Index}}
+    \pagestyle{empty}
+    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Glossary}}
     \hypertarget{sec-index}{} 
 }
 
@@ -158,18 +154,16 @@
 \newcommand{\customtheorem}[1]{%
     \expandafter\newtheorem\expandafter*{#1}{#1}%
 }
-
-% Definition with index
-\newenvironment{hdefinition}[1][]{
+\newenvironment{hdefinition}[1][]{%
     \ifx\relax#1\relax
         \begin{definition}
-    \else\index{#1}
-        \begin{definition}[#1]
+    \else
+        \begin{definition}[#1]\index{#1}
     \fi
-}{
+    \setlength{\baselineskip}{12pt}
+}{%
     \end{definition}
 }
-
 
 % Remove proofs by empty space
 \NewEnviron{reviewmode}{%
@@ -432,6 +426,8 @@
 \DeclareMathOperator{\Out}{Out}
 \DeclareMathOperator{\Iso}{Iso}
 \DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\cod}{cod}
 \newcommand{\cop}[1]{{#1}^{op}}
 
 % Triangle 
