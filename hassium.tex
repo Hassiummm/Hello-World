@@ -87,16 +87,15 @@
 }
 
 % Index page
-\makeindex
+\makeindex[columns=3,title=Alphabetical Glossary]
 \newcommand{\hdef}[1]{\cfd{#1}\index{#1}}
 \newcommand{\hindex}{%
-    \renewcommand{\indexname}{Glossary}
     \pagebreak
     \pagenumbering{gobble}
     \thispagestyle{empty}
     \printindex
     \pagestyle{empty}
-    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Glossary}}
+    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Alphabetical Glossary}}
     \hypertarget{sec-index}{} 
 }
 
