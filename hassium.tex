@@ -59,7 +59,17 @@
 }
 
 % Geometry 
-\geometry{letterpaper, top=54pt,bottom=46.8pt,marginparsep=5.67pt,marginparwidth=56.69pt,voffset=0pt,hoffset=0pt,left=54pt,right=54pt,headheight=24pt,headsep=10pt}
+\geometry{letterpaper,top=54pt,
+    bottom=46.8pt,
+    marginparsep=5.67pt,
+    marginparwidth=56.69pt,
+    voffset=0pt,
+    hoffset=0pt,
+    left=54pt,
+    right=54pt,
+    headheight=24pt,
+    headsep=10pt
+}
 \setstretch{1.25}
 
 % Newsection
@@ -90,7 +100,7 @@
 \makeindex[columns=3,title=Alphabetical Glossary]
 \newcommand{\hdef}[1]{\cfd{#1}\index{#1}}
 \newcommand{\hindex}{%
-    \pagebreak
+    \newpage
     \pagenumbering{gobble}
     \thispagestyle{empty}
     \printindex
@@ -99,7 +109,7 @@
     \hypertarget{sec-index}{} 
 }
 
-% Change fonts
+% Changem fonts
 \newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont #1\fontfamily{cmr}\selectfont}
 \newcommand{\cfc}[1]{{\usefont{T1}{calligra}{m}{n}#1}} 
 
@@ -111,7 +121,7 @@
     \pagecolor{black}
     \color{white}
 }
-\newcommand{\normalmode}{
+\newcommand{\normalode}{
     \pagecolor{white}
     \color{black}
 }
@@ -224,7 +234,7 @@
 % Cayley graph
 \DeclareMathOperator{\Cay}{Cay}
 
-% Uniqueness
+% There exists a unique...
 \newcommand{\uni}{\exists\ \text{!}\ }
 
 % Greek and Hebrew letters
@@ -259,7 +269,6 @@
 \newcommand{\thra}{\twoheadrightarrow}
 \newcommand{\thla}{\twoheadleftarrow}
 \newcommand{\bij}{\xrightarrow{\sim}}
-
 
 % Wide bar (by Bryce)
 \makeatletter
@@ -439,7 +448,7 @@
 % Annihilators
 \DeclareMathOperator{\Ann}{Ann}
 
-% 4. Physics & Chemistry
+% 4. Physical Science (if needed)
 
 % Quantum: h-bar
 \newcommand{\hb}{\hbar}
