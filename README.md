@@ -8,7 +8,14 @@ It's now a .tex document, so you can include it using \input. This is a simple s
 
 All repositories are notes for books and articles. I believe textbooks should be dense, thoughtful, and genuinely insightful. My goal is to include only the best textbooks I've read. Typically, I work on all odd-numbered exercises, which covers at least half of all questions. (A simple proof left to the reader; take a second to think about it.)
 
-Any plans or more details? Not certain yet. (´･_･`)
+Any plans or more details?
+
+I have an exam on 12/18. After that, I plan to write notes for the following books:
+
+1. *Algebraic Geometry* by Hartshorne
+2. *Introduction to Homological Algebra* by Weibel
+
+For (1), I plan to include all the exercises. For (2), as there are no dedicated exercise pages, I will include all examples. (´･_･`) lots work to do...
 
 Please share any books or articles you find interesting (>^ω^<)
 
