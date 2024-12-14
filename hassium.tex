@@ -98,7 +98,7 @@
 }
 
 % Index page
-\makeindex[columns=3,title=Alphabetical Glossary]
+\makeindex[columns=3,title=Alphabetical Index]
 \newcommand{\hdef}[1]{\cfd{#1}\index{#1}}
 \newcommand{\hindex}{%
     \newpage
@@ -106,7 +106,7 @@
     \thispagestyle{empty}
     \printindex
     \pagestyle{empty}
-    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Alphabetical Glossary}}
+    \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Alphabetical Index}}
     \hypertarget{sec-index}{} 
 }
 
@@ -448,11 +448,6 @@
 
 % Annihilators
 \DeclareMathOperator{\Ann}{Ann}
-
-% 4. Physical Science (if needed)
-
-% Quantum: h-bar
-\newcommand{\hb}{\hbar}
 
 
 
