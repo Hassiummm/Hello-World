@@ -15,8 +15,8 @@ I have an exam on 12/18. After that, I plan to write notes for the following boo
 1. *Algebraic Geometry* by Hartshorne
 2. *Introduction to Homological Algebra* by Weibel
 
-For (1), I plan to include all the exercises. For (2), as there are no dedicated exercise pages, I will include all examples. (´･_･`) lots work to do...
+For (1), I plan to include all the exercises. For (2), as there are no dedicated exercise pages, I will include all examples. lots work to do... (´･_･`)
 
 Please share any books or articles you find interesting (>^ω^<)
 
-If you find mistakes in my notes, please contact me at: andyshuaihao@gmail.com
+If you find mistakes in my notes, please contact me at andyshuaihao@gmail.com or on discord (my username: hassium_hs)
