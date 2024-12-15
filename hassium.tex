@@ -1,4 +1,4 @@
-%%% A Simple Scheme Package, author: Hassium %%% 
+%%% A Simple Format, author: Hassium %%% 
 %%% version 1.2.1 %%% 
 
 % I quoted some lines from Stackexchange and Github.
@@ -43,6 +43,15 @@
 \renewcommand*\contentsname{}
 \newcommand{\htoc}{%
     \renewcommand{\cftsecpagefont}{\color{white}}
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+    \thispagestyle{empty}
+}
+% if you are using the dark mode, please use \darkhtoc, I will combine it later after 12.18
+\renewcommand*\contentsname{}
+\newcommand{\darkhtoc}{%
+    \renewcommand{\cftsecpagefont}{\color{black}}
     \begin{multicols}{2}
         \tableofcontents
     \end{multicols}
@@ -121,10 +130,6 @@
 \newcommand{\darkmode}{
     \pagecolor{black}
     \color{white}
-}
-\newcommand{\normalode}{
-    \pagecolor{white}
-    \color{black}
 }
 
 % Enumerate with tab
@@ -438,7 +443,7 @@
 \DeclareMathOperator{\Ob}{Ob}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{cod}
-\newcommand{\cop}[1]{{#1}^{op}}
+\newcommand{\cop}[1]{{\texttt{#1}}^{\texttt{{op}}}}
 
 % Triangle 
 \newcommand{\tri}{\triangle}
