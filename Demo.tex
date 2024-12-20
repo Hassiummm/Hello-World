@@ -18,7 +18,7 @@ This style contains the following packages:
     centernot,ytableau,tikz-cd}
     \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,
     enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,
-    wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim}
+    wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent}
     \usepackage[hidelinks]{hyperref}
     \usepackage{chemfig}
 \end{verbatim}
@@ -68,11 +68,10 @@ This style has a customized index page. Check the code:
 \end{verbatim}
 The command ``hdef'' mark the word and print it. The command ``hindex'' is a customized index page that print words in three columns. Each page number in the index page contains a hyperlink to that page.
 \section{Darkmode}
-Darkmode command changes the background color to black and the text to white. If you are using the ``htoc'' command with the darkmode, please use ``darkhtoc''. I will combine the functions later after the exam. Use the commands by:
+Darkmode command changes the background color to black and the text to white.
 \begin{verbatim}
     \begin{document}
         \darkmode 
-        \darkhtoc
     \end{document}
 \end{verbatim}
 \section{Other Environments and Commands}
