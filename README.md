@@ -15,7 +15,11 @@ I have an exam on 12/18. After that, I plan to write notes for the following boo
 1. *Algebraic Geometry* by R. Hartshorne
 2. *Introduction to Homological Algebra* by C. Weibel
 
-For (1), I plan to include all the exercises. For (2), as there are no dedicated exercise pages, I will include all examples. lots work to do... (´･_･`)
+You can check the repository to see the current status of my notes. lots work to do... (´･_･`)
+
+<h3>Completed</h3>
+
+This will be the place that I list all completed repositories, but for now, nothing is in here.
 
 Please share any books or articles you find interesting (>^ω^<)
 
