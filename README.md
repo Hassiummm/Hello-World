@@ -1,6 +1,4 @@
-I'm glad you read this first ^ _ ^ 
-
-<h3>About my LaTeX style</h3>
+About my LaTeX style
 
 It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to suggest improvements or remove any commands you find unnecessary. ╭(╯^╰)╮
 
