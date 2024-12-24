@@ -23,6 +23,12 @@ You can check the repository to see the current status of my notes. lots work to
 
 This will be the place that I list all completed repositories, but for now, nothing is in here.
 
-<h3>Preliminaries</h3>
+<h3>Some Remarks</h3>
 
-Some math notes assume prior knowledge of certain concepts, so please make sure to check the preliminaries section in advance. However, every math repository assumes that readers are familiar with proof-based mathematics.
+Every math repository assumes that readers are familiar with proof-based mathematics.
+
+It is always better to read books and do some practices by yourself. Notes are just companion materials, they are not textbooks.
+
+Please take more time to think harder when you find something difficult.
+
+Enjoy your life!
