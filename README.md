@@ -22,3 +22,7 @@ You can check the repository to see the current status of my notes. lots work to
 <h3>Completed</h3>
 
 This will be the place that I list all completed repositories, but for now, nothing is in here.
+
+<h3>Recommended Readings</h3>
+
+Some notes require readers to have certain backgrounds. For instance, you need to know basic definitions about rings in order to understand a Galois theory book. If I didn't emphasize a specific prerequisite, then it is fine
