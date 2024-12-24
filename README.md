@@ -27,8 +27,8 @@ This will be the place that I list all completed repositories, but for now, noth
 
 Every math repository assumes that readers are familiar with proof-based mathematics.
 
-It is always better to read books and do some practices by yourself. Notes are just companion materials, they are not textbooks.
+It is always better to read books and practice independently. Notes are merely companion materials; they are not textbooks.
 
-Please take more time to think harder when you find something difficult.
+When you encounter something difficult, take more time to think deeply.
 
 Enjoy your life!
