@@ -2,7 +2,7 @@
 
 It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to suggest improvements or remove any commands you find unnecessary. ╭(╯^╰)╮
 
-I made a small demo for this, so called a style, check what it looks like!
+I made a small demo for this, check what it looks like!
 
 # About my repositories #
 
