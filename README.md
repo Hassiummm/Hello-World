@@ -23,6 +23,6 @@ You can check the repository to see the current status of my notes. lots work to
 
 This will be the place that I list all completed repositories, but for now, nothing is in here.
 
-<h3>Recommended Readings</h3>
+<h3>Preliminaries</h3>
 
-Some notes require readers to have certain backgrounds. For instance, you need to know basic definitions about rings in order to understand a Galois theory book. If I didn't emphasize a specific prerequisite, then it is fine
+Some math notes assume prior knowledge of certain concepts, so please make sure to check the preliminaries section in advance. However, every math repository assumes that readers are familiar with proof-based mathematics.
