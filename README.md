@@ -2,6 +2,8 @@
 
 It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to suggest improvements or remove any commands you find unnecessary. ╭(╯^╰)╮
 
+I made a small demo for this, so called a style, check what it looks like!
+
 # About my repositories #
 
 All repositories are notes for books and articles. I believe textbooks should be dense, thoughtful, and genuinely insightful. My goal is to include only the best textbooks I've read. Typically, I work on all odd-numbered exercises, which covers at least half of all questions. (A simple proof left to the reader; take a second to think about it.)
