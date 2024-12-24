@@ -1,8 +1,10 @@
 # About my LaTeX style #
 
-It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to suggest improvements or remove any commands you find unnecessary. ╭(╯^╰)╮
+It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to remove any commands you find unnecessary. ╭(╯^╰)╮
 
 I made a small demo for this, check what it looks like!
+
+I plan to add more functions to this style. Please contact me if you have any idea.
 
 # About my repositories #
 
@@ -20,7 +22,3 @@ You can check the repository to see the current status of my notes. lots work to
 <h3>Completed</h3>
 
 This will be the place that I list all completed repositories, but for now, nothing is in here.
-
-Please share any books or articles you find interesting (>^ω^<)
-
-If you find mistakes in my notes, please contact me at shuaih5@illinois.edu or on discord (my username: hassium_hs)
