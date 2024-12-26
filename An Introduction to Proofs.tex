@@ -1,0 +1,82 @@
+% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
+\documentclass[10pt]{article}
+\input{hassium.tex}
+\begin{document}
+\def\htitle{An Introduction to Proofs}
+\def\hauthor{Hassium}
+\hsetup
+\htoc
+\hmain
+\par
+\section{Introduction}
+In higher-level mathematics, such as algebra, students need ``mathematical maturity'' to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. This note is designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
+\par
+The second chapter introduces the basic logic used in proofs. In the third chapter, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets. Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final chapter covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This chapter offers students a first taste of a rigorous mathematics course, so it is highly recommended.
+\section{Logic}
+Logic is the formal framework and rules of inference that ensure the validity and coherence of arguments in math. 
+\begin{remark}
+    We shall accept that sentences can be either true or false.
+\end{remark} 
+A \hdef{proposition} is a sentence that is either true or false in a mathematical system. The label ``true'' or ``false'' assigned to a proposition is called its \hdef{truth value}. We use the letters $T$ and $F$ to represent ``true'' and ``false'', respectively.
+\par
+Consider the proposition ``$\pi$ is not a rational number'', which is trivially true. However, we could always find some false companion of this proposition, such as ``$\pi$ is a rational number''. Similarly, we can find a true companion of a false proposition. Let $P$ be a proposition, such companion of $P$ is called the \hdef{negation} of $P$, denoted $\neg P$.
+\par
+Let $P$ and $Q$ be propositions. Those sentences can be combined using the word ``and'', denoted $P\wedge Q$, and called the \hdef{conjunction} of $P$ and $Q$. The proposition $P\wedge Q$ is true if both $P$ and $Q$ is true. We can combine the propositions by the word ``or'', denoted $P\vee Q$, and called the \hdef{disjunction} of $P$ and $Q$. The proposition $P\vee Q$ is true if at least one of $P$ or $Q$ is true. A \hdef{truth table} is shown below.
+\begin{center}
+    \begin{tabular}{cc|ccc}
+        $P$ & $Q$ & $\neg P$ & $P\wedge Q$ & $P\vee Q$ \\
+        \hline
+        $T$ & $T$ & $F$ & $T$ & $T$ \\
+        $T$ & $F$ & $F$ & $F$ & $T$ \\
+        $F$ & $T$ & $T$ & $F$ & $T$ \\
+        $F$ & $F$ & $T$ & $F$ & $F$ \\
+    \end{tabular}
+\end{center}
+\begin{example}
+    Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
+    \begin{enumerate}
+        \item $(P\vee Q)\vee R=P\vee(Q\vee R)$;
+        \item $(P\wedge Q)\vee R=P\wedge(Q\wedge R)$;
+        \item $P\vee(Q\wedge R)=(P\vee Q)\wedge(P\vee R)$.
+    \end{enumerate}
+    Try to proof or disproof using the truth table.
+\end{example}
+\par
+Let $P$ and $Q$ be propositions. Consider the proposition ``if $n$ is an integer, then $2n$ is an even number''. Let $P$ denotes ``$n$ is an integer'' and let $Q$ denotes ``$2n$ is an even number'', then the sentence becomes ``if $P$, then $Q$'', denoted $P\implies Q$. This is called a \hdef{conditional proposition}. The proposition $P\implies Q$ is true if $P$ is true and $Q$ is true.
+\par
+This leads to the question: what if $P$ is false? 
+
+
+\begin{example}
+    Let $P$ and $Q$ be propositions. Try to express $P\implies Q$ using ``$\vee$'', ``$\wedge$'', and ``$\neg$''.
+\end{example}
+
+
+
+\newpage
+
+
+\section{Sets}
+
+
+\section{Functions}
+
+
+\section{Integers}
+
+
+
+\section{Cardinality}
+
+
+
+\section{Real and Complex Numbers}
+
+
+
+\newsection{Further Readings and Acknowledgement}
+This note covers introductory knowledge in many field of mathematics.
+
+
+\hindex
+\end{document}

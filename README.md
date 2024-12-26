@@ -1,4 +1,4 @@
-# About my LaTeX style #
+# About my LaTeX template #
 
 It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to remove any commands you find unnecessary. ╭(╯^╰)╮
 
@@ -23,7 +23,7 @@ About (2): this is adapted from a very different old style of mine, there are ma
 
 I just started a little project: *An Introduction to Proofs*
 
-This is a short project that designed to serve as a transition to proof-based mathematics, including some basic concepts in logic, sets, functions... If you want to start with mathematics, it might be a good option. 
+This is a short note (about 15 pages long) that designed to serve as a transition to proof-based mathematics, including some basic concepts in logic, sets, functions... If you want to start with mathematics, it might be a good option. 
 
 lots work to do... (´･_･`)
 
@@ -31,7 +31,7 @@ lots work to do... (´･_･`)
 
 This will be the place that I list all completed repositories, but for now, nothing is in here.
 
-<h3>Some Remarks</h3>
+# Some Remarks # 
 
 Every math repository assumes that readers are familiar with proof-based mathematics.
 
