@@ -15,9 +15,17 @@ All repositories are notes for books and articles. I believe textbooks should be
 I'm writing notes for:
 
 1. *Algebraic Geometry* by R. Hartshorne
-2. *Introduction to Homological Algebra* by C. Weibel
+3. *Algebra* by S. Lang 
 
-You can check the repository to see the current status of my notes. lots work to do... (´･_･`)
+You can check the repository to see the current status of my notes. 
+
+About (2): this is adapted from a very different old style of mine, there are many problems to solve, it will be published when it's ready, please check other repositories for now
+
+I just started a little project: *An Introduction to Proofs*
+
+This is a short project that designed to serve as a transition to proof-based mathematics, including some basic concepts in logic, sets, functions... If you want to start with mathematics, it might be a good option. 
+
+lots work to do... (´･_･`)
 
 <h3>Completed</h3>
 
