@@ -32,6 +32,8 @@ Let $P$ and $Q$ be propositions. Those sentences can be combined using the word 
         $F$ & $F$ & $T$ & $F$ & $F$ \\
     \end{tabular}
 \end{center}
+\par
+Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the same truth value in every possible combination of truth values for the variables in the statements, denoted $P=Q$.
 \begin{example}
     Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
     \begin{enumerate}
@@ -39,17 +41,32 @@ Let $P$ and $Q$ be propositions. Those sentences can be combined using the word 
         \item $(P\wedge Q)\vee R=P\wedge(Q\wedge R)$;
         \item $P\vee(Q\wedge R)=(P\vee Q)\wedge(P\vee R)$.
     \end{enumerate}
-    Try to proof or disproof using the truth table.
+    Try to prove or disproof the statements.
 \end{example}
 \par
-Let $P$ and $Q$ be propositions. Consider the proposition ``if $n$ is an integer, then $2n$ is an even number''. Let $P$ denotes ``$n$ is an integer'' and let $Q$ denotes ``$2n$ is an even number'', then the sentence becomes ``if $P$, then $Q$'', denoted $P\implies Q$. This is called a \hdef{conditional proposition}. The proposition $P\implies Q$ is true if $P$ is true and $Q$ is true.
-\par
-This leads to the question: what if $P$ is false? 
-
-
+Let $P$ and $Q$ be propositions. Consider the proposition ``if $n$ is a natural number, then $2n$ is an even number''. Let $P$ denotes ``$n$ is a natural '' and let $Q$ denotes ``$2n$ is an even number'', then the sentence becomes ``if $P$, then $Q$'', denoted $P\implies Q$. This implication called a \hdef{conditional proposition}, $P$ is called the \hdef{antecedent} and $Q$ is called the \hdef{consequent}. The proposition $P\implies Q$ is true if $P$ is true and $Q$ is true. What if $P$ is false? The answer arises from one's intuition.
 \begin{example}
-    Let $P$ and $Q$ be propositions. Try to express $P\implies Q$ using ``$\vee$'', ``$\wedge$'', and ``$\neg$''.
+    Imagine your friend says ``if $a$ is an integer, then $a$ is a natural number''. How would you argue against this false proposition? The most possible answer is to find some $a$ that is an integer but not a natural number, maybe pick $a=0$. Whether $a$ is an integer or not does not affect the implication.  
 \end{example}
+\par
+
+
+
+The truth table of $P\implies Q$ is shown below.
+\begin{center}
+    \begin{tabular}{cc|c}
+        $P$ & $Q$ & $P\implies Q$ \\
+        \hline
+        $T$ & $T$ & $T$ \\
+        $T$ & $F$ & $F$ \\
+        $F$ & $T$ & $T$ \\
+        $F$ & $F$ & $T$
+    \end{tabular}
+\end{center}
+\begin{example}
+    Let $P$ and $Q$ be propositions. Try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R=(P\implies Q)$.
+\end{example}
+
 
 
 
@@ -74,8 +91,7 @@ This leads to the question: what if $P$ is false?
 
 
 
-\newsection{Further Readings and Acknowledgement}
-This note covers introductory knowledge in many field of mathematics.
+\newsection{Further Readings and Acknowledgment}
 
 
 \hindex
