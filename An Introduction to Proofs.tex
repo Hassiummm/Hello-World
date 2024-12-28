@@ -11,13 +11,13 @@
 \section{Introduction}
 In higher-level mathematics, such as algebra, students need ``mathematical maturity'' to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. This note is designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
 \par
-The second chapter introduces the basic logic used in proofs. In the third chapter, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets. Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final chapter covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This chapter offers students a first taste of a rigorous mathematics course, so it is highly recommended.
+The second sections introduces the basic logic used in proofs. In the third sections, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets. Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final sections covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This sections offers students a first taste of a rigorous mathematics course, so it is highly recommended.
 \section{Logic}
 Logic is the formal framework and rules of inference that ensure the validity and coherence of arguments in math. 
 \begin{remark}
     We shall accept that sentences can be either true or false.
 \end{remark} 
-A \hdef{proposition} is a sentence that is either true or false in a mathematical system. The label ``true'' or ``false'' assigned to a proposition is called its \hdef{truth value}. We use the letters $T$ and $F$ to represent ``true'' and ``false'', respectively.
+A \hdef{proposition} is a sentence that is either true or false in a mathematical system. The label ``true'' or ``false'' assigned to a proposition is called its \hdef{truth value}. We use the letters $T$ and $F$ to represent ``true'' and ``false'', respectively. An \hdef{axiom} is a proposition that is assumed to be true within a mathematical system without requiring proof. Axioms serve as the foundational building blocks of a mathematical theory, from which other propositions can be derived. A \hdef{theorem} is a proposition that has been proven to be true using logical reasoning and the accepted axioms and previously established theorems of the mathematical system. The proof demonstrates why the theorem must hold based on these foundations.
 \par
 Consider the proposition ``$\pi$ is not a rational number'', which is trivially true. However, we could always find some false companion of this proposition, such as ``$\pi$ is a rational number''. Similarly, we can find a true companion of a false proposition. Let $P$ be a proposition, such companion of $P$ is called the \hdef{negation} of $P$, denoted $\neg P$.
 \par
@@ -33,24 +33,24 @@ Let $P$ and $Q$ be propositions. Those sentences can be combined using the word 
     \end{tabular}
 \end{center}
 \par
-Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the same truth value in every possible combination of truth values for the variables in the statements, denoted $P=Q$.
+Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the same truth value in every possible combination of truth values for the variables in the statements, denoted $P\equiv Q$.
 \begin{example}
     Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
     \begin{enumerate}
-        \item $(P\vee Q)\vee R=P\vee(Q\vee R)$;
-        \item $(P\wedge Q)\vee R=P\wedge(Q\wedge R)$;
-        \item $P\vee(Q\wedge R)=(P\vee Q)\wedge(P\vee R)$.
+        \item $\neg(\neg P)=P$;
+        \item $\neg(P\vee Q)\equiv\neg P\wedge\neg Q$;
+        \item $\neg(P\wedge Q)\equiv\neg P\vee\neg Q$;
+        \item $P\vee(Q\wedge R)\equiv(P\vee Q)\wedge(P\vee R)$.
     \end{enumerate}
-    Try to prove or disproof the statements.
+    Try to prove or disprove the statements. Based on your results, can you find more properties?
 \end{example}
 \par
 Let $P$ and $Q$ be propositions. Consider the proposition ``if $n$ is a natural number, then $2n$ is an even number''. Let $P$ denotes ``$n$ is a natural '' and let $Q$ denotes ``$2n$ is an even number'', then the sentence becomes ``if $P$, then $Q$'', denoted $P\implies Q$. This implication called a \hdef{conditional proposition}, $P$ is called the \hdef{antecedent} and $Q$ is called the \hdef{consequent}. The proposition $P\implies Q$ is true if $P$ is true and $Q$ is true. What if $P$ is false? The answer arises from one's intuition.
-
-
-
-
-
-The truth table of $P\implies Q$ is shown below.
+\begin{example}
+    Imagine your high school teacher say ``if you didn't submit your homework, then you haven't completed it''. How would you argue against this sentence? The most likely response would be, ``I did the homework but I didn't submit it''. Whether or not you submitted your homework does not affect the truth value of the implication.
+\end{example}
+\par
+You should convinced by your own intuition (not mine). This case is called a \hdef{vacuous truth}. In the proposition $P\implies Q$, when $P$ is false, $P\implies Q$ is true. The truth table of $P\implies Q$ is shown below.
 \begin{center}
     \begin{tabular}{cc|c}
         $P$ & $Q$ & $P\implies Q$ \\
@@ -61,36 +61,95 @@ The truth table of $P\implies Q$ is shown below.
         $F$ & $F$ & $T$
     \end{tabular}
 \end{center}
+\par
+Let $P$ and $Q$ be propositions, $(P\implies Q)\wedge(Q\implies P)$ is called a \hdef{biconditional proposition}, denoted $P\iff Q$. We will write this by ``$P$ is true if and only if $Q$ is true''.
 \begin{example}
-    Let $P$ and $Q$ be propositions. Try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R=(P\implies Q)$.
+    Let $P$ and $Q$ be propositions. Try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R\equiv P\implies Q$.
+\end{example}
+\begin{example}
+    Write down the truth table of a biconditional proposition. Based on your truth table and last example, try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R\equiv P\iff Q$. If $P\iff Q$ is true, does $P\equiv Q$?
+\end{example}
+\begin{example}
+    Let $P$, $Q$, and $R$ be propositions. Try to prove or disprove $P\implies(Q\vee R)\equiv\neg P\vee Q\vee R$.
+\end{example}
+\par
+Given a proposition $P\implies Q$, the \hdef{converse} is defined as $Q\implies P$ and the \hdef{contrapositive} is defined as $\neg Q\implies\neg P$. The truth table is shown below, and it suffices to conclude that $P\implies Q\equiv\neg Q\implies\neg P$.
+\begin{center}
+    \begin{tabular}{cc|ccc}
+        $P$ & $Q$ & $P\implies Q$ & $Q\implies P$ & $\neg Q\implies\neg P$ \\
+        \hline
+        $T$ & $T$ & $T$ & $T$ & $T$ \\
+        $T$ & $F$ & $F$ & $T$ & $F$ \\
+        $F$ & $T$ & $T$ & $F$ & $T$ \\
+        $F$ & $F$ & $T$ & $T$ & $T$
+    \end{tabular}
+\end{center}
+\par
+Let $P$ be the proposition ``$x$ is a natural number''. Here $x$ is a \hdef{variable}, and the truth value of this proposition depends on $x$. For instance, if $x=1$, then $P$ is true; if $x=0.86$, then $P$ is false. A \hdef{propositional function} is a family of propositions depending on one or more variables. The collection of permitted variables is the \hdef{domain}. Now we write $P(x)$ instead of $P$, so $P(1)$ is true and $P(0.86)$ is false.
+\par
+Propositional functions are often quantified. The \hdef{universal quantifier} is denoted by ``$\forall$'', and the proposition $\forall x(P(x))$ is true if and only if $P(x)$ is true for every $x$ in its domain. The \hdef{existential quantifier} is denoted by ``$\exists$'', and the proposition $\exists x(P(x))$ is true if and only if $P(x)$ is true for at least one $x$ in its domain.
+\par
+Consider the proposition $\forall x(P(x))$, this means all $x$ make $P(x)$ true, so there does not exists some $x$ such that $P(x)$ is false, which is $\neg(\exists x(\neg P(x)))$. 
+\begin{example}
+    Let $P(x)$ be a proposition. Consider the following statements:
+    \begin{enumerate}
+        \item $\neg(\forall x(P(x)))\iff\exists x(\neg P(x))$;
+        \item $\neg(\exists x(P(x)))\iff\forall x(\neg P(x))$.
+    \end{enumerate}
+    Try to prove or disprove the statements.
+\end{example}
+\par
+In the following sections, we shall assume readers are familiar with basic logic. Several expressions and their “translations” are shown below.
+\begin{center}
+    \begin{tabular}{c|c}
+        $P\implies Q$ & $P\iff Q$ \\
+        \hline
+        $P$ implies $Q$; if $P$, then $Q$ & $P$ if and only if $Q$ \\
+        $P$ is sufficient for $Q$; $Q$ is necessary for $P$ & $P$ is necessary and sufficient for $Q$
+    \end{tabular}
+\end{center}
+\section{Sets}
+It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.
+\par
+If $S$ is a set and $x$ is an element in $S$, then we say $x$ \hdef{belongs to} $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
+\customtheorem{Axiom of Extensionality}
+\begin{Axiom of Extensionality}\index{Axiom of Extensionality}
+    If $X$ and $Y$ are sets that have the same elements, then $X=Y$.
+\end{Axiom of Extensionality}
+\par
+One way to describe a set is to explicitly list the elements. For instance, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by properties, and it is guaranteed to be a set. 
+\customtheorem{Axiom Schema of Separation}
+\begin{Axiom Schema of Separation}\index{Axiom Schema of Separation}
+    If $P$ is a property with parameter $p$, then for any $X$ and $p$, there exists a set $Y=\{u\in X\mid P(u,p)\}$ that contains all those $u\in X$ that have property $P$.
+\end{Axiom Schema of Separation}
+\begin{example}
+    The set of rational numbers, denoted $\Q$, is the set $\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
+\end{example}
+\begin{definition}
+    Let $S$ be a set. A set $R$ is a \hdef{subset} of $S$, denoted $R\sub S$, if for all $x\in R$, $x\in S$. If there exists some $x\in S$ such that $x\notin R$, then $R$ is called a \hdef{proper subset} of $S$, denoted $R\subn S$.
+\end{definition}
+\begin{remark}
+    Some textbooks use ``$\sube$'' for subsets and ``$\sub$'' for proper subsets.
+\end{remark}
+\begin{example}
+    
 \end{example}
 
 
 
 
+
+
+
+
+
+
+
 \newpage
-
-
-\section{Sets}
-
-
 \section{Functions}
-
-
 \section{Integers}
-
-
-
 \section{Cardinality}
-
-
-
 \section{Real and Complex Numbers}
-
-
-
 \newsection{Further Readings and Acknowledgment}
-
-
 \hindex
 \end{document}
