@@ -37,7 +37,7 @@ Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the sa
 \begin{example}
     Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
     \begin{enumerate}
-        \item $\neg(\neg P)=P$;
+        \item $\neg(\neg P)\equiv P$;
         \item $\neg(P\vee Q)\equiv\neg P\wedge\neg Q$;
         \item $\neg(P\wedge Q)\equiv\neg P\vee\neg Q$;
         \item $P\vee(Q\wedge R)\equiv(P\vee Q)\wedge(P\vee R)$.
@@ -108,6 +108,17 @@ In the following sections, we shall assume readers are familiar with basic logic
         $P$ is sufficient for $Q$; $Q$ is necessary for $P$ & $P$ is necessary and sufficient for $Q$
     \end{tabular}
 \end{center}
+\begin{example}
+    Here are some true propositions, try to convert them into the language of logic.
+    \begin{enumerate}
+        \item If $x$ is a natural number, then $2x$ is an even number.
+        \item For all natural number $x$, there exists a natural number $y$ such that $y>x$.
+        \item For all 
+    \end{enumerate}
+\end{example}
+\begin{example}
+    Based on your results, try to find the negation and converse of those propositions.
+\end{example}
 \section{Sets}
 It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.
 \par
@@ -123,7 +134,10 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     If $P$ is a property with parameter $p$, then for any $X$ and $p$, there exists a set $Y=\{u\in X\mid P(u,p)\}$ that contains all those $u\in X$ that have property $P$.
 \end{Axiom Schema of Separation}
 \begin{example}
-    The set of rational numbers, denoted $\Q$, is the set $\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
+    The set of rational numbers, is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
+\end{example}
+\begin{example}
+    The set $\{2n\mid n\in\N\}$ is the set of all even numbers. Try to write the set of all odd numbers.
 \end{example}
 \begin{definition}
     Let $S$ be a set. A set $R$ is a \hdef{subset} of $S$, denoted $R\sub S$, if for all $x\in R$, $x\in S$. If there exists some $x\in S$ such that $x\notin R$, then $R$ is called a \hdef{proper subset} of $S$, denoted $R\subn S$.
@@ -131,12 +145,15 @@ One way to describe a set is to explicitly list the elements. For instance, we c
 \begin{remark}
     Some textbooks use ``$\sube$'' for subsets and ``$\sub$'' for proper subsets.
 \end{remark}
-\begin{example}
+\begin{proposition}
+    Let $X$ and $Y$ be sets, then $X=Y$ if and only $X\sub Y$ and $Y\sub X$.
+\end{proposition}
+\begin{remark}
+    For a biconditional proposition $P\iff Q$, we use the notation ``$(\Ra)$'' in the proof to show $P\implies Q$ and ``$(\La)$'' for $Q\implies P$.
+\end{remark}
+\begin{proof}
     
-\end{example}
-
-
-
+\end{proof}
 
 
 
