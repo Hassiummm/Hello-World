@@ -7,11 +7,10 @@
 \hsetup
 \htoc
 \hmain
-\par
 \section{Introduction}
 In higher-level mathematics, such as algebra, students need ``mathematical maturity'' to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. This note is designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
 \par
-The second sections introduces the basic logic used in proofs. In the third sections, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets. Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final sections covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This sections offers students a first taste of a rigorous mathematics course, so it is highly recommended.
+The second sections introduces the basic logic used in proofs. In the third sections, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets. Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final sections covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This section offers students a first taste of a rigorous mathematics course, so it is highly recommended.
 \section{Logic}
 Logic is the formal framework and rules of inference that ensure the validity and coherence of arguments in math. 
 \begin{remark}
@@ -113,8 +112,9 @@ In the following sections, we shall assume readers are familiar with basic logic
     \begin{enumerate}
         \item If $x$ is a natural number, then $2x$ is an even number.
         \item For all natural number $x$, there exists a natural number $y$ such that $y>x$.
-        \item For all 
+        \item A sequence $({x}_{n})$ of real numbers is a \hdef{Cauchy sequence} if for every positive real number $\ep$, there exists some $N\in\N$ and $N\ne 0$ such that for all natural numbers $m,n>N$, $\card{{x}_{m}-{x}_{n}}<\ep$.
     \end{enumerate}
+    For every statement above, you don't need to understand the contents, try to understand the logical relations.
 \end{example}
 \begin{example}
     Based on your results, try to find the negation and converse of those propositions.
@@ -145,6 +145,9 @@ One way to describe a set is to explicitly list the elements. For instance, we c
 \begin{remark}
     Some textbooks use ``$\sube$'' for subsets and ``$\sub$'' for proper subsets.
 \end{remark}
+\begin{example}
+    For all set $A$, we have $A\sub A$.
+\end{example}
 \begin{proposition}
     Let $X$ and $Y$ be sets, then $X=Y$ if and only $X\sub Y$ and $Y\sub X$.
 \end{proposition}
@@ -152,9 +155,28 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     For a biconditional proposition $P\iff Q$, we use the notation ``$(\Ra)$'' in the proof to show $P\implies Q$ and ``$(\La)$'' for $Q\implies P$.
 \end{remark}
 \begin{proof}
-    
+    Let $X$ and $Y$ be sets. $(\Ra)$ For all $x\in X$, since $X=Y$, $x\in Y$, so $X\sub Y$. For all $y\in Y$, since $X=Y$, $y\in X$, so $Y\sub X$. $(\La)$ Suppose $X\ne Y$, then there exists $a\in X$ and $a\notin Y$, so $X\nsub Y$, yet contradiction. 
 \end{proof}
-
+\begin{proposition}
+    Let $A$ be any set, then $\es\sub A$.
+\end{proposition}
+\begin{proof}
+    Suppose there does not exists $a\in A$ such that $a\notin\es$. Since $a\notin\es$, so $ $
+\end{proof}
+\begin{example}
+    If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, then $X\sub Z$.
+\end{example}
+\begin{definition}
+    Let $A$ and $B$ be sets. The \hdef{union} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{or}\ x\in B\}$, denoted $A\cup B$. The \hdef{intersection} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{and}\ x\in B\}$. The \hdef{complement} of $A$ in $B$ is the set $\{x\mid x\in B\ \text{and}\ x\notin A\}$, denoted $B/A$.
+\end{definition}
+\par
+Some textbooks assume there exists an ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U/S$. However, this assumption leads to a paradox. 
+\begin{example}
+    Let $S$ be a set whose elements are all those sets that are not members of themselves, which gives $S=\{X:X\notin X\}$. Does $S$ belong to $S$? This is known as the \hdef{Russell's Paradox}.
+\end{example}
+\par
+If $S$ belongs to $S$, then $S$ is not a member of itself, and so $S\notin S$. On the other hand, if $S\notin S$, then $S$ belongs to $S$. In either case, we have a contradiction.
+\customtheorem{Axiom of Union}
 
 
 
@@ -167,6 +189,6 @@ One way to describe a set is to explicitly list the elements. For instance, we c
 \section{Integers}
 \section{Cardinality}
 \section{Real and Complex Numbers}
-\newsection{Further Readings and Acknowledgment}
+\newsection{Acknowledgment}
 \hindex
 \end{document}
