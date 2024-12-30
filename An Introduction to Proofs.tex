@@ -122,7 +122,7 @@ In the following sections, we shall assume readers are familiar with basic logic
 \section{Sets}
 It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.
 \par
-If $S$ is a set and $x$ is an element in $S$, then we say $x$ \hdef{belongs to} $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
+If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
 \customtheorem{Axiom of Extensionality}
 \begin{Axiom of Extensionality}\index{Axiom of Extensionality}
     If $X$ and $Y$ are sets that have the same elements, then $X=Y$.
@@ -134,7 +134,7 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     If $P$ is a property with parameter $p$, then for any $X$ and $p$, there exists a set $Y=\{u\in X\mid P(u,p)\}$ that contains all those $u\in X$ that have property $P$.
 \end{Axiom Schema of Separation}
 \begin{example}
-    The set of rational numbers, is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
+    The set of rational numbers is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
 \end{example}
 \begin{example}
     The set $\{2n\mid n\in\N\}$ is the set of all even numbers. Try to write the set of all odd numbers.
@@ -146,7 +146,7 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     Some textbooks use ``$\sube$'' for subsets and ``$\sub$'' for proper subsets.
 \end{remark}
 \begin{example}
-    For all set $A$, we have $A\sub A$.
+    For all sets $A$, we have $A\sub A$.
 \end{example}
 \begin{proposition}
     Let $X$ and $Y$ be sets, then $X=Y$ if and only $X\sub Y$ and $Y\sub X$.
@@ -161,7 +161,7 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     Let $A$ be any set, then $\es\sub A$.
 \end{proposition}
 \begin{proof}
-    Suppose there does not exists $a\in A$ such that $a\notin\es$. Since $a\notin\es$, so $ $
+    Suppose $\es\nsub A$, then there exists $x\in\es$ such that $x\notin A$, since $x\in\es$ is false, contradiction.
 \end{proof}
 \begin{example}
     If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, then $X\sub Z$.
@@ -170,13 +170,13 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     Let $A$ and $B$ be sets. The \hdef{union} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{or}\ x\in B\}$, denoted $A\cup B$. The \hdef{intersection} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{and}\ x\in B\}$. The \hdef{complement} of $A$ in $B$ is the set $\{x\mid x\in B\ \text{and}\ x\notin A\}$, denoted $B/A$.
 \end{definition}
 \par
-Some textbooks assume there exists an ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U/S$. However, this assumption leads to a paradox. 
+Some textbooks assume there exists a ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U/S$. However, this assumption leads to a paradox. 
 \begin{example}
-    Let $S$ be a set whose elements are all those sets that are not members of themselves, which gives $S=\{X:X\notin X\}$. Does $S$ belong to $S$? This is known as the \hdef{Russell's Paradox}.
+    Consider the set $S$, defined as the set of all sets that are not members of themselves, that is, $S=\{X\mid X\notin X\}$. Does $S$ belong to $S$? This is known as the \hdef{Russell's Paradox}.
 \end{example}
 \par
-If $S$ belongs to $S$, then $S$ is not a member of itself, and so $S\notin S$. On the other hand, if $S\notin S$, then $S$ belongs to $S$. In either case, we have a contradiction.
-\customtheorem{Axiom of Union}
+Assume $S\in S$. By the definition of $S$, it must satisfy $S\notin S$. This is a contradiction. Assume $S \notin S$. By the definition of $S$, it must satisfy $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency. 
+
 
 
 
@@ -193,6 +193,7 @@ If $S$ belongs to $S$, then $S$ is not a member of itself, and so $S\notin S$. O
 
 
 \newsection{Acknowledgment}
+
  
 
 
