@@ -10,7 +10,7 @@
 \section*{Introduction}\addcontentsline{toc}{section}{Introduction}
 In higher-level mathematics, such as algebra, students need ``mathematical maturity'' to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. This note is designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
 \par
-This introduction is divided into several sections. The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets. 
+This introduction is divided into several sections. The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets, are mentioned in the third section. We shall use facts from these sections in further discussions and renew the idea of them. In the fourth section, we
 
 Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final section covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This section offers students a first taste of a rigorous mathematics course, so it is highly recommended.
 \par
@@ -130,23 +130,11 @@ In the following sections, we shall assume readers are familiar with basic logic
 \end{example}
 \section{Sets}
 \par
-In this section, we begin
-
-
-
-It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.
+In this section, we begin to investigate sets, the most basic entities in mathematics. It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.
 \par
 If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
-\customtheorem{Axiom of Extensionality}
-\begin{Axiom of Extensionality}\index{Axiom of Extensionality}
-    If $X$ and $Y$ are sets that have the same elements, then $X=Y$.
-\end{Axiom of Extensionality}
 \par
-One way to describe a set is to explicitly list the elements. For instance, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by properties, and it is guaranteed to be a set. 
-\customtheorem{Axiom Schema of Separation}
-\begin{Axiom Schema of Separation}\index{Axiom Schema of Separation}
-    If $P$ is a property with parameter $p$, then for any $X$ and $p$, there exists a set $Y=\{u\in X\mid P(u,p)\}$ that contains all those $u\in X$ that have property $P$.
-\end{Axiom Schema of Separation}
+One way to describe a set is to explicitly list the elements. For instance, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by some properties they satisfied.
 \begin{example}
     The set of rational numbers is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
 \end{example}
