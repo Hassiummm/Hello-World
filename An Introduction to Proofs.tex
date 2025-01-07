@@ -7,24 +7,34 @@
 \hsetup
 \htoc
 \hmain
-\section*{Introduction}\addcontentsline{toc}{section}{Introduction}
+\par
 In higher-level mathematics, such as algebra, students need ``mathematical maturity'' to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. This note is designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
 \par
-This introduction is divided into several sections. The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets, are mentioned in the third section. We shall use facts from these sections in further discussions and renew the idea of them. In the fourth section, we
+This introduction is divided into several sections. The first section 
+
+
+The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets, are mentioned in the third section. We shall use facts from these sections in further discussions and renew the idea of them. In the fourth section, we
 
 Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final section covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This section offers students a first taste of a rigorous mathematics course, so it is highly recommended.
 \par
-There is no solid prerequisite for this note. I 
+Rea
+
+mathematics is the art of giving the same name to different things
+
+There is no solid prerequisite for this note. I include some examples and in-text practices to demonstrates the idea clearer, readers should find that the note is easy to read. 
+
+
 
 
 
 \pagebreak
 
-\section{Logic}
+\section{Basic Logic}
 Logic is the formal framework and rules of inference that ensure the validity and coherence of arguments in math. 
 \begin{remark}
     We shall accept that sentences can be either true or false.
 \end{remark} 
+\par
 A \hdef{proposition} is a sentence that is either true or false in a mathematical system. The label ``true'' or ``false'' assigned to a proposition is called its \hdef{truth value}. We use the letters $T$ and $F$ to represent ``true'' and ``false'', respectively. An \hdef{axiom} is a proposition that is assumed to be true within a mathematical system without requiring proof. Axioms serve as the foundational building blocks of a mathematical theory, from which other propositions can be derived. A \hdef{theorem} is a proposition that has been proven to be true using logical reasoning and the accepted axioms and previously established theorems of the mathematical system. The proof demonstrates why the theorem must hold based on these foundations.
 \par
 Consider the proposition ``$\pi$ is not a rational number'', which is trivially true. However, we could always find some false companion of this proposition, such as ``$\pi$ is a rational number''. Similarly, we can find a true companion of a false proposition. Let $P$ be a proposition, such companion of $P$ is called the \hdef{negation} of $P$, denoted $\neg P$.
@@ -43,9 +53,21 @@ Let $P$ and $Q$ be propositions. Those sentences can be combined using the word 
 \par
 Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the same truth value in every possible combination of truth values for the variables in the statements, denoted $P\equiv Q$.
 \begin{example}
+    Let $P$ be a proposition, then $P\equiv\neg(\neg P)$ is logically equivalent. To prove this statement, consider $\neg P$ as a proposition $Q$, then we obtain the following truth table.
+    \begin{center}
+        \begin{tabular}{c|cc}
+            $P$ & $Q=\neg P$ & $\neg Q=\neg(\neg P)$ \\
+            \hline
+            $T$ & $F$ & $T$ \\
+            $F$ & $T$ & $F$
+        \end{tabular}
+    \end{center}
+    Here $P$ and $\neg Q$ has the same truth value in each case, so $P\equiv\neg(\neg P)$.
+\end{example}
+
+\begin{example}
     Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
     \begin{enumerate}
-        \item $\neg(\neg P)\equiv P$;
         \item $\neg(P\vee Q)\equiv\neg P\wedge\neg Q$;
         \item $\neg(P\wedge Q)\equiv\neg P\vee\neg Q$;
         \item $P\vee(Q\wedge R)\equiv(P\vee Q)\wedge(P\vee R)$.
@@ -192,9 +214,6 @@ Assume $S\in S$. By the definition of $S$, it must satisfy $S\notin S$. This is 
 \section{Cardinality}
 \section{Real and Complex Numbers}
 
-
-
-\newsection{Acknowledgment}
 
  
 
