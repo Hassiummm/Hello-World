@@ -8,20 +8,19 @@
 \htoc
 \hmain
 \par
-In higher-level mathematics, such as algebra, students need ``mathematical maturity'' to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. This note is designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
+In higher-level mathematics, such as algebra, students need “mathematical maturity” to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. These notes are designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
 \par
-This introduction is divided into several sections. The first section 
-
-
-The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations. Functions, which are natural tools for connecting sets while preserving their structure, can be understood as the morphisms between sets, are mentioned in the third section. We shall use facts from these sections in further discussions and renew the idea of them. In the fourth section, we
-
-Integers, denoted $\Z$, are fundamental in our daily lives. Studying integers provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets “countable”? The final section covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This section offers students a first taste of a rigorous mathematics course, so it is highly recommended.
+This introduction is divided into several sections. The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations: union, intersection, and complement. In the third section, we expand this concept in a more complex way, namely, functions. Functions are natural tools for connecting sets while preserving their structure. We shall use facts from these sections in further discussions and revisit these ideas.
 \par
-Rea
+Section 4 explains some properties of integers and provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets countable?
+\par
+The final section covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This section offers students a first taste of a rigorous mathematics course, so it is highly recommended.
+\par
+During the reading, you may notice that we use different names for the same object. This happens quite often in mathematics. For instance, we can view $\mathbb{R}$ as a set, a group, a ring, a field, a manifold, a topological space, $\dots$ Every time we use a word, we are specifying a particular aspect of the same object. As Poincaré said, “Mathematics is the art of giving the same name to different things.”
 
-mathematics is the art of giving the same name to different things
 
-There is no solid prerequisite for this note. I include some examples and in-text practices to demonstrates the idea clearer, readers should find that the note is easy to read. 
+
+
 
 
 
@@ -56,7 +55,7 @@ Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the sa
     Let $P$ be a proposition, then $P\equiv\neg(\neg P)$ is logically equivalent. To prove this statement, consider $\neg P$ as a proposition $Q$, then we obtain the following truth table.
     \begin{center}
         \begin{tabular}{c|cc}
-            $P$ & $Q=\neg P$ & $\neg Q=\neg(\neg P)$ \\
+            $P$ & $Q\equiv\neg P$ & $\neg Q\equiv\neg(\neg P)$ \\
             \hline
             $T$ & $F$ & $T$ \\
             $F$ & $T$ & $F$
@@ -64,16 +63,23 @@ Two propositions $P$ and $Q$ are \hdef{logically equivalent} if they have the sa
     \end{center}
     Here $P$ and $\neg Q$ has the same truth value in each case, so $P\equiv\neg(\neg P)$.
 \end{example}
-
-\begin{example}
+\begin{problem}
     Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
     \begin{enumerate}
-        \item $\neg(P\vee Q)\equiv\neg P\wedge\neg Q$;
-        \item $\neg(P\wedge Q)\equiv\neg P\vee\neg Q$;
+        \item $P\vee(Q\vee R)\equiv(P\vee Q)\vee R$;
+        \item $P\wedge(Q\wedge R)\equiv(P\wedge Q)\wedge R$.
+    \end{enumerate}
+    Try to prove or disprove the statements.
+\end{problem}
+\begin{problem}
+    Let $P$, $Q$, and $R$ be propositions. Consider the following statements:
+    \begin{enumerate}
+        \item $\neg(P\vee Q)\equiv(\neg P)\wedge(\neg Q)$;
+        \item $\neg(P\wedge Q)\equiv(\neg P)\vee(\neg Q)$;
         \item $P\vee(Q\wedge R)\equiv(P\vee Q)\wedge(P\vee R)$.
     \end{enumerate}
     Try to prove or disprove the statements. Based on your results, can you find more properties?
-\end{example}
+\end{problem}
 \par
 Let $P$ and $Q$ be propositions. Consider the proposition ``if $n$ is a natural number, then $2n$ is an even number''. Let $P$ denotes ``$n$ is a natural number'' and let $Q$ denotes ``$2n$ is an even number'', then the sentence becomes ``if $P$, then $Q$'', denoted $P\implies Q$. This implication called a \hdef{conditional proposition}, $P$ is called the \hdef{antecedent} and $Q$ is called the \hdef{consequent}. The proposition $P\implies Q$ is true if $P$ is true and $Q$ is true. What if $P$ is false? The answer arises from one's intuition.
 \begin{example}
@@ -93,17 +99,23 @@ You should convinced by your own intuition (not mine). This case is called a \hd
 \end{center}
 \par
 Let $P$ and $Q$ be propositions, $(P\implies Q)\wedge(Q\implies P)$ is called a \hdef{biconditional proposition}, denoted $P\iff Q$. We will write this by ``$P$ is true if and only if $Q$ is true''.
+\begin{problem}
+    Let $P$ and $Q$ be propositions, show $(\neg P\equiv\neg Q)\iff(P\equiv Q)$.
+\end{problem}
 \begin{example}
-    Let $P$ and $Q$ be propositions. Try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R\equiv P\implies Q$.
+    Let $P$ and $Q$ be propositions. Consider the conditional proposition $P\implies Q$. It is false only if $P$ is true and $Q$ is false, that is, $\neg(P\implies Q)\equiv P\wedge(\neg Q)$. Now we take the negation of the right side, $\neg(P\wedge(\neg Q))\equiv(\neg P)\vee(\neg(\neg Q))\equiv(\neg P)\vee Q$.
 \end{example}
-\begin{example}
-    Write down the truth table of a biconditional proposition. Based on your truth table and last example, try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R\equiv P\iff Q$. If $P\iff Q$ is true, does $P\equiv Q$?
-\end{example}
-\begin{example}
-    Let $P$, $Q$, and $R$ be propositions. Try to prove or disprove $P\implies(Q\vee R)\equiv\neg P\vee Q\vee R$.
-\end{example}
+\begin{problem}
+    Write down the truth table of a biconditional proposition. Based on your truth table and the previous example, try to find a proposition $R$ by ``$\vee$'', ``$\wedge$'', and ``$\neg$'' such that $R\equiv(P\iff Q)$. If $P\iff Q$ is true, does $P\equiv Q$?
+\end{problem}
+\begin{problem}
+    Let $P$, $Q$, $R$, and $S$ be propositions. Rewrite $P\implies(Q\implies(R\implies S))$ by `$\vee$'', ``$\wedge$'', and ``$\neg$''. What is the negation of this sentence?
+\end{problem}
+\begin{problem}
+    Let $P$, $Q$, and $R$ be propositions. Try to prove or disprove $P\implies(Q\vee R)\equiv(\neg P)\vee Q\vee R$. What about $P\implies(Q\wedge R)$?
+\end{problem}
 \par
-Given a proposition $P\implies Q$, the \hdef{converse} is defined as $Q\implies P$ and the \hdef{contrapositive} is defined as $\neg Q\implies\neg P$. The truth table is shown below, and it suffices to conclude that $P\implies Q\equiv\neg Q\implies\neg P$.
+Given a proposition $P\implies Q$, the \hdef{converse} is defined as $Q\implies P$ and the \hdef{contrapositive} is defined as $(\neg Q)\implies(\neg P)$. The truth table is shown below, and it suffices to conclude that $(P\implies Q)\equiv(\neg Q\implies\neg P)$.
 \begin{center}
     \begin{tabular}{cc|ccc}
         $P$ & $Q$ & $P\implies Q$ & $Q\implies P$ & $\neg Q\implies\neg P$ \\
@@ -114,22 +126,38 @@ Given a proposition $P\implies Q$, the \hdef{converse} is defined as $Q\implies 
         $F$ & $F$ & $T$ & $T$ & $T$
     \end{tabular}
 \end{center}
+\begin{problem}
+    Let $P$ and $Q$ be propositions, when does $(P\implies Q)\equiv(Q\implies P)$?
+\end{problem}
 \par
 Let $P$ be the proposition ``$x$ is a natural number''. Here $x$ is a \hdef{variable}, and the truth value of this proposition depends on $x$. For instance, if $x=1$, then $P$ is true; if $x=0.86$, then $P$ is false. A \hdef{propositional function} is a family of propositions depending on one or more variables. The collection of permitted variables is the \hdef{domain}. Now we write $P(x)$ instead of $P$, so $P(1)$ is true and $P(0.86)$ is false.
 \par
-Propositional functions are often quantified. The \hdef{universal quantifier} is denoted by ``$\forall$'', and the proposition $\forall x(P(x))$ is true if and only if $P(x)$ is true for every $x$ in its domain. The \hdef{existential quantifier} is denoted by ``$\exists$'', and the proposition $\exists x(P(x))$ is true if and only if $P(x)$ is true for at least one $x$ in its domain.
-\par
-Consider the proposition $\forall x(P(x))$, this means all $x$ make $P(x)$ true, so there does not exists some $x$ such that $P(x)$ is false, which is $\neg(\exists x(\neg P(x)))$. 
+Propositional functions are often quantified. The \hdef{universal quantifier} is denoted by ``$\forall$'', and the proposition $\forall x(P(x))$ is true if and only if $P(x)$ is true for every $x$ in its domain. The \hdef{existential quantifier} is denoted by ``$\exists$'', and the proposition $\exists x(P(x))$ is true if and only if $P(x)$ is true for at least one $x$ in its domain. Consider the proposition $\forall x(P(x))$, this means all $x$ make $P(x)$ true, so there does not exists some $x$ such that $P(x)$ is false, which is $\neg(\exists x(\neg P(x)))$.
 \begin{example}
-    Let $P(x)$ be a proposition. Consider the following statements:
+    Let $P(x)$ be a proposition, then $\neg(\forall x(P(x)))\iff\neg(\neg(\exists x(\neg P(x))))\iff\exists x(\neg P(x))$. 
+\end{example}
+\begin{problem}
+    Let $P(x)$ be a proposition, show that $\neg(\exists x(P(x)))\iff\forall x(\neg P(x))$.
+\end{problem}
+\par
+The order of quantifiers does matter the meaning of a proposition. Consider the proposition ``for all natural number $x$, there exists a natural number $y$ such that $y>x$''. Pick some $x$, let $y=x+1$, then $y>x$ and $y$ is a natural number, so the proposition is true. However, switching the order of quantifiers gives ``there exists a natural number $y$, for all natural number $x$, $y>x$''. Suppose there exists such $y$, then $y+1$ is a natural number, so let $x=y+1$, it is trivial that $y<x$, hence the proposition is false.
+\begin{example}
+    Let $P(x)$ and $Q(y)$ be propositions. Consider the proposition $\forall x(\exists y(P(x)\vee Q(y)))$. To find its negation, let $R(x)\equiv\exists y(P(x)\vee Q(y))$, now the negation becomes $\exists x(\neg R(x))$. Since $P$ only depends on $x$, let $S(y)\equiv(P(x)\vee Q(y))$, then we have $\exists x(\neg(\exists y(S(y))))\equiv\exists x(\forall y(\neg S(y)))\equiv\exists x(\forall y(\neg(P(x)\vee Q(y))))\equiv\exists x(\forall y((\neg P(x))\wedge(\neg Q(y))))$.
+\end{example}
+\begin{problem}
+    Let $P(x,y,z)$ be a proposition, consider the following propositions.
     \begin{enumerate}
-        \item $\neg(\forall x(P(x)))\iff\exists x(\neg P(x))$;
-        \item $\neg(\exists x(P(x)))\iff\forall x(\neg P(x))$.
+        \item $Q(x,y,z)\equiv\exists x(\forall y(\forall z(P(x,y,z))))$;
+        \item $R(x,y,z)\equiv\forall x(\exists y(\forall z(P(x,y,z))))$;
+        \item $S(x,y,z)\equiv\forall x(\forall y(\exists z(P(x,y,z))))$.
     \end{enumerate}
-    Try to prove or disprove the statements.
+    What are the negations for those propositions? What is the negation of $Q\vee(R\wedge S)$?
+\end{problem}
+\begin{example}
+    Let $P(x)$ and $Q(x)$ be propositions. Consider the negation of $P(x)\implies Q(x)$, $\neg(P(x)\implies Q(x))\equiv\neg((\neg P(x))\vee Q(x))\equiv P(x)\wedge(\neg Q(x))\equiv\forall x(P(x)\wedge(\exists x(\neg Q(x))))\equiv\exists x(P(x)\wedge(\neg Q(x)))$. Notice that taking the negation brings an existential quantifier.
 \end{example}
 \par
-In the following sections, we shall assume readers are familiar with basic logic. Several expressions and their “translations” are shown below.
+In the following sections, we shall assume readers are familiar with basic logic and use it as a tool to understand or prove propositions. Several expressions and their “translations” are shown below.
 \begin{center}
     \begin{tabular}{c|c}
         $P\implies Q$ & $P\iff Q$ \\
@@ -138,18 +166,21 @@ In the following sections, we shall assume readers are familiar with basic logic
         $P$ is sufficient for $Q$; $Q$ is necessary for $P$ & $P$ is necessary and sufficient for $Q$
     \end{tabular}
 \end{center}
-\begin{example}
-    Here are some true propositions, try to convert them into the language of logic.
+\begin{problem}
+    Given the following propositions, analyze their structures.
     \begin{enumerate}
-        \item If $x$ is a natural number, then $2x$ is an even number.
-        \item For all natural number $x$, there exists a natural number $y$ such that $y>x$.
-        \item A sequence $({x}_{n})$ of real numbers is a \hdef{Cauchy sequence} if for every positive real number $\ep$, there exists some $N\in\N$ and $N\ne 0$ such that for all natural numbers $m,n>N$, $\card{{x}_{m}-{x}_{n}}<\ep$.
-    \end{enumerate}
-    For every statement above, you don't need to understand the contents, try to understand the logical relations.
-\end{example}
-\begin{example}
-    Based on your results, try to find the negation and converse of those propositions.
-\end{example}
+        \item the real number $\sqrt{2}$ is not a rational number;
+        \item if $x$ is a natural number, then $x$ is an integer;
+        \item for all natural number $x$, for all rational number $y$ with $x<y<x+1$, there exists a real number $z$ such that $y<z<y+1$ and $z$ is irrational;
+        \item given a sequence $({x}_{n})$ of real numbers, we say $({x}_{n})$ converges to a real number $L$ if, for all real number $\ep>0$, there exists a real number $N$ such that, for all natural number $n$, $n>N$ implies $\card{{x}_{n}-L}<\ep$.
+    \end{enumerate} 
+    Find the negation of each proposition. 
+\end{problem}
+\pagebreak
+
+
+
+
 \section{Sets}
 \par
 In this section, we begin to investigate sets, the most basic entities in mathematics. It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.

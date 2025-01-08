@@ -2,7 +2,7 @@
 
 It's now a .tex document, so you can include it using \input. This is a simple setup—feel free to remove any commands you find unnecessary. ╭(╯^╰)╮
 
-I made a small demo for this, check what it looks like!
+I made a small demo for this, check what it looks like! If you are interested in how it looks for a math note, check my note *An Introduction to Proofs*.
 
 I plan to add more functions to this style. Please contact me if you have any idea.
 
@@ -23,7 +23,7 @@ About (2): this is adapted from a very different old style of mine, there are ma
 
 I just started a little project: *An Introduction to Proofs*
 
-This is a short note (about 15 pages long) that designed to serve as a transition to proof-based mathematics, including some basic concepts in logic, sets, functions... If you want to start with mathematics, it might be a good option. 
+This is a short note that designed to serve as a transition to proof-based mathematics, including some basic concepts in logic, sets, functions... If you want to start with mathematics, it might be a good option. 
 
 lots work to do... (´･_･`)
 
