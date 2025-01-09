@@ -169,31 +169,36 @@ In the following sections, we shall assume readers are familiar with basic logic
 \begin{problem}
     Given the following propositions, analyze their structures.
     \begin{enumerate}
-        \item the real number $\sqrt{2}$ is not a rational number;
+        \item the number $\sqrt{2}$ is not a rational number;
         \item if $x$ is a natural number, then $x$ is an integer;
         \item for all natural number $x$, for all rational number $y$ with $x<y<x+1$, there exists a real number $z$ such that $y<z<y+1$ and $z$ is irrational;
         \item given a sequence $({x}_{n})$ of real numbers, we say $({x}_{n})$ converges to a real number $L$ if, for all real number $\ep>0$, there exists a real number $N$ such that, for all natural number $n$, $n>N$ implies $\card{{x}_{n}-L}<\ep$.
     \end{enumerate} 
     Find the negation of each proposition. 
 \end{problem}
-\pagebreak
-
-
-
-
 \section{Sets}
 \par
-In this section, we begin to investigate sets, the most basic entities in mathematics. It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects, and those objects are called \hdef{elements}. From now on, we shall accept that sets exist.
+In this section, we begin to investigate sets, the most basic entities in mathematics. It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects that satisfy a , and those objects are called \hdef{elements}.
 \par
 If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
+\begin{remark}
+    This note is based on ZFC set theory. In this system, every object is a set and sets have heirachy, so there are set of sets.
+\end{remark}
+\customtheorem{Axiom of Extensionality}
+\begin{Axiom of Extensionality}\index{Axiom of Extensionality}
+    Two sets $A$ and $B$ are equal if and only if they have the same elements.
+\end{Axiom of Extensionality}
 \par
-One way to describe a set is to explicitly list the elements. For instance, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by some properties they satisfied.
+Elements determine a set, so it is essential to find a way to show the elements in a set. One way to describe a set is to explicitly list the elements. For instance, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by some properties they satisfied. We shall come back to give some restrictions on this property.
 \begin{example}
     The set of rational numbers is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
 \end{example}
 \begin{example}
-    The set $\{2n\mid n\in\N\}$ is the set of all even numbers. Try to write the set of all odd numbers.
+    The set $\{2n\mid n\in\N\}$ is the set of all even numbers.
 \end{example}
+\begin{problem}
+    Write out the set of all positive integers, the set of all prime numbers, and the set of all points on a circle with center $(0,0)$ and radius 1 in 3-dimensional Euclidean space.
+\end{problem}
 \begin{definition}
     Let $S$ be a set. A set $R$ is a \hdef{subset} of $S$, denoted $R\sub S$, if for all $x\in R$, $x\in S$. If there exists some $x\in S$ such that $x\notin R$, then $R$ is called a \hdef{proper subset} of $S$, denoted $R\subn S$.
 \end{definition}
@@ -201,7 +206,7 @@ One way to describe a set is to explicitly list the elements. For instance, we c
     Some textbooks use ``$\sube$'' for subsets and ``$\sub$'' for proper subsets.
 \end{remark}
 \begin{example}
-    For all sets $A$, we have $A\sub A$.
+    For all sets $A$, for all $x\in A$, $x\in A$, so $A\sub A$. 
 \end{example}
 \begin{proposition}
     Let $X$ and $Y$ be sets, then $X=Y$ if and only $X\sub Y$ and $Y\sub X$.
@@ -218,9 +223,17 @@ One way to describe a set is to explicitly list the elements. For instance, we c
 \begin{proof}
     Suppose $\es\nsub A$, then there exists $x\in\es$ such that $x\notin A$, since $x\in\es$ is false, contradiction.
 \end{proof}
-\begin{example}
-    If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, then $X\sub Z$.
-\end{example}
+\begin{problem}
+    If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, prove that $X\sub Z$.
+\end{problem}
+
+
+\customtheorem{Axiom of Union}
+\begin{Axiom of Union}\index{Axiom of Union}
+    For all
+\end{Axiom of Union}
+
+
 \begin{definition}
     Let $A$ and $B$ be sets. The \hdef{union} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{or}\ x\in B\}$, denoted $A\cup B$. The \hdef{intersection} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{and}\ x\in B\}$. The \hdef{complement} of $A$ in $B$ is the set $\{x\mid x\in B\ \text{and}\ x\notin A\}$, denoted $B/A$.
 \end{definition}
@@ -230,7 +243,11 @@ Some textbooks assume there exists a ``universal set'', denoted $U$, which has a
     Consider the set $S$, defined as the set of all sets that are not members of themselves, that is, $S=\{X\mid X\notin X\}$. Does $S$ belong to $S$? This is known as the \hdef{Russell's Paradox}.
 \end{example}
 \par
-Assume $S\in S$. By the definition of $S$, it must satisfy $S\notin S$. This is a contradiction. Assume $S \notin S$. By the definition of $S$, it must satisfy $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency. 
+Assume $S\in S$. By the definition of $S$, it must satisfy $S\notin S$. This is a contradiction. Assume $S \notin S$. By the definition of $S$, it must satisfy $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency. In ZFC, we add restrictions to the property to collect elements.
+\customtheorem{Axiom Schema of Separation}
+\begin{Axiom Schema of Separation}
+    L
+\end{Axiom Schema of Separation}
 
 
 
