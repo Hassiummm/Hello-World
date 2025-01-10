@@ -191,13 +191,19 @@ If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, de
 \par
 Elements determine a set, so it is essential to find a way to show the elements in a set. One way to describe a set is to explicitly list the elements. For instance, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by some properties they satisfied. We shall come back to give some restrictions on this property.
 \begin{example}
+    The set $S=\{\es,\{\es\},\{\{\es\}\}\}$ has three elements.
+\end{example}
+\begin{example}
     The set of rational numbers is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
 \end{example}
 \begin{example}
     The set $\{2n\mid n\in\N\}$ is the set of all even numbers.
 \end{example}
 \begin{problem}
-    Write out the set of all positive integers, the set of all prime numbers, and the set of all points on a circle with center $(0,0)$ and radius 1 in 3-dimensional Euclidean space.
+    How many elements are in the set $S=\{1,2,\{3,4\},\{1,2\}\}$?
+\end{problem}
+\begin{problem}
+    Write out the set of all positive integers and the set of all prime numbers.
 \end{problem}
 \begin{definition}
     Let $S$ be a set. A set $R$ is a \hdef{subset} of $S$, denoted $R\sub S$, if for all $x\in R$, $x\in S$. If there exists some $x\in S$ such that $x\notin R$, then $R$ is called a \hdef{proper subset} of $S$, denoted $R\subn S$.
@@ -223,6 +229,9 @@ Elements determine a set, so it is essential to find a way to show the elements 
 \begin{proof}
     Suppose $\es\nsub A$, then there exists $x\in\es$ such that $x\notin A$, since $x\in\es$ is false, contradiction.
 \end{proof}
+\begin{problem}
+    How many subsets does $S=\{1,2,3\}$ have? What about $X=\{1,2,3,4\}$?
+\end{problem}
 \begin{problem}
     If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, prove that $X\sub Z$.
 \end{problem}
