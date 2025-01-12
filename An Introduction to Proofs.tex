@@ -235,17 +235,14 @@ Elements determine a set, so it is essential to find a way to show the elements 
 \begin{problem}
     If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, prove that $X\sub Z$.
 \end{problem}
-
-
-\customtheorem{Axiom of Union}
-\begin{Axiom of Union}\index{Axiom of Union}
-    For all
-\end{Axiom of Union}
-
-
 \begin{definition}
     Let $A$ and $B$ be sets. The \hdef{union} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{or}\ x\in B\}$, denoted $A\cup B$. The \hdef{intersection} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{and}\ x\in B\}$. The \hdef{complement} of $A$ in $B$ is the set $\{x\mid x\in B\ \text{and}\ x\notin A\}$, denoted $B/A$.
 \end{definition}
+\customtheorem{Axiom of Union}
+\begin{Axiom of Union}\index{Axiom of Union}
+    For all set $X$, there exists a set $Y=\Un X$, the union
+    of all elements of $X$.
+\end{Axiom of Union}
 \par
 Some textbooks assume there exists a ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U/S$. However, this assumption leads to a paradox. 
 \begin{example}
