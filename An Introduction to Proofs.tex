@@ -1,4 +1,4 @@
-% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
+% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44 
 \documentclass[10pt]{article}
 \input{hassium.tex}
 \begin{document}
@@ -7,14 +7,12 @@
 \hsetup
 \htoc
 \hmain
-\par
+\section*{Introduction}
 In higher-level mathematics, such as algebra, students need “mathematical maturity” to understand and apply abstract ideas. There is no obvious way to determine this maturity, nor a clear method to teach someone how to write a proof. These notes are designed to serve as a transition to proof-based mathematics, guiding students in adapting to the way mathematics operates.
-\par
-This introduction is divided into several sections. The first section introduces the basic logic used in proofs. In the second section, we begin to “formalize mathematics” by studying sets and their relations: union, intersection, and complement. In the third section, we expand this concept in a more complex way, namely, functions. Functions are natural tools for connecting sets while preserving their structure. We shall use facts from these sections in further discussions and revisit these ideas.
-\par
-Section 4 explains some properties of integers and provides concrete examples for rigorous proofs. Building on the properties of integers, we extend the discussion to infinite sets, exploring questions such as: What is an infinite set? Are these sets countable?
-\par
-The final section covers $\R$ and $\C$, the real and complex fields, respectively. It begins with their constructions and presents several algebraic and analytic properties to deepen understanding. This section offers students a first taste of a rigorous mathematics course, so it is highly recommended.
+
+
+
+
 \par
 During the reading, you may notice that we use different names for the same object. This happens quite often in mathematics. For instance, we can view $\mathbb{R}$ as a set, a group, a ring, a field, a manifold, a topological space, $\dots$ Every time we use a word, we are specifying a particular aspect of the same object. As Poincaré said, “Mathematics is the art of giving the same name to different things.”
 
@@ -26,7 +24,6 @@ During the reading, you may notice that we use different names for the same obje
 
 
 
-\pagebreak
 
 \section{Basic Logic}
 Logic is the formal framework and rules of inference that ensure the validity and coherence of arguments in math. 
@@ -147,7 +144,7 @@ The order of quantifiers does matter the meaning of a proposition. Consider the 
 \begin{problem}
     Let $P(x,y,z)$ be a proposition, consider the following propositions.
     \begin{enumerate}
-        \item $Q(x,y,z)\equiv\exists x(\forall y(\forall z(P(x,y,z))))$;
+        \item $Q(x,y,z)\equiv\exists x(\forall y(\forall z(P(x,y,z))))$; %开始写10
         \item $R(x,y,z)\equiv\forall x(\exists y(\forall z(P(x,y,z))))$;
         \item $S(x,y,z)\equiv\forall x(\forall y(\exists z(P(x,y,z))))$.
     \end{enumerate}
@@ -176,13 +173,13 @@ In the following sections, we shall assume readers are familiar with basic logic
     \end{enumerate} 
     Find the negation of each proposition. 
 \end{problem}
-\section{Sets}
+\section{Some Axioms of Sets}
 \par
-In this section, we begin to investigate sets, the most basic entities in mathematics. It is natural to ask the question: what is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects that satisfy a , and those objects are called \hdef{elements}.
+In this section, we begin to investigate sets, the most basic entities in mathematics. It is natural to ask the question: What is a set? There is no precise definition of sets. Intuitively, a \hdef{set} is a collection of objects that satisfy some property, and these objects are called \hdef{elements}.
 \par
 If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
 \begin{remark}
-    This note is based on ZFC set theory. In this system, every object is a set and sets have heirachy, so there are set of sets.
+    This note is based on ZFC set theory. In this system, every object is a set and sets have inheritoires, so there are sets of sets.
 \end{remark}
 \customtheorem{Axiom of Extensionality}
 \begin{Axiom of Extensionality}\index{Axiom of Extensionality}
@@ -194,10 +191,7 @@ Elements determine a set, so it is essential to find a way to show the elements 
     The set $S=\{\es,\{\es\},\{\{\es\}\}\}$ has three elements.
 \end{example}
 \begin{example}
-    The set of rational numbers is the set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$, where $\Z$ is the set of integers.
-\end{example}
-\begin{example}
-    The set $\{2n\mid n\in\N\}$ is the set of all even numbers.
+    The set $\{2n\mid n\in\N\}$ is the set of all even numbers, where $\N$ is the set of natural numbers. The set $\Q=\{a/b\mid a,b\in\Z\ \text{and}\ b\ne 0\}$ is the set of rational numbers, where $\Z$ is the set of integers.
 \end{example}
 \begin{problem}
     How many elements are in the set $S=\{1,2,\{3,4\},\{1,2\}\}$?
@@ -205,15 +199,21 @@ Elements determine a set, so it is essential to find a way to show the elements 
 \begin{problem}
     Write out the set of all positive integers and the set of all prime numbers.
 \end{problem}
+\begin{problem}
+    Prove that a set is independent of the order of its elements. For example, $\{1,2,3\}=\{3,2,1\}$.
+\end{problem}
 \begin{definition}
     Let $S$ be a set. A set $R$ is a \hdef{subset} of $S$, denoted $R\sub S$, if for all $x\in R$, $x\in S$. If there exists some $x\in S$ such that $x\notin R$, then $R$ is called a \hdef{proper subset} of $S$, denoted $R\subn S$.
 \end{definition}
 \begin{remark}
-    Some textbooks use ``$\sube$'' for subsets and ``$\sub$'' for proper subsets.
+    Some textbooks use "$\sube$" for subset and "$\sub$" for proper subsets.
 \end{remark}
-\begin{example}
-    For all sets $A$, for all $x\in A$, $x\in A$, so $A\sub A$. 
-\end{example}
+\begin{proposition}
+    Let $A$ be a set, then $A\sub A$.
+\end{proposition}
+\begin{proof}
+    Let $A$ be a set. For all $x\in A$, $x\in A$, so $A\sub A$. 
+\end{proof}
 \begin{proposition}
     Let $X$ and $Y$ be sets, then $X=Y$ if and only $X\sub Y$ and $Y\sub X$.
 \end{proposition}
@@ -221,7 +221,7 @@ Elements determine a set, so it is essential to find a way to show the elements 
     For a biconditional proposition $P\iff Q$, we use the notation ``$(\Ra)$'' in the proof to show $P\implies Q$ and ``$(\La)$'' for $Q\implies P$.
 \end{remark}
 \begin{proof}
-    Let $X$ and $Y$ be sets. $(\Ra)$ For all $x\in X$, since $X=Y$, $x\in Y$, so $X\sub Y$. For all $y\in Y$, since $X=Y$, $y\in X$, so $Y\sub X$. $(\La)$ Suppose $X\ne Y$, then there exists $a\in X$ and $a\notin Y$, so $X\nsub Y$, yet contradiction. 
+    Let $X$ and $Y$ be sets. $(\Ra)$ For all $x\in X$, since $X=Y$, $x\in Y$, so $X\sub Y$. For all $y\in Y$, since $X=Y$, $y\in X$, so $Y\sub X$. $(\La)$ Suppose $X\ne Y$, then there exist $a\in X$ and $a\notin Y$, so $X\nsub Y$, yet contradiction. 
 \end{proof}
 \begin{proposition}
     Let $A$ be any set, then $\es\sub A$.
@@ -230,43 +230,159 @@ Elements determine a set, so it is essential to find a way to show the elements 
     Suppose $\es\nsub A$, then there exists $x\in\es$ such that $x\notin A$, since $x\in\es$ is false, contradiction.
 \end{proof}
 \begin{problem}
+    Let $a$ be any object, prove that $\{a\}=\{a,a\}$.
+\end{problem}
+\begin{problem}
     How many subsets does $S=\{1,2,3\}$ have? What about $X=\{1,2,3,4\}$?
 \end{problem}
 \begin{problem}
     If $X$, $Y$, and $Z$ are sets such that $X\sub Y$ and $Y\sub Z$, prove that $X\sub Z$.
 \end{problem}
 \begin{definition}
-    Let $A$ and $B$ be sets. The \hdef{union} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{or}\ x\in B\}$, denoted $A\cup B$. The \hdef{intersection} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{and}\ x\in B\}$. The \hdef{complement} of $A$ in $B$ is the set $\{x\mid x\in B\ \text{and}\ x\notin A\}$, denoted $B/A$.
+    Let $A$ and $B$ be sets. The \hdef{union} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{or}\ x\in B\}$, denoted $A\cup B$. The \hdef{intersection} of $A$ and $B$ is the set $\{x\mid x\in A\ \text{and}\ x\in B\}$. We say $A$ and $B$ are \hdef{disjoint} if $A\cap B=\es$. The \hdef{complement} of $A$ in $B$ is the set $\{x\mid x\in B\ \text{and}\ x\notin A\}$, denoted $B\sm A$.
 \end{definition}
 \customtheorem{Axiom of Union}
 \begin{Axiom of Union}\index{Axiom of Union}
     For all set $X$, there exists a set $Y=\Un X$, the union
     of all elements of $X$.
 \end{Axiom of Union}
-\par
-Some textbooks assume there exists a ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U/S$. However, this assumption leads to a paradox. 
+\begin{proposition}
+    Let $A$ and $B$ be sets, then $A\cup B=B\cup A$.
+\end{proposition}
+\begin{proof}
+    For all $x\in A\cup B$, if $x\in A$, then $x\in B\cup A$; if $x\in B$, then $x\in B$, hence $A\cup B=B\cup A$.
+\end{proof}
+\begin{problem}
+    Let $A$, $B$, and $C$ be sets. Prove the following propositions.
+    \begin{enumerate}
+        \item $A\cap B=B\cap A$;
+        \item $A\cup(B\cup C)=(A\cup B)\cup C$;
+        \item $A\cap(B\cap C)=(A\cap B)\cap C$;
+        \item $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$;
+        \item $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
+    \end{enumerate}
+\end{problem}
+\begin{theorem}[De Morgan's law]
+    Let $A$, $B$, and $C$ be sets, then $C\sm(A\cap B)=(C\sm A)\cup(C\sm B)$ and $C\sm(A\cup B)=(C\sm A)\cap(C\sm B)$.
+\end{theorem}
+\begin{proof}
+    Let $x\in C\sm(A\cap B)$, then $x\in C$ and $x\notin A\cap B$, that is, $x\notin A$ and $x\notin B$. If $x\notin C\sm A$, then $x\notin A$, so $x\notin B$ and $x\in C\sm B$. Hence $C\sm(A\cap B)\sub(C\sm A)\cup(C\sm B)$. Now let $x\in(C\sm A)\cup(C\sm B)$, then $x\in C$ and $x\notin A$ or $x\notin B$, so $x\notin A\cap B$, that is, $x\in C\sm(A\cap B)$, hence $(C\sm A)\cup(C\sm B)\sub C\sm(A\cap B)$. The proof of the second part is left as an exercise.
+\end{proof}
+Some texts assume the existence of some ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U\sm S$. However, this assumption leads to a paradox. 
 \begin{example}
-    Consider the set $S$, defined as the set of all sets that are not members of themselves, that is, $S=\{X\mid X\notin X\}$. Does $S$ belong to $S$? This is known as the \hdef{Russell's Paradox}.
+    Consider the set $S$, defined as the set of all sets that are not members of themselves, that is, $S=\{X\mid X\notin X\}$. Does $S$ belong to $S$? This is known as \hdef{Russell's Paradox}.
 \end{example}
 \par
-Assume $S\in S$. By the definition of $S$, it must satisfy $S\notin S$. This is a contradiction. Assume $S \notin S$. By the definition of $S$, it must satisfy $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency. In ZFC, we add restrictions to the property to collect elements.
+Assume $S\in S$. By the definition of $S$, it must satisfy $S\notin S$. This is a contradiction. Assume $S\notin S$. By the definition of $S$, it must satisfy $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency. In ZFC, we have restrictions on the property of collecting elements.
 \customtheorem{Axiom Schema of Separation}
-\begin{Axiom Schema of Separation}
-    L
+\begin{Axiom Schema of Separation}\index{Axiom Schema of Separation}
+    If $P$ is a property, then for any $X$ there exists a set $Y=\{x\in X\mid P(x)\}$.
 \end{Axiom Schema of Separation}
-
-
-
-
+\par
+Recall that sets are orderless. To construct more complex structures, we need an order between objects. 
+\customtheorem{Axiom of Pairing}
+\begin{Axiom of Pairing}\index{Axiom of Pairing}
+    For two objects $a$ and $b$, there exists a set $\{a,b\}$ containing exactly $a$ and $b$.
+\end{Axiom of Pairing}
+\begin{definition}
+    Let $a$ and $b$ be some objects. An \hdef{ordered pair} $(a,b)$ is defined as the set $\{\{a\},\{a,b\}\}$.
+\end{definition}
+\begin{proposition}
+    Let $(a,b)$ and $(c,d)$ be ordered pairs, then $(a,b)=(c,d)$ if and only if $a=c$ and $b=d$.
+\end{proposition}
+\begin{proof}
+    We have $(a,b)=\{\{a\},\{a,b\}\}$ and $(c,d)=\{\{c\},\{c,d\}\}$. $(\Ra)$ Suppose $a\ne c$, then $\{a\}\ne\{c\}$. If $\{a\}=\{c,d\}$, then $c=d=a$, yet contradiction. Suppose $b\ne d$. If $a=c$, then $\{a\}=\{c\}$ and $\{a,b\}\ne\{c,d\}$, yet contradiction. $(\La)$ If $a=c$ and $b=d$, then $\{a,b\}=\{c,d\}$ and $\{a\}=\{c\}$, hence $(a,b)=(c,d)$.
+\end{proof}
+\par
+The definition of ordered pairs can be extended to multiple elements. We call $({a}_{1},\dots,{a}_{n})$ a \hdef{n-tuple}.
+\customtheorem{Axiom of Power Set}
+\begin{Axiom of Power Set}\index{Axiom of Power Set}
+    For any $X$ there exists a set consisting of all subsets of $X$.
+\end{Axiom of Power Set}
+\begin{definition}
+    Given a set $X$, the set of all subsets of $X$ is called its \hdef{power set}, denoted $\ps(X)$.
+\end{definition}
+\begin{example}
+    Let $X=\{a,b\}$, the power set $\ps(X)=\{\es,\{a\},\{b\},\{a,b\}\}$.
+\end{example}
+\begin{problem}
+    Let $X=\{a,b,c\}$, how many elements are in $\ps(X)$? What if $X=\{a,b,c,d\}$?
+\end{problem}
+\begin{definition}
+    Let $X$ and $Y$ be sets. The \hdef{Cartesian product} $X\times Y$ is the set of all ordered pairs $(a,b)$, where $a\in X$ and $b\in Y$.
+\end{definition}
+\par
+Why the Cartesian product $X\times Y$ is a set? We could rewrite $X\times Y\sub\ps\ps(X\cup Y)$ as $\{z\in\ps(\ps(X\cup Y))\mid\exists x\in X,\ \exists y\in Y,\ z=(x,y)\}$.
+\begin{problem}
+    Prove that $X\times Y=\{z\in\ps(\ps(X\cup Y))\mid\exists x\in X,\ \exists y\in Y,\ z=(x,y)\}$.
+\end{problem}
+\begin{problem}
+    Let $A$, $B$, and $C$ be sets. Prove the following propositions.
+    \begin{enumerate}
+        \item $A\times B=B\times A$ if and only if $A=B$;
+        \item $A\times(B\times C)=(A\times B)\times C$;
+        \item $(A\cup B)\times C=(A\times C)\cup(B\times C)$;
+        \item $(A\cap B)\times C=(A\times C)\cap(B\times C)$;
+        \item $(A\sm B)\times C=(A\times C)\sm(B\times C)$.
+    \end{enumerate}
+\end{problem}
+\begin{problem}
+    Let $A$ and $B$ be sets. Prove that $\es\times A=\es$. Prove that if $A\times B=\es$, then either $A=\es$ or $B=\es$.
+\end{problem}
+\begin{remark}
+    Let $X$ be a set, then we denote ${X}^{n}=X\times\cdots\times X$, the Cartesian product of $n$ numbers of $X$.
+\end{remark}
+\begin{definition}
+    A \hdef{binary operation} $R$ is a set of ordered pairs. If $(x,y)\in R$, we write $xRy$. The \hdef{domain} of $R$ is the set $\dom(R)=\{u\mid\exists v(u,v)\in R\}$. The \hdef{range} of $R$ is the set $\ran(R)=\{v\mid\exists u(u,v)\in R\}$. 
+\end{definition}
+\begin{problem}
+    Why the domain and range of a binary operation $R$ are sets? Prove that $\dom(R),\ran(R)\sub\Un\Un R$.
+\end{problem}
+\begin{definition}
+    Let $\le$ be a binary relation on a set $X$. We say $\le$ is a \hdef{partial ordering} if the following conditions hold:
+    \begin{enumerate}
+        \item for all $x\in X$, $x\le x$;
+        \item for all $x,y\in X$, $x\le y$ and $y\le x$ implies $x=y$;
+        \item for all $a,b,c\in X$, if $a\le b$ and $b\le c$, then $a\le c$.
+    \end{enumerate}
+    The set with a partial ordering is called a \hdef{partially ordered set}.
+\end{definition}
+\begin{definition}
+    A partially ordered set $(X,\le)$ is \hdef{linearly ordered} if for all $p,q\in X$, either $p\le q$ or $q\le p$.
+\end{definition}
+\begin{example}
+    The set of real numbers $\R$ forms a linearly ordered set in the natural ordering.
+\end{example}
+\begin{proposition}
+    Let $(X,\le)$ be a partially ordered set and let $Y\sub X$, then $Y$ is a partially ordered.
+\end{proposition}
+\begin{proof}
+    For all elements $a,b,c\in Y$, $a,b,c\in X$, so $Y$ inherits the partial ordering of $X$.
+\end{proof}
+\begin{problem}
+    Let $(X,\le)$ be a linearly ordered set and let $Y\sub X$, prove that $Y$ is linearly ordered.
+\end{problem}
+\begin{problem}
+    Let $X$ be a set. If $(\ps(X),\sub)$ is a linearly ordered set, prove that either $X=\es$ or $X=\{a\}$.
+\end{problem}
+\begin{definition}
+    Let $(X,\le)$ be a partially ordered set and let $Y\sub X$ be an nonempty subset. An element $a$ is the \hdef{upper bound} of $X$ if for all $x\in X$, $x\le a$. An element $b$ is the \hdef{lower bound} of $X$ if for all $x\in X$, $b\le x$. The least upper bound of $X$ is called the \hdef{supremum} and the greatest lower bound of $X$ is called the \hdef{infimum}.
+\end{definition}
+\begin{problem}
+    We say a set is finite if it has $n$ elements, where $n\in\N$. Let $X$ be a partially ordered set such that every subset of $X$ has a supremum and a infimum. Prove that $X$ is a finite linearly ordered set.
+\end{problem}
+\par
+We shall give a precise construction of natural numbers and use it to define finiteness later.
 
 
 
 
 \newpage
 \section{Functions}
-\section{Integers}
-\section{Cardinality}
-\section{Real and Complex Numbers}
+\section{Integers and Cardinality}
+\section{More on Sets}
+\section{Real Numbers}
+\section{Abstract Structures}
 
 
  
