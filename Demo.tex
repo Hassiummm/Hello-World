@@ -16,8 +16,8 @@ This style contains the following packages:
     \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,
     centernot,ytableau,tikz-cd}
     \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,
-    enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,
-    wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent}
+    enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,
+    mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,halloweenmath}
     \usepackage[hidelinks]{hyperref}
     \usepackage{chemfig}
 \end{verbatim}
@@ -112,7 +112,7 @@ The command ``circled'' draws a small circle and you can add something inside th
 \noindent
 The output is $\circled{1}$. You can write any Romam numerals by:
 \begin{verbatim}
-    \rom2024 % replace 2024 by any number you want
+    \rom108 
 \end{verbatim}
 \noindent
 There are two simple commands for hand-written fonts:
@@ -185,7 +185,7 @@ The environment name can be customized by using:
     \customtheorem{This is a custom theorem}
     \begin{This is a custom theorem}
         The proof is trivial.
-    \end{theorem}
+    \end{This is a custom theorem}
 \end{verbatim}
 \noindent
 The output environment is:
@@ -229,9 +229,9 @@ I will give a table of all commands in math mode.
     $\bs$ca$\{$H$\}$\hfill$\ca{H}$ \\
     $\bs$fr$\{$H$\}$\hfill$\fr{H}$ \\
     $\bs$T\hfill$\T$ \\
-    $\bs$Pn$\{1\}$\hfill$\Pn{1}$ \\
-    $\bs$CP$\{1\}$\hfill$\CP{1}$ \\
-    $\bs$RP$\{1\}$\hfill$\RP{1}$ \\
+    $\bs$Pn$\{$n$\}$\hfill$\Pn{n}$ \\
+    $\bs$CP$\{$n$\}$\hfill$\CP{n}$ \\
+    $\bs$RP$\{$n$\}$\hfill$\RP{n}$ \\
     $\bs$Sym\hfill$\Sym$ \\
     $\bs$GL\hfill$\GL$ \\
     $\bs$SL\hfill$\SL$ \\
@@ -297,7 +297,7 @@ I will give a table of all commands in math mode.
     $\bs$defa\hfill$\defa$ \\
     $\bs$sdp\hfill$\sdp$ \\
     $\bs$inv$\{$f$\}$\hfill$\inv{f}$ \\
-    1$\bs$mod 2\hfill$1\mod 2$ \\
+    x$\bs$mod y\hfill$x\mod y$ \\
     $\bs$Cl\hfill$\Cl$ \\
     $\bs$Hol\hfill$\Hol$ \\
     $\bs$comp\hfill$\comp$ \\
@@ -306,6 +306,7 @@ I will give a table of all commands in math mode.
     $\bs$im\hfill$\im$ \\
     $\bs$norm$\{$M$\}$\hfill$\norm{M}$ \\
     $\bs$po\hfill$\po$ \\
+    $\bs$poe\hfill$\poe$ \\
     $\bs$cyc$\{$g$\}$\hfill$\cyc{g}$ \\
     $\bs$Spec\hfill$\Spec$ \\
     $\bs$Syl\hfill$\Syl$ \\
@@ -324,8 +325,12 @@ I will give a table of all commands in math mode.
     $\bs$pa\hfill$\pa$ \\
     $\bs$Ann\hfill$\Ann$ \\
     $\bs$dom\hfill$\dom$ \\
+    $\be$ran\hfill$\ran$ \\
     $\bs$cod\hfill$\cod$ \\
-    $\bs$A$\{$n$\}$\hfill$\A{n}$
+    $\bs$A$\{$n$\}$\hfill$\A{n}$ \\
+    $\bs$sq\hfill$\sq$ \\
+    $\bs$CAT\hfill$\CAT$ \\
+    $\bs$fl$\{$A$\}$\hfill$\fl{A}$
 \end{multicols}
 \section{Acknowledgement}
 Special thanks to \cfd{FSG}; his advice on style has been invaluable.
