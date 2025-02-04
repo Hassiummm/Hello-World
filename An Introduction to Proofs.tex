@@ -8,13 +8,13 @@
 \htoc
 \hmain
 \section*{Introduction}
-In higher-level mathematics, students need a certain level of ``mathematical maturity'' to understand and apply abstract ideas. However, there is no clear way to measure this maturity, nor a definitive method to teach someone how to write a proof. These notes are intended to help students transition to proof-based mathematics, guiding them in adapting to the way mathematical reasoning operates.
+In higher-level mathematics, students need a certain level of ``mathematical maturity'' to understand and apply abstract ideas. However, there is no clear way to measure this maturity, nor a definitive method to teach someone how to write a proof. This note is intended to be a trnasition from high/middle school math to proof-based formal mathematics.
 \par
 As you read, you may notice that we use different names for the same object—a common practice in mathematics. For example, $\R$ can be viewed as a set, a group, a ring, a field, a topological space, a metric space $\dots$ Each term highlights a particular aspect of the same structure. As Poincaré famously said, ``Mathematics is the art of giving the same name to different things.''
 \section{Basic Logic}
 Logic is the formal framework and rules of inference that ensure the validity and coherence of arguments in math. 
 \begin{remark}
-    We shall accept that sentences can be either true or false.
+    We shall accept that sentences can be either true or false. Moreover, we assume that every English sentences can be stated in symbolic logic form.
 \end{remark} 
 \par
 A \hdef{proposition} is a sentence that is either true or false in a mathematical system. The label ``true'' or ``false'' assigned to a proposition is called its \hdef{truth value}. We use the letters $T$ and $F$ to represent ``true'' and ``false'', respectively. An \hdef{axiom} is a proposition that is assumed to be true within a mathematical system without requiring proof. Axioms serve as the foundational building blocks of a mathematical theory, from which other propositions can be derived. A \hdef{theorem} is a proposition that has been proven to be true using logical reasoning and the accepted axioms and previously established theorems of the mathematical system. The proof demonstrates why the theorem must hold based on these foundations.
@@ -114,6 +114,9 @@ Given a proposition $P\implies Q$, the \hdef{converse} is defined as $Q\implies 
 \end{problem}
 \par
 Let $P$ be the proposition ``$x$ is a natural number''. Here $x$ is a \hdef{variable}, and the truth value of this proposition depends on $x$. For instance, if $x=1$, then $P$ is true; if $x=0.86$, then $P$ is false. A \hdef{propositional function} is a family of propositions depending on one or more variables. The collection of permitted variables is the \hdef{domain}. Now we write $P(x)$ instead of $P$, so $P(1)$ is true and $P(0.86)$ is false.
+\begin{problem}
+    Let $x$ be a variable and let $x$ be a natural number. Give a proposition $P(x)$ such that $P(x)$ is true when $x\le 2024$ and false when $x\ge 2025$.
+\end{problem}
 \par
 Propositional functions are often quantified. The \hdef{universal quantifier} is denoted by ``$\forall$'', and the proposition $\forall x(P(x))$ is true if and only if $P(x)$ is true for every $x$ in its domain. The \hdef{existential quantifier} is denoted by ``$\exists$'', and the proposition $\exists x(P(x))$ is true if and only if $P(x)$ is true for at least one $x$ in its domain. Consider the proposition $\forall x(P(x))$, this means all $x$ make $P(x)$ true, so there does not exists some $x$ such that $P(x)$ is false, which is $\neg(\exists x(\neg P(x)))$.
 \begin{example}
@@ -130,7 +133,7 @@ The order of quantifiers does matter the meaning of a proposition. Consider the 
 \begin{problem}
     Let $P(x,y,z)$ be a proposition, consider the following propositions.
     \begin{enumerate}
-        \item $Q(x,y,z)\equiv\exists x(\forall y(\forall z(P(x,y,z))))$; %开始写10
+        \item $Q(x,y,z)\equiv\exists x(\forall y(\forall z(P(x,y,z))))$;
         \item $R(x,y,z)\equiv\forall x(\exists y(\forall z(P(x,y,z))))$;
         \item $S(x,y,z)\equiv\forall x(\forall y(\exists z(P(x,y,z))))$.
     \end{enumerate}
@@ -166,14 +169,18 @@ In this section, we begin investigating sets, the most basic entities in mathema
     This note is based on the ZFC set theory. In this system, every object is a set and we allow sets of sets. From now on, assume that there exists a set.
 \end{remark}
 \par
-If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$. A set with one element is called a \hdef{singleton}.
+If $S$ is a set and $x$ is an element in $S$, then we say $x$ belongs to $S$, denoted $x\in S$. If $x$ does not belong to $S$, then we write $x\notin S$. If $S$ has no element, then we call it an \hdef{empty set}, denoted $\es$.
+\customtheorem{Axiom of empty set}
+\begin{Axiom of empty set}\index{axiom of empty set}
+    There exists an empty set.
+\end{Axiom of empty set}
 \customtheorem{Axiom of extensionality}
 \begin{Axiom of extensionality}\index{axiom of extensionality}
     Two sets $A$ and $B$ are equal if and only if they have the same elements.
 \end{Axiom of extensionality}
 \customtheorem{Axiom schema of separation}
 \begin{Axiom schema of separation}\index{axiom schema of separation}
-    If $P$ is a property, then for any $X$ there exists a set $Y=\{x\in X\mid P(x)\}$.
+    If $P$ is a property, then for any set $X$ there exists a set $Y=\{x\in X\mid P(x)\}$.
 \end{Axiom schema of separation}
 \par
 Elements determine a set. One way to describe a set is to explicitly list the elements. For example, we can write a set $S=\{6,7,8\}$. Another way is to express the elements by the properties they satisfy.
@@ -210,7 +217,7 @@ It suffices to check that axiom schema of separation guarantees that subsets are
     For a biconditional proposition $P\iff Q$, we use the notation ``$(\Ra)$'' in the proof to show $P\implies Q$ and ``$(\La)$'' for $Q\implies P$.
 \end{remark}
 \begin{proof}
-    Let $X$ and $Y$ be sets. $(\Ra)$ For all $x\in X$, since $X=Y$, $x\in Y$, so $X\sub Y$. For all $y\in Y$, since $X=Y$, $y\in X$, so $Y\sub X$. $(\La)$ Suppose $X\ne Y$, then there exist $a\in X$ and $a\notin Y$, so $X\nsub Y$, yet contradiction. 
+    Let $X$ and $Y$ be sets. $(\Ra)$ For all $x\in X$, since $X=Y$, $x\in Y$, so $X\sub Y$. For all $y\in Y$, since $X=Y$, $y\in X$, so $Y\sub X$. $(\La)$ Suppose $X\ne Y$. If $X\sub Y$, then there exists $a\in Y$ such that $a\notin X$, so $X\nsub Y$, a contradiction.
 \end{proof}
 \begin{proposition}
     Let $A$ be any set, then $\es\sub A$.
@@ -227,7 +234,7 @@ It suffices to check that axiom schema of separation guarantees that subsets are
 \begin{problem}
     List all the subsets of $X=\{1,2,3\}$, $Y=\{1,2,3,4\}$, and $Z=\{1,\{1,2\},\{2,1\},3\}$.
 \end{problem}
-Recall that sets are orderless. To construct more complex structures, we need an order between objects. 
+To construct more complex structures, we need an order between objects. 
 \customtheorem{Axiom of pairing}
 \begin{Axiom of pairing}\index{axiom of pairing}
     For two objects $a$ and $b$, there exists a set $\{a,b\}$ containing exactly $a$ and $b$.
@@ -235,19 +242,22 @@ Recall that sets are orderless. To construct more complex structures, we need an
 \begin{definition}
     Let $a$ and $b$ be some objects. An \hdef{ordered pair} $(a,b)$ is defined as the set $\{\{a\},\{a,b\}\}$.
 \end{definition}
+\begin{problem}
+    Show that an ordered pair is indeed a set.
+\end{problem}
 \begin{proposition}
     Let $(a,b)$ and $(c,d)$ be ordered pairs, then $(a,b)=(c,d)$ if and only if $a=c$ and $b=d$.
 \end{proposition}
 \begin{proof}
-    We have $(a,b)=\{\{a\},\{a,b\}\}$ and $(c,d)=\{\{c\},\{c,d\}\}$. $(\Ra)$ Suppose $a\ne c$, then $\{a\}\ne\{c\}$. If $\{a\}=\{c,d\}$, then $c=d=a$, yet contradiction. Suppose $b\ne d$. If $a=c$, then $\{a\}=\{c\}$ and $\{a,b\}\ne\{c,d\}$, yet contradiction. $(\La)$ If $a=c$ and $b=d$, then $\{a,b\}=\{c,d\}$ and $\{a\}=\{c\}$, hence $(a,b)=(c,d)$.
+    We have $(a,b)=\{\{a\},\{a,b\}\}$ and $(c,d)=\{\{c\},\{c,d\}\}$. $(\Ra)$ Suppose $a\ne c$, then $\{a\}\ne\{c\}$. If $\{a\}=\{c,d\}$, then $c=d=a$, a contradiction. Suppose $b\ne d$. If $a=c$, then $\{a\}=\{c\}$ and $\{a,b\}\ne\{c,d\}$, a contradiction. $(\La)$ If $a=c$ and $b=d$, then $\{a,b\}=\{c,d\}$ and $\{a\}=\{c\}$, hence $(a,b)=(c,d)$.
 \end{proof}
 \par
 The definition of ordered pairs can be extended to multiple elements. We call $({a}_{1},\dots,{a}_{n})$ a \hdef{n-tuple}.
 \begin{problem}
-    Prove that $\{a\}=\{a,a\}$.
+    Prove that $\{a\}=\{a,a\}$. A set with one element is called a \hdef{singleton}.
 \end{problem}
 \begin{problem}
-    Give the definition of a 3-tuple. Determine the number of elements in a 3-tuple.
+    Write out the definition to $n$-tuples, where $n$ is a positive integer.
 \end{problem}
 \customtheorem{Axiom of union}
 \begin{Axiom of union}\index{axiom of union}
@@ -282,7 +292,7 @@ The definition of ordered pairs can be extended to multiple elements. We call $(
     Let $x\in C\sm(A\cap B)$, then $x\in C$ and $x\notin A\cap B$, that is, $x\notin A$ and $x\notin B$. If $x\notin C\sm A$, then $x\notin A$, so $x\notin B$ and $x\in C\sm B$. Hence $C\sm(A\cap B)\sub(C\sm A)\cup(C\sm B)$. Now let $x\in(C\sm A)\cup(C\sm B)$, then $x\in C$ and $x\notin A$ or $x\notin B$, so $x\notin A\cap B$, that is, $x\in C\sm(A\cap B)$, hence $(C\sm A)\cup(C\sm B)\sub C\sm(A\cap B)$. The proof of the second part is left as an exercise.
 \end{proof}
 \par
-Some texts assume the existence of an ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U\sm S$. However, this assumption leads to a paradox. Consider the set $S$, defined as the set of all sets that are not members of themselves, that is, $S=\{X\mid X\notin X\}$. Does $S$ belong to $S$? This is known as \hdef{Russell's Paradox}. Assume $S\in S$, then by the definition of $S$, $S\in S$ implies $S\notin S$, yet contradiction. Assume $S\notin S$, then $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency.
+Some texts assume the existence of an ``universal set'', denoted $U$, which has all objects as elements including itself, so we can define complements of any set $S$ as the set $U\sm S$. However, this assumption leads to a paradox. Consider the set $S$, defined as the set of all sets that are not members of themselves, that is, $S=\{X\mid X\notin X\}$. Does $S$ belong to $S$? This is known as \hdef{Russell's Paradox}. Assume $S\in S$, then by the definition of $S$, $S\in S$ implies $S\notin S$, a contradiction. Assume $S\notin S$, then $S\in S$. This is also a contradiction. Thus, the existence of such a set $S$ leads to a logical inconsistency.
 \begin{definition}
     Let $X$ be a set, and let the \hdef{successor} of $X$ be ${X}^{+}=X\cup\{X\}$. A set $S$ is called an \hdef{inductive set} if $\es\in S$ and for all $X\in S$, ${X}^{+}\in S$.
 \end{definition}
@@ -303,7 +313,7 @@ Some texts assume the existence of an ``universal set'', denoted $U$, which has 
 \par
 We denote $0=\es$, $1={0}^{+}$, $2={1}^{+}$, $\dots$
 \begin{problem}
-    The set of all natural numbers is the smallest inductive set.
+    Prove that the set of all natural numbers is the smallest inductive set.
 \end{problem}
 \customtheorem{Axiom of power set}
 \begin{Axiom of power set}\index{axiom of power set}
@@ -340,10 +350,10 @@ We denote $0=\es$, $1={0}^{+}$, $2={1}^{+}$, $\dots$
 \par
 It suffices to show a binary operation is indeed a set. Let $R$ be a binary operation, then $R\sub X\times Y$ for some sets $X$ and $Y$. By the axiom schema of separation, $R$ is a set. 
 \begin{problem}
-    Let $R$ be a binary operation. Prove that $\dom(R),\ran(R)\sub\Un(\Un R)$, hence, by the axiom of union, $\dom(R)$ and $\ran(R)$ are sets.
+    Let $R$ be a binary operation. Prove that $\dom(R),\ran(R)\sub\Un(\Un R)$, hence, by axiom of union, $\dom(R)$ and $\ran(R)$ are sets.
 \end{problem}
 \begin{definition}
-    Let $R$ be a binary operation on a set $S$, that is, $R\sub X\times X$. We say $R$ is an \hdef{equivalence relation} if the following properties hold.
+    Let $R$ be a binary operation on a set $S$, that is, $R\sub S\times S$. We say $R$ is an \hdef{equivalence relation} if the following properties hold.
     \begin{enumerate}
         \item for all $a\in X$, $aRa$;\hfill(reflexive)
         \item $aRb$ implies $bRa$;\hfill(symmetric)
@@ -354,9 +364,9 @@ It suffices to show a binary operation is indeed a set. Let $R$ be a binary oper
 \begin{problem}
     Prove that an equivalence class is a set.
 \end{problem}
-\begin{example}
-    In $\N$, the inclusion $\sub$ is an equivalence relation.
-\end{example}
+\begin{problem}
+    Prove that the inclusion $\sub$ is an equivalence relation in $\N$.
+\end{problem}
 \begin{problem}
     Let $R$ be a binary operation on a set $X$. For all $a,b\in A$, prove that ${S}_{a}\cap{S}_{b}$ is either $\es$ or ${S}_{a}$. Prove that $\Un{S}_{a}=X$, where each pair of ${S}_{a}$ are disjoint.
 \end{problem}
@@ -402,13 +412,13 @@ The well-ordering principle is equivalent to the axiom of choice, which will be 
     Given a subset $S\sub\N$ of the natural numbers with $0\in S$ and $n\in S$ implies $n+1\in S$, then $S=\N$.
 \end{theorem}
 \begin{proof}
-    Suppose $S\ne\N$, then $X=\N\sm S$ is a nonempty set. By the well-ordering principle, $X$ has a smallest element. Since $0\in S$, $0\notin X$, so the minimal element of $X$ can be written in the form $k+1$, where $k\in\N$. Recall that $k+1={k}^{+}=k\cup\{k\}$ is the successor of $k\in\N$, since $k+1$ is the smallest element, $k\notin X$, so $k\in S$. Now we have $k\in S$ and $k+1\notin S$, yet contradiction.
+    Suppose $S\ne\N$, then $X=\N\sm S$ is a nonempty set. By the well-ordering principle, $X$ has a smallest element. Since $0\in S$, $0\notin X$, so the minimal element of $X$ can be written in the form $k+1$, where $k\in\N$. Recall that $k+1={k}^{+}=k\cup\{k\}$ is the successor of $k\in\N$, since $k+1$ is the smallest element, $k\notin X$, so $k\in S$. Now we have $k\in S$ and $k+1\notin S$, a contradiction.
 \end{proof}
 \begin{example}
     Consider the statement: let $n\in\N$, show that ${\sum}_{i=0}^{n}=(n(n+1))/2$. If $n=0$, then the equation trivially holds. Assume ${\sum}_{i=0}^{k}=(k(k+1))/2$ holds for some $k\in\N$, then ${\sum}_{i=0}^{k+1}=(k(k+1))/2+(k+1)=((k+1)(k+2))/2$. Hence, by induction, ${\sum}_{i=0}^{n}=(n(n+1))/2$ for all $n\in\N$.
 \end{example}
 \begin{problem}
-    Given a subset $S\sub\N$ of the natural numbers with $0\in S$ and $\{0,1,\dots,n\}\sub S$ implies $n+1\in S$, then $S=\N$. This is known as the complete finite induction.
+    Prove that given a subset $S\sub\N$ of the natural numbers with $0\in S$ and $\{0,1,\dots,n\}\sub S$ implies $n+1\in S$, then $S=\N$. This is known as the complete finite induction.
 \end{problem}
 \begin{problem}
     Prove that the complete finite induction is equivalent to the finite induction.
@@ -418,15 +428,48 @@ The well-ordering principle is equivalent to the axiom of choice, which will be 
 \end{problem}
 \section{Functions}
 \begin{definition}
-    Let $X$ and $Y$ be sets. A function 
+    Let $X$ and $Y$ be sets. A \hdef{function} $f$ is a binary operation $f\sub X\times Y$ such that for all $x\in X$, there exists a unique $y\in Y$ such that $(x,y)\in f$. We say $f$ is a function from $X$ to $Y$, denoted $f:X\to Y$. The set $Y$ is called the \hdef{codomain} of $f$, denoted $\cod(f)$.
+\end{definition}
+\begin{definition}
+    Let $f:X\to Y$ be a function, the \hdef{image} of $X$ under $f$, denoted $\im(f)$, is the range of $f$. For all $(x,y)\in f$, we write $f(x)=y$. The \hdef{preimage} of $Y$ under $f$, denoted $\inv{f}(Y)$, is the set $\{x\mid x\in X\ \text{and}\ f(x)\in Y\}$.
+\end{definition}
+\begin{example}
+    Here are some examples of functions.
+    \begin{enumerate}
+        \item if $X$ is a set, then $\id:X\to X$ is a function such that for all $x\in X$, $\id(x)=x$;
+        \item the operation $f:\N\to\N$ defined by $f(n)={n}^{+}$, where $n\in\N$, is a function;
+        \item the operation $f:\R\to\R\times\R$ defined by $f(x)=(x,x)$, where $x\in\R$, is a function.
+    \end{enumerate}
+\end{example}
+\begin{problem}
+    Let $f$ be a function, prove that $\ran(f)\sub\cod(f)$.
+\end{problem}
+\begin{problem}
+    Verity whether the following binary operations are functions.
+    \begin{enumerate}
+        \item the operation $f:\R\to\R$ with $f(x)=\sqrt{x}$ for all $x\in\R$;
+        \item the operation $f:\{1,2,3\}\to\{2,3\}$ with $f=\{\{1,2\},\{2,2\},\{3,2\}\}$;
+        \item the operation $f:\Q\to\Q$ with $f(x)=\sqrt{x}$ for all $x\in\Q$;
+        \item the operation $f:\Z\to\Q$ with $f(x)=\card{x}$ for all $x\in\N$.
+    \end{enumerate}
+\end{problem}
+\begin{definition}
+    Let $f:X\to Y$ and $g:Y\to Z$ be functions. The \hdef{composition} of $f$ and $g$, denoted $g\comp f$, is defined as $g\comp f:X\to Z$ with $(g\comp f)(x)=g(f(x))$ for all $x\in X$.
 \end{definition}
 
 
 
 
+
+
+
 \newpage
+
 \section{Integers and Rationals}
+\section{Groups}
+\section{Rings and Fields}
 \section{Real Numbers}
-\section{Basic Group Theory}
+\newsection{Acknowledgement}
+
 \hindex
 \end{document}
