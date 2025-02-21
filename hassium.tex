@@ -20,7 +20,6 @@
 
 % 2. General Commands
 
-% Enable warnings
 % chktex-file 1 % chktex-file 8 % chktex-file 9 % chktex-file 12 % chktex-file 13 % chktex-file 15 % chktex-file 17 % chktex-file 18 % chktex-file 26 % chktex-file 31 % chktex-file 36 % chktex-file 44
 
 % Title page
@@ -102,7 +101,7 @@
     \printindex
     \pagestyle{empty}
     \addcontentsline{toc}{section}{\protect\hyperlink{sec-index}{Alphabetical Index}}
-    \hypertarget{sec-index}{} 
+    \hypertarget{sec-index}{}
 }
 
 % Changem fonts
@@ -169,6 +168,16 @@
     \setlength{\baselineskip}{12pt}
 }{%
     \end{definition}
+}
+\newenvironment{htheorem}[1][]{%
+    \ifx\relax#1\relax
+        \begin{theorem}
+    \else
+        \begin{theorem}[#1]\index{#1}
+    \fi
+    \setlength{\baselineskip}{12pt}
+}{%
+    \end{theorem}
 }
 
 % Remove proofs by empty space
@@ -446,7 +455,7 @@
 % Deravitive
 \renewcommand{\'}{\prime}
 
-% Floor 
+% Floor
 \newcommand{\fl}[1]{\lfloor{#1}\rfloor}
 
 % Square
