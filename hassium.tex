@@ -53,6 +53,13 @@
     \fancyfoot{}
 }
 
+% Use all the setup
+\newcommand{\hstart}{
+    \hsetup
+    \htoc
+    \hmain
+}
+
 % Page Geometry 
 \geometry{letterpaper,top=54pt,
     bottom=46.8pt,
@@ -113,9 +120,25 @@
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 
 % Darkmode
-\newcommand{\darkmode}{
+\newcommand{\darkhsetup}{%
+    \thispagestyle{empty}
+    \begin{center}
+        {\LARGE\bfseries\textcolor{white}{\htitle}} \\
+        \vspace{2pt}
+        {\small\texttt{\textcolor{white}{\hauthor}}}
+    \end{center} 
+    \normalsize
+}
+
+\newcommand{\darkhmain}{
+    \pagestyle{fancy}
     \pagecolor{black}
-    \color{white}
+    \color{white}     
+    \fancyhead[L]{\textcolor{white}{\texttt{\hfauthor}}}  
+    \fancyhead[R]{\textcolor{white}{\texttt{p.\thepage}}}
+    \fancyhead[C]{\textcolor{white}{\texttt{\htitle}}  }           
+    \renewcommand{\headrule}{\color{white}\hrule width\headwidth height0.5pt}
+    \fancyfoot{}
 }
 
 % Enumerate with tab
@@ -225,7 +248,7 @@
 % Topological space
 \newcommand{\T}{\mathcal{T}}
 
-% Projective Plane
+% Projective space
 \newcommand{\Pn}[1]{{\mathbb{P}}^{#1}}
 \newcommand{\CP}[1]{{\mathbb{CP}}^{#1}}
 \newcommand{\RP}[1]{{\mathbb{RP}}^{#1}}
@@ -385,9 +408,6 @@
 
 % Group action
 \newcommand{\acts}{\curvearrowright}
-
-% Span
-\DeclareMathOperator{\Span}{span}
 
 % Sign of permutation
 \DeclareMathOperator{\sgn}{sgn}

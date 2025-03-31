@@ -1,12 +1,10 @@
 % chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
 \documentclass[10pt]{article}
 \input{hassium.tex}
-\begin{document}
 \def\htitle{Demo of My \LaTeX\ Style}
 \def\hauthor{Hassium}\let\hfauthor\hauthor
-\hsetup
-\htoc
-\hmain
+\begin{document}
+\hstart
 \section{Packages}
 This style contains the following packages:
 \begin{verbatim}
@@ -40,7 +38,17 @@ After inserting the package, you should define the title and author name. Here i
         \hmain
     \end{document}
 \end{verbatim}
-Here the ``hfauthor'' is the left part of the header.
+Here the ``hfauthor'' is the left part of the header. Also, feel free to use ``hstart'' command to include all three setup.
+\begin{verbatim}
+    \documentclass{article}
+    \input{hassium.tex}
+    \begin{document}
+        \def\htitle{Demo of Hassium Style}
+        \def\hauthor{Hassium}
+        \def\hfauthor{Hassium}
+        \hstart
+    \end{document}
+\end{verbatim}
 \section{Page Geometry}
 There are some commands that adjust the geometry of the document:
 \begin{verbatim}
@@ -69,10 +77,11 @@ This style has a customized index page. Check the code:
 \end{verbatim}
 The command ``hdef'' mark the word and print it. The command ``hindex'' is a customized index page that print words in three columns. Each page number in the index page contains a hyperlink to that page.
 \section{Darkmode}
-Darkmode command changes the background color to black and the text to white.
+Darkmode commands change the background color to black and the text to white.
 \begin{verbatim}
     \begin{document}
-        \darkmode 
+        \darkhsetup
+        \darkhmain
     \end{document}
 \end{verbatim}
 \section{Other Environments and Commands}
@@ -298,7 +307,6 @@ I will give a table of all commands in math mode.
     $\bs$ot\hfill$\ot$ \\
     $\bs$op\hfill$\op$ \\
     $\bs$acts\hfill$\acts$ \\
-    $\bs$Span\hfill$\Span$ \\
     $\bs$sgn\hfill$\sgn$ \\
     $\bs$nsg\hfill$\nsg$ \\
     $\bs$defa\hfill$\defa$ \\
