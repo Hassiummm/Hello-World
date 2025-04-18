@@ -96,6 +96,9 @@
     \addtolength{\itemindent}{-2em}
 }
 
+% Index 
+\newcommand{\hdef}[1]{\cfd{#1}\index{#1}}
+
 % Circle
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.5pt](char){#1};}}
 
@@ -112,15 +115,15 @@
 
 % Theorem styles
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{definition}{Definition}
+\newtheorem*{theorem}{Theorem}
 \newtheorem*{proposition}{Proposition}
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{corollary}{Corollary}
 \newtheorem*{example}{Example}
 \newtheorem*{remark}{Remark}
 \newtheorem*{notation}{Notation}
-\newtheorem{problem}{Problem}[section]
+\newtheorem*{problem}{Problem}
 \newtheorem*{claim}{Claim}
 \newtheorem*{answer}{Answer}
 \newtheorem{questioninner}{Exercise}
