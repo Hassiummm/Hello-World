@@ -90,6 +90,13 @@
     \fancyfoot{}
 }
 
+% Hyperlink on toc and section titles
+\titleformat{\section}
+{\normalfont\large\bfseries}{\thesection}{1em}{\hyperlink{sec-\thesection}{#1}
+\addtocontents{toc}{\protect\hypertarget{sec-\thesection}{}}}
+\titleformat{name=\section,numberless}
+{\normalfont\large\bfseries}{}{0pt}{\hyperlink{toc}{#1}}
+
 % Enumerate with tab
 \newenvironment{level}{
     \addtolength{\itemindent}{2em}}{
