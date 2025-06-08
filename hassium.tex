@@ -14,7 +14,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
-\usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath}
+\usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath}
 \usepackage[hidelinks]{hyperref}
 \usepackage{chemfig}
 
@@ -132,6 +132,17 @@
     \normalsize
 }
 
+\newcommand{\darkhtoc}{
+    \renewcommand*{\contentsname}{}
+    \renewcommand{\cftsecfont}{\color{white}}        
+    \renewcommand{\cftsecpagefont}{\color{white}}    
+    \renewcommand{\cftsecpagefont}{\transparent{0}} 
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
+    \thispagestyle{empty}
+}
+
 \newcommand{\darkhmain}{
     \pagestyle{fancy}
     \pagecolor{black}
@@ -141,6 +152,12 @@
     \fancyhead[C]{\textcolor{white}{\texttt{\htitle}}  }           
     \renewcommand{\headrule}{\color{white}\hrule width\headwidth height0.5pt}
     \fancyfoot{}
+}
+
+\newcommand{\darkhstart}{
+    \darkhsetup
+    \darkhtoc
+    \darkhmain
 }
 
 % Enumerate with tab
@@ -441,7 +458,7 @@
 \DeclareMathOperator{\Hol}{Hol}
 
 % Composition of functions
-\newcommand{\comp}{~\raisebox{1pt}{\tikz \draw[line width=0.6pt] circle(1.1pt);}~}
+\newcommand{\comp}{~\raisebox{1pt}{\tikz \draw[line width=0.4pt] circle(1.1pt);}~}
 
 % Galois group
 \DeclareMathOperator{\Gal}{Gal}
@@ -468,7 +485,7 @@
 % Sylow groups
 \DeclareMathOperator{\Syl}{Syl}
 
-% Category
+% Categorical notations
 \newcommand{\iso}{\approx}
 \newcommand{\niso}{\not\approx}
 \DeclareMathOperator{\Mor}{Mor}
@@ -481,8 +498,12 @@
 \DeclareMathOperator{\Ob}{Ob}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{cod}
-\newcommand{\cop}[1]{{\cat{#1}}^{\cat{{op}}}}
+
+% Category
 \newcommand{\cat}[1]{\textsf{#1}}
+\newcommand{\cata}[2]{{\textsf{#1}}^{\textsf{#2}}}
+\newcommand{\catb}[2]{{\textsf{#1}}_{\textsf{#2}}}
+\newcommand{\catop}[1]{\cata{#1}{op}}
 
 % Floor
 \newcommand{\fl}[1]{\lfloor{#1}\rfloor}
