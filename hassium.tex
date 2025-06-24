@@ -13,7 +13,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,tikz-cd}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,sansmath,tikz-cd}
 \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath}
 \usepackage[hidelinks]{hyperref}
 \usepackage{chemfig}
@@ -500,10 +500,7 @@
 \DeclareMathOperator{\cod}{cod}
 
 % Category
-\newcommand{\cat}[1]{\textsf{#1}}
-\newcommand{\cata}[2]{{\textsf{#1}}^{\textsf{#2}}}
-\newcommand{\catb}[2]{{\textsf{#1}}_{\textsf{#2}}}
-\newcommand{\catop}[1]{\cata{#1}{op}}
+\newcommand{\cat}[1]{\text{\sansmath\mathversion{sans}$#1$}}
 
 % Floor
 \newcommand{\fl}[1]{\lfloor{#1}\rfloor}
