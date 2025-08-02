@@ -114,13 +114,13 @@
     \hypertarget{sec-index}{}
 }
 
+% Circle
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.5pt](char){#1};}}
+
 % Changem fonts
 \newcommand{\cfd}[1]{\fontfamily{pzc}\selectfont #1\fontfamily{cmr}\selectfont}
 \newcommand{\cfc}[1]{{\usefont{T1}{calligra}{m}{n}#1}} 
 \newcommand{\cft}[1]{\texttt{#1}}
-
-% Enumerate
-\setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 
 % Darkmode
 \newcommand{\darkhsetup}{%
@@ -132,7 +132,6 @@
     \end{center} 
     \normalsize
 }
-
 \newcommand{\darkhtoc}{
     \renewcommand*{\contentsname}{}
     \renewcommand{\cftsecfont}{\color{white}}        
@@ -143,7 +142,6 @@
     \end{multicols}
     \thispagestyle{empty}
 }
-
 \newcommand{\darkhmain}{
     \pagestyle{fancy}
     \pagecolor{black}
@@ -154,27 +152,25 @@
     \renewcommand{\headrule}{\color{white}\hrule width\headwidth height0.5pt}
     \fancyfoot{}
 }
-
 \newcommand{\darkhstart}{
     \darkhsetup
     \darkhtoc
     \darkhmain
 }
 
-% Enumerate with tab
+% Diamond and square
+\newcommand{\sq}{\square}
+\newcommand{\largediamond}{\scalerel*{\lozenge}{\square}}
+
+% Enumerate
+\setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 \newenvironment{level}{
     \addtolength{\itemindent}{2em}}{
     \addtolength{\itemindent}{-2em}
 }
 
-% Circle
-\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=0.5pt](char){#1};}}
-
 % Roman numberals
 \newcommand{\rom}{\romannumeral}
-
-% Diamond
-\newcommand{\largediamond}{\scalerel*{\lozenge}{\square}}
 
 % Pgfplot setup
 \pgfplotsset{compat=1.18}
@@ -442,9 +438,6 @@
 
 % Sylow groups
 \DeclareMathOperator{\Syl}{Syl}
-
-% Square
-\newcommand{\sq}{\square}
 
 % Several groups
 \DeclareMathOperator{\Sym}{Sym}
