@@ -53,7 +53,7 @@
     \fancyfoot{}
 }
 
-% Use all the setup
+% Setup
 \newcommand{\hstart}{
     \hsetup
     \htoc
@@ -77,7 +77,7 @@
 }
 \setstretch{1.25}
 
-% Newsection
+% Section without numbering but appears in appendix
 \makeatletter
 \newcommand\newsection[1]{%
   \stepcounter{section}
@@ -181,7 +181,6 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{convention}{Convention}[section]
 \newtheorem*{proposition}{Proposition}
 \newtheorem*{lemma}{Lemma}
 \newtheorem*{corollary}{Corollary}
@@ -190,10 +189,9 @@
 \newtheorem*{notation}{Notation}
 \newtheorem{problem}{Problem}[section]
 \newtheorem*{claim}{Claim}
-\newtheorem*{answer}{Answer}
-\newtheorem{questioninner}{Exercise}
 
 % Exercise with customization on numbering
+\newtheorem{questioninner}{Exercise}
 \newenvironment{exercise}[1][]{%
     \ifx\relax#1\relax\else\renewcommand{\thequestioninner}{#1}\fi 
     \questioninner
@@ -204,42 +202,34 @@
 \newcommand{\customtheorem}[1]{%
     \expandafter\newtheorem\expandafter*{#1}{#1}%
 }
-\newenvironment{hdefinition}[1][]{%
+
+% Theorem and definition with index
+\newenvironment{idefinition}[1][]{%
     \ifx\relax#1\relax
         \begin{definition}
     \else
         \begin{definition}[#1]\index{#1}
     \fi
-    \setlength{\baselineskip}{12pt}
+    \setlength{\baselineskip}{10pt}
 }{%
     \end{definition}
 }
-
-% Theorem with index
-\newenvironment{htheorem}[1][]{%
+\newenvironment{itheorem}[1][]{%
     \ifx\relax#1\relax
         \begin{theorem}
     \else
         \begin{theorem}[#1]\index{#1}
     \fi
-    \setlength{\baselineskip}{12pt}
+    \setlength{\baselineskip}{10pt}
 }{%
     \end{theorem}
 }
 
-% Theorem in appendix
-\newtheorem{atheorem}{Theorem}[section]
+% Environment in appendix
+\newtheorem{adefinition}{Definition}
+\renewcommand{\theadefinition}{A\arabic{adefinition}}
+\newtheorem{atheorem}{Theorem}
 \renewcommand{\theatheorem}{A\arabic{atheorem}}
-\newenvironment{hatheorem}[1][]{%
-    \ifx\relax#1\relax
-        \begin{atheorem}
-    \else
-        \begin{atheorem}[#1]\index{#1}
-    \fi
-    \setlength{\baselineskip}{12pt}
-}{%
-    \end{atheorem}
-}
 
 % Remove proofs by empty space
 \NewEnviron{reviewmode}{%
