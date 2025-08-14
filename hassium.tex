@@ -1,5 +1,5 @@
 %%% A Simple Format, author: Hassium %%% 
-%%% version 1.2.7 !!! %%% 
+%%% version 1.2.8 !!! %%% 
 
 % I quoted some lines from Stackexchange and Github.
 
@@ -177,7 +177,7 @@
 
 % 3. Math
 
-% Theorem styles
+% Normal Theorem styles
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
@@ -192,11 +192,15 @@
 \newtheorem*{claim}{Claim}
 \newtheorem*{answer}{Answer}
 \newtheorem{questioninner}{Exercise}
+
+% Exercise with customization on numbering
 \newenvironment{exercise}[1][]{%
     \ifx\relax#1\relax\else\renewcommand{\thequestioninner}{#1}\fi 
     \questioninner
 }{%
 }
+
+% Customize the name of a theorem environment
 \newcommand{\customtheorem}[1]{%
     \expandafter\newtheorem\expandafter*{#1}{#1}%
 }
@@ -210,6 +214,8 @@
 }{%
     \end{definition}
 }
+
+% Theorem with index
 \newenvironment{htheorem}[1][]{%
     \ifx\relax#1\relax
         \begin{theorem}
@@ -219,6 +225,20 @@
     \setlength{\baselineskip}{12pt}
 }{%
     \end{theorem}
+}
+
+% Theorem in appendix
+\newtheorem{atheorem}{Theorem}[section]
+\renewcommand{\theatheorem}{A\arabic{atheorem}}
+\newenvironment{hatheorem}[1][]{%
+    \ifx\relax#1\relax
+        \begin{atheorem}
+    \else
+        \begin{atheorem}[#1]\index{#1}
+    \fi
+    \setlength{\baselineskip}{12pt}
+}{%
+    \end{atheorem}
 }
 
 % Remove proofs by empty space
