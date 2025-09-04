@@ -1,5 +1,5 @@
 %%% A Simple Format, author: Hassium %%% 
-%%% version 1.2.8 !!! %%% 
+%%% version 1.2.9 !!! %%% 
 
 % I quoted some lines from Stackexchange and Github.
 
@@ -321,7 +321,7 @@
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{cod}
 \DeclareMathOperator{\colim}{colim}
-\newcommand{\cat}[1]{\text{\sansmath\mathversion{sans}$#1$}}
+\newcommand{\cat}[1]{\mathsf{#1}}
 
 % Conjugacy classes
 \DeclareMathOperator{\Cl}{Cl}
@@ -403,7 +403,18 @@
 \newcommand{\nsg}{\trianglelefteq}
 
 % Number sign
-\newcommand{\ns}{\texttt{\#}}
+\newcommand{\ns}{%
+  \raisebox{0pt}[0.75ex][0.25ex]{
+    \begin{tikzpicture}
+      % Vertical lines
+      \draw[line cap=round, line width=0.3pt, rotate=-10] (0.05ex, -0.05ex) -- (0.05ex, 1ex);
+      \draw[line cap=round, line width=0.3pt, rotate=-10] (0.35ex, 0) -- (0.35ex, 1.05ex);
+      % Horizontal lines
+      \draw[line cap=round, line width=0.3pt] (0.8ex, 0.65ex) -- (-0.2ex, 0.65ex);
+      \draw[line cap=round, line width=0.3pt] (0.8ex, 0.35ex) -- (-0.2ex, 0.35ex);
+    \end{tikzpicture}
+  }%
+}
 
 % Otimes, oplus
 \newcommand{\ot}{\otimes}
