@@ -1,5 +1,5 @@
 %%% A Simple Format, author: Hassium %%% 
-%%% version 1.2.10 !!! %%% 
+%%% version 1.2.11 !!! %%% 
 
 % I quoted some lines from Stackexchange and Github.
 
@@ -20,7 +20,7 @@
 
 % 2. General Commands
 
-% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 14 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 40 chktex-file 44
+% Add this line to enable warnings: chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 14 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 40 chktex-file 44
 
 % Title page
 \newcommand{\hsetup}{%
@@ -315,7 +315,7 @@
 \DeclareMathOperator{\Ob}{Ob}
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\cod}{cod}
-\DeclareMathOperator{\colim}{co\lim}
+\DeclareMathOperator*{\colim}{colim}
 \newcommand{\cat}[1]{\mathsf{#1}}
 
 % Conjugacy classes
