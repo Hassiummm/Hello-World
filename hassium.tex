@@ -67,7 +67,7 @@
   bottom=60pt,
   left=60pt,
   right=60pt,
-  headheight=10pt,
+  headheight=12pt,
   headsep=10pt,
 }
 \setstretch{1.25}
@@ -95,6 +95,9 @@
 \newcommand{\descr}[1]{%
   \addtocontents{toc}{\medskip\noindent\detokenize{#1}\leavevmode\par\medskip}
 }
+
+% Table of contents counter
+\setcounter{tocdepth}{1}
 
 % Index page
 \newcommand{\hdef}[1]{\cfd{#1}\index{#1}}
