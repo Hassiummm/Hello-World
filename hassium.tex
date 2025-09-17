@@ -14,7 +14,7 @@
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,sansmath,tikz-cd}
-\usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath,manfnt,relsize}
+\usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath,manfnt,relsize,nameref}
 \usepackage[hidelinks]{hyperref}
 \usepackage{chemfig}
 
@@ -43,12 +43,17 @@
     \thispagestyle{empty}
 }
 
+% Record section name
+\makeatletter
+\newcommand*{\secname}{\@currentlabelname}
+\makeatother
+
 % Mainmatter: fancy header
 \newcommand{\hmain}{%
     \pagestyle{fancy}
     \fancyhead[L]{\texttt{\hfauthor}}      
     \fancyhead[R]{\texttt{p.\thepage}}
-    \fancyhead[C]{\texttt{\htitle}}             
+    \fancyhead[C]{\texttt{\secname}}             
     \renewcommand{\headrulewidth}{0.5pt}
     \fancyfoot{}
 }
