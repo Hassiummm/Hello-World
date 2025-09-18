@@ -13,7 +13,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,sansmath,tikz-cd,pgfplots}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,sansmath,tikz-cd,pgfplots,tikz-3dplot}
 \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath,manfnt,relsize,nameref}
 \usepackage[hidelinks]{hyperref}
 \usepackage{chemfig}
@@ -53,7 +53,7 @@
     \pagestyle{fancy}
     \fancyhead[L]{\texttt{\hfauthor}}      
     \fancyhead[R]{\texttt{p.\thepage}}
-    \fancyhead[C]{\texttt{\secname}}             
+    \fancyhead[C]{\texttt{\htitle}}             
     \renewcommand{\headrulewidth}{0.5pt}
     \fancyfoot{}
 }
@@ -73,7 +73,7 @@
   left=60pt,
   right=60pt,
   headheight=12pt,
-  headsep=10pt,
+  headsep=10pt
 }
 \setstretch{1.25}
 
@@ -161,10 +161,6 @@
     \darkhmain
 }
 
-% Diamond and square
-\newcommand{\sq}{\square}
-\newcommand{\largediamond}{\scalerel*{\lozenge}{\square}}
-
 % Enumerate
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 \newenvironment{level}{
@@ -174,9 +170,6 @@
 
 % Roman numberals
 \newcommand{\rom}{\romannumeral}
-
-% Pgfplot setup
-\pgfplotsset{compat=1.18}
 
 % 3. Math
 
@@ -343,6 +336,10 @@
 
 % Cardinality
 \newcommand{\card}[1]{\lvert{#1}\rvert}
+
+% Diamond and square
+\newcommand{\sq}{\square}
+\newcommand{\largediamond}{\scalerel*{\lozenge}{\square}}
 
 % Defined as
 \newcommand{\defa}{\coloneqq}

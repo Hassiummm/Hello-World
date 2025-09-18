@@ -1,4 +1,4 @@
-% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 44
+% chktex-file 1 chktex-file 8 chktex-file 9 chktex-file 12 chktex-file 13 chktex-file 14 chktex-file 15 chktex-file 17 chktex-file 18 chktex-file 26 chktex-file 31 chktex-file 36 chktex-file 40 chktex-file 44
 \documentclass[10pt]{article}
 \input{hassium.tex}
 \def\htitle{Demo of My \LaTeX\ Style}
@@ -12,17 +12,18 @@ This style contains the following packages:
     \usepackage[explicit]{titlesec}
     \usepackage[utf8]{inputenc}
     \usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,
-    centernot,ytableau,tikz-cd}
-    \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,
-    enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,wrapfig,pgfplots,
-    mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,halloweenmath}
+        centernot,ytableau,sansmath,tikz-cd,pgfplots,tikz-3dplot}
+    \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,
+        blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,mdframed,
+        tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,
+        halloweenmath,manfnt,relsize,nameref}
     \usepackage[hidelinks]{hyperref}
     \usepackage{chemfig}
 \end{verbatim}
 How to insert it? 
 \begin{verbatim}
     \documentclass{article} 
-    \input{hassium.tex} % Download and input it using its path 
+    \input{hassium.tex}
 \end{verbatim}
 \section{Title Page Setup}
 After inserting the package, you should define the title and author name. Here is an example, which is the code of this demo:
@@ -38,7 +39,7 @@ After inserting the package, you should define the title and author name. Here i
         \hmain
     \end{document}
 \end{verbatim}
-Here the ``hfauthor'' is the left part of the header. Also, feel free to use ``hstart'' command to include all three setup.
+The command ``hsetup'' gives you the title and the author name. The command ``\texttt{htoc}'' gives a table of contents, which we will mention later. The command ``\texttt{hmain}'' is a setup of the mainmatter, which includes a fancy header. The ``\texttt{hfauthor}'' variable is the left part of the header. Also, feel free to use ``\texttt{hstart}'' command to include all three of them.
 \begin{verbatim}
     \documentclass{article}
     \input{hassium.tex}
@@ -52,9 +53,9 @@ Here the ``hfauthor'' is the left part of the header. Also, feel free to use ``h
 \section{Page Geometry}
 There are some commands that adjust the geometry of the document:
 \begin{verbatim}
-    \geometry{letterpaper, top=54pt,bottom=46.8pt,marginparsep=5.67pt,marginparwidth=56.69pt,
-    voffset=0pt,hoffset=0pt,left=54pt,right=54pt,headheight=24pt,headsep=10pt}
-    \setstretch{1.25} % spacing
+    \geometry{letterpaper,top=60pt,bottom=60pt,left=60pt,right=60pt,headheight=12pt,   
+        headsep=10pt}
+    \setstretch{1.25}
 \end{verbatim}
 \section{More on Table of Contents}
 You can add descriptions to each section and the description will appear in the table of contents, directly below the section name: 
@@ -62,12 +63,10 @@ You can add descriptions to each section and the description will appear in the 
     \section{This is a Sample Section} 
     \descr{This is a description to the section} 
 \end{verbatim}
-\noindent
 The table of contents only shows the section names, but no subsections and numberless sections. If you want a numberless section in the table of contents, use the ``newsection'' command:
 \begin{verbatim}
     \newsection{This is a numberless section} 
 \end{verbatim}
-\noindent
 Note that the section names in the table of contents are hyperlinks; click on any section name to navigate directly to that section. You can do the converse to navigate to the first page as well.
 \section{Index Page}
 This style has a customized index page. Check the code:
@@ -77,20 +76,18 @@ This style has a customized index page. Check the code:
 \end{verbatim}
 The command ``hdef'' mark the word and print it. The command ``hindex'' is a customized index page that print words in three columns. Each page number in the index page contains a hyperlink to that page.
 \section{Darkmode}
-Darkmode commands change the background color to black and the text to white.
+Darkmode commands change the background color to black and the text to white. Similar to the normal setup, there are darkmode setup:
 \begin{verbatim}
-    \begin{document}
         \darkhsetup
+        \darkhtoc
         \darkhmain
-    \end{document}
 \end{verbatim}
 \section{Other Environments and Commands}
-The line-spacing in ``enumerate'' environment is changed:
+The line-spacing in ``\texttt{enumerate}'' environment is changed:
 \begin{verbatim}
     \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 \end{verbatim}
-\noindent
-The ``level'' environment is used in ``enumerate'' environment, consider the following code:
+The ``\texttt{level}'' environment is used in ``\texttt{enumerate}'' environment, consider the following code:
 \begin{verbatim}
     \begin{enumerate}
         \item This is the first line.
@@ -103,7 +100,6 @@ The ``level'' environment is used in ``enumerate'' environment, consider the fol
         \end{level}
     \end{enumerate}
 \end{verbatim}
-\noindent
 This code gives:
 \begin{enumerate}
     \item This is the first line.
@@ -115,17 +111,14 @@ This code gives:
         \item This is another line.
     \end{level}
 \end{enumerate}
-\noindent
-The command ``circled'' draws a small circle and you can add something inside the circle:
+The command ``\texttt{circled}'' draws a small circle and you can add something inside the circle:
 \begin{verbatim}
     \circled{1}
 \end{verbatim}
-\noindent
 The output is $\circled{1}$. You can write any Romam numerals by:
 \begin{verbatim}
     \rom108 
 \end{verbatim}
-\noindent
 There are two simple commands for hand-written fonts:
 \begin{verbatim}
     \cfd{font 1}
@@ -135,9 +128,6 @@ The outputs are \cfd{font 1} and \cfc{font 2}.
 \section{Quiver}
 Quiver is done by \href{https://github.com/varkor}{varkor} and \href{https://tex.stackexchange.com/users/138900/andr%C3%A9c}{AndréC}, check their github for more information. I include quiver to draw curve arrows in a commutative diagram. To draw a diagram with quiver, check this \href{https://q.uiver.app/}{website}. An example is given below:
 \begin{verbatim}
-    % chktex-file 15 % the three lines enables useless warnings
-    % chktex-file 17
-    % chktex-file 18
     \begin{center}
         \begin{tikzcd}
             Hello &&&& World \\
@@ -174,23 +164,9 @@ Several theorem styles are offered:
     \newtheorem*{example}{Example}
     \newtheorem*{remark}{Remark}
     \newtheorem*{notation}{Notation}
+    \newtheorem{problem}{Problem}[section]
+    \newtheorem*{claim}{Claim}
 \end{verbatim}
-\noindent
-There is a ``hdefinition'' environment, which works exactly the same as ``definition'' if you write:
-\begin{verbatim}
-    \begin{hdefinition}
-        This is a definition of Hassium.
-    \end{hdefinition}
-\end{verbatim}
-\noindent
-If you include a name variable, it gives an index to the name.
-\begin{verbatim}
-    \begin{hdefinition}[Hassium]
-        This is a definition of Hassium
-    \end{hdefinition}
-    \hindex % This will print Hassium
-\end{verbatim} 
-\noindent
 The environment name can be customized by using:
 \begin{verbatim}
     \customtheorem{This is a custom theorem}
@@ -198,26 +174,32 @@ The environment name can be customized by using:
         The proof is trivial.
     \end{This is a custom theorem}
 \end{verbatim}
-\noindent
-The output environment is:
+The output will be:
 \customtheorem{This is a custom theorem}
 \begin{This is a custom theorem}
     The proof is trivial.
 \end{This is a custom theorem}
-\noindent
-You can put any number or label in ``exercise'' environment:
+\noindent If you don't want to include section number but still want to have a counter in a single section, please use:
+\begin{verbatim}
+    \begin{adefinition}
+        A definition in appendix.
+    \end{adefinition}
+    \begin{atheorem}
+        A theorem in appendix.
+    \end{atheorem}
+\end{verbatim}
+You can put any number or label in ``\texttt{exercise}'' environment:
 \begin{verbatim}
     \begin{exercise}[8.6]
         The proof is trivial.
     \end{exercise}
 \end{verbatim}
-\noindent
 The environment looks like:
 \begin{exercise}[8.6]
     The proof is trivial.
 \end{exercise}
 \section{Invisible Proofs}
-The environment ``reviewmode'' is originally done by my friend \href{https://github.com/ETwilight}{ETwilight}. It replaces your ``proof'' environment by three empty lines:
+The environment ``\texttt{reviewmode}'' is originally done by my friend \href{https://github.com/ETwilight}{ETwilight}. It replaces your ``proof'' environment by three empty lines:
 \begin{verbatim}
     \begin{reviewmode}
         \begin{proof}
@@ -225,50 +207,21 @@ The environment ``reviewmode'' is originally done by my friend \href{https://git
         \end{proof}
     \end{reviewmode}
 \end{verbatim}
+\section{Drawing Functions}
+To draw a function, you may use the following code:
+\begin{verbatim}
+    \functiondraw{0.8}{-10}{10}{exp(x^-2*sin(deg(x)))}
+\end{verbatim}
+The first parameter is the scale of your plot. The second and the third is the domain of the plot, in our example, the domain is $[-1,1]$. The last entry is for your function. For the format of the function, please check the pgfplots package. The example code (with centering) yields the following plot.
+\begin{center}
+    \functiondraw{0.8}{-10}{10}{exp(x^-2*sin(deg(x)))}
+\end{center}
 \section{Simple Commands in Math Mode}
 I will give a table of all commands in math mode.
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{black}}
 \begin{multicols}{2}
-    \noindent$\bs$bs\hfill$\bs$ \\
-    $\bs$N\hfill$\N$ \\
-    $\bs$Z\hfill$\Z$ \\
-    $\bs$Q\hfill$\Q$ \\
-    $\bs$R\hfill$\R$ \\
-    $\bs$C\hfill$\C$ \\
-    $\bs$bb$\{$H$\}$\hfill$\bb{H}$ \\
-    $\bs$ca$\{$H$\}$\hfill$\ca{H}$ \\
-    $\bs$fr$\{$H$\}$\hfill$\fr{H}$ \\
-    $\bs$T\hfill$\T$ \\
-    $\bs$Ps$\{$n$\}$\hfill$\Ps{n}$ \\
-    $\bs$CP$\{$n$\}$\hfill$\CP{n}$ \\
-    $\bs$RP$\{$n$\}$\hfill$\RP{n}$ \\
-    $\bs$Sym\hfill$\Sym$ \\
-    $\bs$GL\hfill$\GL$ \\
-    $\bs$SL\hfill$\SL$ \\
-    $\bs$Mod\hfill$\Mod$ \\
-    $\bs$Sg\hfill$\Sg$ \\
-    $\bs$Ag\hfill$\Ag$ \\
-    $\bs$Cay\hfill$\Cay$ \\
-    $\bs$uni\hfill$\uni$ \\
-    $\bs$al\hfill$\al$ \\
-    $\bs$be\hfill$\be$ \\
-    $\bs$ga\hfill$\ga$ \\
-    $\bs$de\hfill$\de$ \\
-    $\bs$ep\hfill$\ep$ \\
-    $\bs$si\hfill$\si$ \\
-    $\bs$la\hfill$\la$ \\
-    $\bs$ka\hfill$\ka$ \\
-    $\bs$om\hfill$\om$ \\
-    $\bs$Ga\hfill$\Ga$ \\
-    $\bs$De\hfill$\De$ \\
-    $\bs$Si\hfill$\Si$ \\
-    $\bs$LA\hfill$\LA$ \\
-    $\bs$Om\hfill$\Om$ \\
-    $\bs$vp\hfill$\vp$ \\
-    $\bs$vt\hfill$\vt$ \\
-    $\bs$ve\hfill$\ve$ \\
-    $\bs$ua\hfill$\ua$ \\
+    \noindent$\bs$ua\hfill$\ua$ \\
     $\bs$da\hfill$\da$ \\
     $\bs$Ra\hfill$\Ra$ \\
     $\bs$La\hfill$\La$ \\
@@ -285,10 +238,91 @@ I will give a table of all commands in math mode.
     $\bs$thra\hfill$\thra$ \\
     $\bs$thla\hfill$\thla$ \\
     $\bs$bij\hfill$\bij$ \\
-    $\bs$wb$\{$A$\}$\hfill$\wb{A}$ \\
+    $\bs$Ann\hfill$\Ann$ \\
+    $\bs$A\{1\}\hfill$\A{1}$ \\
+    $\bs$ab\hfill$\ab$ \\
+    $\bs$can\hfill$\can$ \\
+    $\bs$Can\hfill$\Can$ \\
+    $\bs$Rel\hfill$\Rel$ \\
+    $\bs$Cycl\hfill$\Cycl$ \\
+    $\bs$SCan\hfill$\SCan$ \\
+    $\bs$Cay\hfill$\Cay$ \\
+    $\bs$bb\{H\}\hfill$\bb{H}$ \\
+    $\bs$ca\{H\}\hfill$\ca{H}$ \\
+    $\bs$fr\{H\}\hfill$\fr{H}$ \\
+    $\bs$scr\{H\}\hfill$\scr{H}$ \\
+    $\bs$comp\hfill$\comp$ \\
+    $\bs$iso\hfill$\iso$ \\
+    $\bs$niso\hfill$\niso$ \\
+    $\bs$Mor\hfill$\Mor$ \\
+    $\bs$Aut\hfill$\Aut$ \\
+    $\bs$End\hfill$\End$ \\
+    $\bs$Hom\hfill$\Hom$ \\
+    $\bs$Inn\hfill$\Inn$ \\
+    $\bs$Out\hfill$\Out$ \\
+    $\bs$Iso\hfill$\Iso$ \\
+    $\bs$Ob\hfill$\Ob$ \\
+    $\bs$dom\hfill$\dom$ \\
+    $\bs$cod\hfill$\cod$ \\
+    $\bs$colim\hfill$\colim$ \\
+    $\bs$cat\{C\_S\}\hfill$\cat{{C}_{S}}$ \\
+    $\bs$Cl\hfill$\Cl$ \\
+    $\bs$CAT\hfill$\CAT$ \\
+    $\bs$card\{1\}\hfill$\card{1}$ \\
+    $\bs$sq\hfill$\sq$ \\
+    $\bs$largediamond\hfill$\largediamond$ \\
+    $\bs$defa\hfill$\defa$ \\
+    $\bs$pa\hfill$\pa$ \\
+    $\bs$d\hfill$\d$ \\
+    $\bs$Ext\hfill$\Ext$ \\
+    $\bs$Tor\hfill$\Tor$ \\
+    $\bs$fl\{1\}\hfill$\fl{1}$ \\
+    $\bs$al\hfill$\al$ \\
+    $\bs$be\hfill$\be$ \\
+    $\bs$ga\hfill$\ga$ \\
+    $\bs$de\hfill$\de$ \\
+    $\bs$ep\hfill$\ep$ \\
+    $\bs$si\hfill$\si$ \\
+    $\bs$la\hfill$\la$ \\
+    $\bs$ka\hfill$\ka$ \\
+    $\bs$om\hfill$\om$ \\
+    $\bs$Ga\hfill$\Ga$ \\
+    $\bs$De\hfill$\De$ \\
+    $\bs$Si\hfill$\Si$ \\
+    $\bs$LA\hfill$\LA$ \\
+    $\bs$Om\hfill$\Om$ \\
+    $\bs$vt\hfill$\vt$ \\
+    $\bs$vp\hfill$\vp$ \\
+    $\bs$ve\hfill$\ve$ \\
+    $\bs$acts\hfill$\acts$ \\
+    $\bs$Gal\hfill$\Gal$ \\
+    $\bs$cyc\{1\}\hfill$\cyc{1}$ \\
+    $\bs$Ht\hfill$\Ht$ \\
+    $\bs$Hol\hfill$\Hol$ \\
     $\bs$id\hfill$\id$ \\
+    $\bs$im\hfill$\im$ \\
+    $\bs$inv\{1\}\hfill$\inv{1}$ \\
+    x$\bs$mod y\hfill$x\mod y$ \\
+    $\bs$norm\{1\}\hfill$\norm{1}$ \\
+    $\bs$N\hfill$\N$ \\
+    $\bs$C\hfill$\C$ \\
+    $\bs$R\hfill$\R$ \\
+    $\bs$Q\hfill$\Q$ \\
+    $\bs$Z\hfill$\Z$ \\
+    $\bs$F\hfill$\F$ \\
+    $\bs$nsg\hfill$\nsg$ \\
+    $\bs$ot\hfill$\ot$ \\
+    $\bs$op\hfill$\op$ \\
+    $\bs$Ps\{1\}\hfill$\Ps{1}$ \\
+    $\bs$CP\{1\}\hfill$\CP{1}$ \\
+    $\bs$RP\{1\}\hfill$\RP{1}$ \\
+    $\bs$proj\hfill$\proj$ \\
+    $\bs$po\hfill$\po$ \\
+    $\bs$poe\hfill$\poe$ \\
+    $\bs$ran\hfill$\ran$ \\
     $\bs$sub\hfill$\sub$ \\
     $\bs$sube\hfill$\sube$ \\
+    $\bs$sups\hfill$\sups$ \\
     $\bs$supe\hfill$\supe$ \\
     $\bs$nsub\hfill$\nsub$ \\
     $\bs$nsup\hfill$\nsup$ \\
@@ -302,52 +336,24 @@ I will give a table of all commands in math mode.
     $\bs$Un\hfill$\Un$ \\
     $\bs$In\hfill$\In$ \\
     $\bs$Du\hfill$\Du$ \\
-    $\bs$cp\hfill$\cp$ \\
     $\bs$Cp\hfill$\Cp$ \\
-    $\bs$ot\hfill$\ot$ \\
-    $\bs$op\hfill$\op$ \\
-    $\bs$acts\hfill$\acts$ \\
+    $\bs$cp\hfill$\cp$ \\
     $\bs$sgn\hfill$\sgn$ \\
-    $\bs$nsg\hfill$\nsg$ \\
-    $\bs$defa\hfill$\defa$ \\
     $\bs$sdp\hfill$\sdp$ \\
-    $\bs$inv$\{$f$\}$\hfill$\inv{f}$ \\
-    x$\bs$mod y\hfill$x\mod y$ \\
-    $\bs$Cl\hfill$\Cl$ \\
-    $\bs$Hol\hfill$\Hol$ \\
-    $\bs$comp\hfill$\comp$ \\
-    $\bs$Gal\hfill$\Gal$ \\
-    $\bs$card$\{S\}$\hfill$\card{S}$ \\
-    $\bs$im\hfill$\im$ \\
-    $\bs$norm$\{$M$\}$\hfill$\norm{M}$ \\
-    $\bs$po\hfill$\po$ \\
-    $\bs$poe\hfill$\poe$ \\
-    $\bs$cyc$\{$g$\}$\hfill$\cyc{g}$ \\
     $\bs$Spec\hfill$\Spec$ \\
     $\bs$Syl\hfill$\Syl$ \\
-    $\bs$iso\hfill$\iso$ \\
-    $\bs$niso\hfill$\niso$ \\
-    $\bs$Mor\hfill$\Mor$ \\
-    $\bs$Aut\hfill$\Aut$ \\
-    $\bs$End\hfill$\End$ \\
-    $\bs$Hom\hfill$\Hom$ \\
-    $\bs$Inn\hfill$\Inn$ \\
-    $\bs$Out\hfill$\Out$ \\
-    $\bs$Iso\hfill$\Iso$ \\
-    $\bs$Ob\hfill$\Ob$ \\
+    $\bs$Sym\hfill$\Sym$ \\
+    $\bs$GL\hfill$\GL$ \\
+    $\bs$SL\hfill$\SL$ \\
+    $\bs$Mod\hfill$\Mod$ \\
+    $\bs$Sg\hfill$\Sg$ \\
+    $\bs$Ag\hfill$\Ag$ \\
+    $\bs$uni\hfill$\uni$ \\
+    $\bs$tp\{1\}\hfill$\tp{1}$ \\
+    $\bs$T\hfill$\T$ \\
     $\bs$tri\hfill$\tri$ \\
-    $\bs$pa\hfill$\pa$ \\
-    $\bs$Ann\hfill$\Ann$ \\
-    $\bs$dom\hfill$\dom$ \\
-    $\bs$ran\hfill$\ran$ \\
-    $\bs$cod\hfill$\cod$ \\
-    $\bs$A$\{$n$\}$\hfill$\A{n}$ \\
-    $\bs$sq\hfill$\sq$ \\
-    $\bs$CAT\hfill$\CAT$ \\
-    $\bs$fl$\{$A$\}$\hfill$\fl{A}$ \\
-    $\bs$can\hfill$\can$ \\
-    $\bs$Can\hfill$\Can$ \\
-    $\bs$cat$\{A\}$\hfill$\cat{A}$
+    $\bs$td\hfill$\td$ \\
+    $\bs$wb\{1\}\hfill$\wb{1}$
 \end{multicols}
 \section{Acknowledgement}
 Special thanks to \cfd{FSG}. His advice on this style has been invaluable.
