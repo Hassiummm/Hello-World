@@ -1,5 +1,5 @@
 %%% A Simple Format, author: Hassium %%% 
-%%% version 1.2.11 !!! %%% 
+%%% version 1.3.1 !!! %%% 
 
 % I quoted some lines from Stackexchange and Github.
 
@@ -13,7 +13,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[explicit]{titlesec}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,sansmath,tikz-cd}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs,mathtools,nicematrix,chngcntr,centernot,ytableau,sansmath,tikz-cd,pgfplots}
 \usepackage{imakeidx,textcomp,tocloft,environ,setspace,geometry,enumerate,enumitem,blindtext,multicol,xcolor,fancyhdr,calligra,graphicx,etoolbox,wrapfig,pgfplots,mdframed,tabularx,lipsum,comment,csquotes,verbatim,transparent,scalerel,ragged2e,halloweenmath,manfnt,relsize,nameref}
 \usepackage[hidelinks]{hyperref}
 \usepackage{chemfig}
@@ -300,6 +300,15 @@
 
 % Cayley graph
 \DeclareMathOperator{\Cay}{Cay}
+\newcommand{\points}[6]{%
+  \foreach \x in {0,...,\numexpr #1-1\relax} {
+    \foreach \y in {0,...,\numexpr #2-1\relax} {
+      \foreach \z in {0,...,\numexpr #3-1\relax} {
+        \filldraw[black] (#5*\y,#4*\x,#6*\z) circle (2pt);
+      }
+    }
+  }
+} % x,y,z axes, distance 
 
 % Change font (math) 
 \newcommand{\bb}[1]{\mathbb{#1}}
@@ -348,6 +357,21 @@
 
 % Floor
 \newcommand{\fl}[1]{\lfloor{#1}\rfloor}
+
+% Functions (pgfplot)
+\pgfplotsset{compat=1.9}
+\newcommand{\functiondraw}[4]{
+    \begin{tikzpicture}[scale=#1]
+        \begin{axis}[hide axis]
+            \addplot[
+                thick, 
+                domain=#2:#3,
+                samples=100
+            ] 
+            {#4};
+        \end{axis}
+    \end{tikzpicture}
+}
 
 % Greek and Hebrew letters
 \newcommand{\al}{\alpha}
