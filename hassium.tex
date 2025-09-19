@@ -356,18 +356,28 @@
 \newcommand{\fl}[1]{\lfloor{#1}\rfloor}
 
 % Functions (pgfplot)
-\pgfplotsset{compat=1.9}
-\newcommand{\functiondraw}[4]{
-    \begin{tikzpicture}[scale=#1]
+\pgfplotsset{compat=newest}
+\newcommand{\functiondraw}[5]{%
+    \begin{tikzpicture}[scale=#2]
         \begin{axis}[hide axis]
-            \addplot[
-                thick, 
-                domain=#2:#3,
-                samples=100
-            ] 
-            {#4};
+            \ifnumcomp{#1}{=}{2}{%
+                \addplot[
+                    thick,
+                    domain=#3:#4,
+                    samples=100
+                ]{#5};%
+            }{%
+                \addplot3[
+                    surf,
+                    shader=flat,
+                    draw=black,
+                    fill=white,
+                    domain=#3:#4,
+                    samples=40,
+                ]{#5};%
+            }%
         \end{axis}
-    \end{tikzpicture}
+    \end{tikzpicture}%
 }
 
 % Greek and Hebrew letters

@@ -208,13 +208,17 @@ The environment ``\texttt{reviewmode}'' is originally done by my friend \href{ht
     \end{reviewmode}
 \end{verbatim}
 \section{Drawing Functions}
-To draw a function, you may use the following code:
+The function drawing command is based on the package \texttt{pgfplots}, you may use the following code:
 \begin{verbatim}
-    \functiondraw{0.8}{-10}{10}{exp(x^-2*sin(deg(x)))}
+    \functiondraw{3}{0.8}{-5}{5}{exp(-x^2-y^2)*x}
+    \functiondraw{2}{0.8}{-5}{5}{exp(x^-2*sin(deg(x)))}
+    \functiondraw{3}{0.8}{-5}{5}{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)}
 \end{verbatim}
-The first parameter is the scale of your plot. The second and the third is the domain of the plot, in our example, the domain is $[-1,1]$. The last entry is for your function. For the format of the function, please check the pgfplots package. The example code (with centering) yields the following plot.
+The first parameter decides the dimension of the graph. If you want the graph to be 2D, then set 2 to the first parameter. Otherwise, give a random integer that does not equal to 2 would give you a 3D graph. The second parameter is the scale of your plot. The third and the fourth is the domain of the plot, in our example, the domain is $[-5,5]$. The last entry is for your function. The example code (with centering) yields the following plot.
 \begin{center}
-    \functiondraw{0.8}{-10}{10}{exp(x^-2*sin(deg(x)))}
+    \functiondraw{3}{0.8}{-5}{5}{exp(-x^2-y^2)*x}
+    \functiondraw{2}{0.8}{-5}{5}{exp(x^-2*sin(deg(x)))}
+    \functiondraw{3}{0.8}{-5}{5}{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)}
 \end{center}
 \section{Simple Commands in Math Mode}
 I will give a table of all commands in math mode.
