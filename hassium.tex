@@ -379,6 +379,13 @@
         \end{axis}
     \end{tikzpicture}%
 }
+\newcommand{\multidraw}[3]{
+   \addplot[
+        thick,
+        domain=#1:#2,
+        samples=100
+        ]{#3};
+}
 
 % Greek and Hebrew letters
 \newcommand{\al}{\alpha}
