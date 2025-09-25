@@ -20,8 +20,6 @@ The note for Hartshorne's book is a long-term project. It might not be posted re
 
 <h3>An Introduction to Proofs</h3>
 
-I'm working on a little project with my friend: *An Introduction to Proofs*
-
 This is a short (not short anymore) note that designed to be a transition to proof-based mathematics. If you want to start with mathematics, it might be a good option. 
 
 Lots work to do... (´･_･`)
